@@ -1,7 +1,12 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Oxygen:wght@300;400;700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 /* Variables */
 :root {
-  --main-color: red;
+  --main-color: #b92038;
+  --white: #fff;
+  --orange: #EB5900;
+
+  --bg-white: #eee;
+  --bg-grey: #333;
 }
 
 
@@ -10,4 +15,31 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-white);
+  font-family: 'Open Sans', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+.w1400 {
+  max-width: 1400px;
+  width: 100%;
+  margin: auto;
+}
+
+.dflex {
+  display: flex;
+}
+
+.btn {
+  border: none;
 }

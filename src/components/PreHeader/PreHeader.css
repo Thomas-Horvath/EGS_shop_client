@@ -1,0 +1,32 @@
+.pre-header {
+    background: var(--bg-grey);
+    color: var(--white);
+}
+
+.pre-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 300;
+    letter-spacing: .08rem;
+    font-size: .8rem;
+}
+
+.pre-menu-link {
+    padding: .5rem 1rem;
+}
+
+.pre-menu-link:hover {
+    background: var(--main-color);
+    cursor: pointer;
+}
+
+.contact-section {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+}
+
+.address {
+    margin-right: 2rem;
+}
