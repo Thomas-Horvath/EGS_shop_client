@@ -4,6 +4,7 @@ import './Navbar.css';
 
 import { FaGripfire } from "react-icons/fa";
 import { IoCloseSharp } from "react-icons/io5";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 const Navbar = ({ isOpen, setIsOpen }) => {
   return (
@@ -11,26 +12,26 @@ const Navbar = ({ isOpen, setIsOpen }) => {
 
       <button className='btn close-btn' onClick={() => setIsOpen(false)}><IoCloseSharp /></button>
       <ul className='navbar-menu w1400'>
-        <li className='navbar-menu-item' onClick={() => setIsOpen(false)}>Elektromos gitárok
+        <li className='navbar-menu-item' onClick={() => setIsOpen(false)}>Elektromos gitárok<MdOutlineKeyboardArrowDown /> 
           <ul className='sublist'>
             <Link to="/products"><li>Jobb kezes</li></Link>
             <Link to="/products"><li>Bal kezes</li></Link>
             <Link to="/products"><li>Héthúros</li></Link>
           </ul>
         </li>
-        <li className='navbar-menu-item' onClick={() => setIsOpen(false)}>Gitár erősítők
+        <li className='navbar-menu-item' onClick={() => setIsOpen(false)}>Gitár erősítők<MdOutlineKeyboardArrowDown />
           <ul className='sublist'>
             <Link to="/products"><li>Erősítő fej</li></Link>
             <Link to="/products"><li>Láda</li></Link>
             <Link to="/products"><li>Kombó</li></Link>
           </ul></li>
-        <li className='navbar-menu-item' onClick={() => setIsOpen(false)}>Effektek
+        <li className='navbar-menu-item' onClick={() => setIsOpen(false)}>Effektek<MdOutlineKeyboardArrowDown />
           <ul className='sublist'>
             <Link to="/products"><li>Pedál</li></Link>
             <Link to="/products"><li>Multieffekt</li></Link>
             {/* <Link to="/products"><li>Héthúros</li></Link> */}
           </ul></li>
-        <li className='navbar-menu-item' onClick={() => setIsOpen(false)}>Kiegészítők
+        <li className='navbar-menu-item' onClick={() => setIsOpen(false)}>Kiegészítők<MdOutlineKeyboardArrowDown />
           <ul className='sublist'>
             <Link to="/products"><li>Húr</li></Link>
             <Link to="/products"><li>Kemény tok</li></Link>

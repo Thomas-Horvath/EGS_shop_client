@@ -93,8 +93,8 @@ const Login = ({ toggleMenu }) => {
             <div className="login-btn">
               <button className='btn btn-icon'><FaUserAlt className='login-icon' /><p className='btn-text'>Belépés</p></button>
               <ul className='login-submenu'>
-                <li ><Link to="/loginpage">Bejelentkezés</Link></li>
-                <li><Link to="/loginpage">Regisztráció</Link></li>
+                <Link to="/loginpage"><li >Bejelentkezés</li></Link>
+                <Link to="/loginpage"><li>Regisztráció</li></Link>
               </ul>
             </div>
           ) : (
@@ -114,7 +114,7 @@ const Login = ({ toggleMenu }) => {
 
 
 
-          <button className='btn btn-icon hamburger-btn' ><FaBars onClick={toggleMenu} className='login-icon hamburger-icon'/></button>
+          <button className='btn btn-icon hamburger-btn' ><FaBars onClick={toggleMenu} className='login-icon hamburger-icon' /></button>
         </div>
       </div>
     </div>
