@@ -1,4 +1,5 @@
 .pre-header {
+    display:none;
     background: var(--bg-grey);
     color: var(--white);
 }
@@ -29,4 +30,10 @@
 
 .address {
     margin-right: 2rem;
+}
+
+@media (min-width: 992px) {
+    .pre-header {
+        display:block;
+    }
 }

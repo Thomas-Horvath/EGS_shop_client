@@ -1,6 +1,6 @@
-.home {
+.login-page {
     min-height: 100vh;
-    background: #666;
+    background: gold;
     display: flex;
     align-items: center;
     justify-content: center;

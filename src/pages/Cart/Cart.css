@@ -1,6 +1,6 @@
-.home {
+.cart {
     min-height: 100vh;
-    background: #666;
+    background: dodgerblue;
     display: flex;
     align-items: center;
     justify-content: center;

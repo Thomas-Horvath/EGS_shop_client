@@ -18,18 +18,24 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth;  
+
 }
 
 body {
-  background: var(--bg-white);
+  /* background: var(--bg-white); */
+  background: green;
   font-family: 'Open Sans', sans-serif;
+  min-width: 350px;
+ 
 }
 
 li {
   list-style: none;
 }
-
+a {
+  text-decoration: none;
+}
 .w1400 {
   max-width: 1400px;
   width: 100%;
@@ -42,4 +48,9 @@ li {
 
 .btn {
   border: none;
+}
+
+
+@media (min-width: 992px) {
+
 }

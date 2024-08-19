@@ -1,8 +1,9 @@
-.home {
-    min-height: 100vh;
-    background: #666;
+.products {
+    height: 100vh;
+    background: orangered;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 10rem;
+
 }

@@ -15,7 +15,7 @@ const PreHeader = () => {
 
                 <div className="contact-section">
                     <FaLocationDot />
-                    <p className='address'>Cím: kdfkkfdk</p>
+                    <p className='address'>1035 Budapest Bárhol utca 6.</p>
                     <FaPhone />
                     <p> 06 20 123 4567</p>
                 </div>
