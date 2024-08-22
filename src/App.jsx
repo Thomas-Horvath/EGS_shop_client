@@ -11,6 +11,7 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import Info from './pages/Info/Info';
 import Contact from './pages/Contact/Contact';
 import Profile from './pages/Profile/Profile';
+import  ScrollTop from './components/ScrollTop/ScrollTop';
 
 import { AuthProvider } from './contexts/AuthContext';
 
@@ -20,6 +21,7 @@ function App() {
   return (
     <AuthProvider >
       <Router>
+      <ScrollTop />
         <div className="app">
           <PreHeader />
           <Header />

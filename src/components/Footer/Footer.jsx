@@ -6,11 +6,6 @@ import { footerInfoLinks, assets } from '../../assets/assets';
 const Footer = () => {
   
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-
 
   return (
     <div className='footer'>
@@ -42,7 +37,7 @@ const Footer = () => {
                 title={link.title}
                 className={link.className}
                 path={link.path}
-                onClick={scrollToTop}
+               
               />
             ))
             }

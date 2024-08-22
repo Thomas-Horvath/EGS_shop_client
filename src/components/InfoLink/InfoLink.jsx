@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const InfoLink = (props) => {
     const {path , title , className , onClick } = props;
   return (
-    <Link to={path}><li className={className} onClick={onClick}>{title}</li></Link>
+   <li className={className} onClick={onClick}> <Link to={path}>{title}</Link></li>
   )
 }
 

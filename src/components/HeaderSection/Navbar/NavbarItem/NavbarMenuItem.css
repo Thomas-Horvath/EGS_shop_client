@@ -24,6 +24,7 @@
     font-weight: 400;
     text-transform: capitalize;
     display: none;
+    gap: .5rem;
     background: var(--bg-white);
     flex-direction: column;
     overflow: hidden;
@@ -36,10 +37,12 @@
 }
 
 .sublist a {
+    display: block;
     color: var(--bg-grey);
     position: relative;
     transition: padding .2s ease;
     padding: .5rem;
+    width: 100%;
 }
 
 .sublist a::before {

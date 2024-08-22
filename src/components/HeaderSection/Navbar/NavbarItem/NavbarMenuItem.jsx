@@ -11,9 +11,9 @@ const NavbarMenuItem = (props) => {
       {title}<MdOutlineKeyboardArrowDown />
       <ul className="sublist">
         {submenuItems.map((item, index) => (
-          <Link to={item.path} onClick={handleLinkClick} key={index}>
-            <li>{item.label}</li>
-          </Link>
+          <li key={index}><Link to={item.path} onClick={handleLinkClick} >
+            {item.label}
+          </Link></li>
         ))}
       </ul>
     </li>

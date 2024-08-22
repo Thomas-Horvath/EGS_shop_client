@@ -15,9 +15,11 @@
 
 .pre-menu-link {
     padding: .5rem 1rem;
-    color: var(--white);
 }
+.pre-menu-link a {
+    color: var(--white);
 
+}
 .pre-menu-link:hover {
     background: var(--main-color);
     cursor: pointer;
