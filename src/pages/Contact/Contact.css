@@ -1,6 +1,6 @@
-.home {
+.contact {
     min-height: 100vh;
-    background: var(--bg-white);
+    background: rebeccapurple;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,9 +1,36 @@
 .products {
-    height: 100vh;
-    background: orangered;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10rem;
+    min-height: 100vh;
+    background: var(--bg-white);
+    padding: 2rem;
+}
 
+.product-container {
+    width: 100%;
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.filter-container {
+    height: 70vh;
+    width: 300px;
+    background: tomato;
+}
+.product-card-container {
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+
+@media (min-width: 992px) {
+    .product-container {
+        flex-direction: row;
+    }
 }

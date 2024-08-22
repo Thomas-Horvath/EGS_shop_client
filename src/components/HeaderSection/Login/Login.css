@@ -53,7 +53,9 @@
     display: flex;
 }
 
-
+.login-btn.close .login-submenu {
+    display: none;
+}
 
 
 /* search input  */
@@ -100,7 +102,9 @@
 .login-cart-btn:hover .cart-alert {
     display: flex;
 }
-
+.login-cart-btn.close .cart-alert {
+    display:none;
+}
 
 
 

@@ -15,6 +15,7 @@
 
 .pre-menu-link {
     padding: .5rem 1rem;
+    color: var(--white);
 }
 
 .pre-menu-link:hover {

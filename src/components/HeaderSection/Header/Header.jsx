@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <div className='header'>
       <Login toggleMenu={toggleMenu}  />
-      <Navbar isOpen={isOpen} setIsOpen={ setIsOpen }/>
+      <Navbar isOpen={isOpen} setIsOpen={ setIsOpen } />
     </div>
 
   )

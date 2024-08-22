@@ -1,0 +1,28 @@
+/* Spinner style */
+
+.spinner {
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 7px solid rgba(0, 0, 0, 0.1); /* Átlátszó körvonal */
+    border-top-color: var(--main-color); /* A forgó gyűrű színe */
+    border-right-color:var(--main-color);
+    border-bottom-color:var(--main-color);
+    animation: spin .7s linear infinite;
+    z-index: 0;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .spinner-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
+  }

@@ -1,5 +1,7 @@
 import React from 'react';
 import './PreHeader.css';
+import InfoLink from '../../InfoLink/InfoLink';
+import { preHeaderLinks } from '../../../assets/assets.js';
 import { FaLocationDot, FaPhone } from "react-icons/fa6";
 
 const PreHeader = () => {
@@ -7,10 +9,16 @@ const PreHeader = () => {
         <div className="pre-header">
             <div className="pre-header-content w1400">
                 <ul className='pre-menu dflex'>
-                    <li className='pre-menu-link'>Kezdőlap</li>
-                    <li className='pre-menu-link'>Információk</li>
-                    <li className='pre-menu-link'>Szállítás És Fizetés</li>
-                    <li className='pre-menu-link'>Kapcsolat</li>
+                  {
+                    preHeaderLinks.map((link , index ) => (
+                        <InfoLink
+                         key={ index + link.title}
+                         title={link.title}
+                         className={ link.className }
+                         path={ link.path }    
+                         />
+                    ))
+                  }
                 </ul>
 
                 <div className="contact-section">

@@ -8,24 +8,34 @@ import Cart from './pages/Cart/Cart';
 import Footer from './components/Footer/Footer';
 import PreHeader from './components/HeaderSection/PreHeader/PreHeader'
 import LoginPage from './pages/LoginPage/LoginPage';
+import Info from './pages/Info/Info';
+import Contact from './pages/Contact/Contact';
+import Profile from './pages/Profile/Profile';
+
+import { AuthProvider } from './contexts/AuthContext';
+
 function App() {
 
 
   return (
-    <Router>
-      <div className="app">
-
-        <PreHeader />
-        <Header />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/products' element={<Products />} />
-          <Route path='/loginpage' element={<LoginPage />} />
-          <Route path='/cart' element={<Cart />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <AuthProvider >
+      <Router>
+        <div className="app">
+          <PreHeader />
+          <Header />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/termékek/:cagerory' element={<Products />} />
+            <Route path='/profil/:category' element={<LoginPage />} />
+            <Route path='/kosár' element={<Cart />} />
+            <Route path='/:links' element={<Info />} />
+            <Route path='/kapcsolat' element={<Contact />} />
+            <Route path='/fiókom/:category' element={<Profile />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
 

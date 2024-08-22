@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
 import { assets } from '../../../assets/assets';
 import { FaUserAlt, FaShoppingCart, FaSearch, FaBars } from "react-icons/fa";
-import { RiLogoutBoxRLine } from "react-icons/ri";
+import { AuthContext } from '../../../contexts/AuthContext';
+
 
 const Login = ({ toggleMenu }) => {
-  const [searchVisible, setSearchVisible] = useState(false);
+  const [searchVisible, setSearchVisible] = useState(false); // Állapot a keresőmezőhöz
   const [searchQuery, setSearchQuery] = useState(''); // Állapot a keresőszöveghez
+  const [sublistClosed, setSublistClosed] = useState(false);
 
-  // TODO a sessoin storeageben tárolt tokentől függ majd ha van akkor true ha nincs false 
-  const [login, setLogin] = useState(false);
+  const { isLoggedIn, logout } = useContext(AuthContext);
+
+
 
   // Képernyőméret figyelése
   useEffect(() => {
@@ -59,15 +62,29 @@ const Login = ({ toggleMenu }) => {
   };
 
 
+// eltűntetjük az almenüt ha a valamelyik linkre kattintunk
+  const handleLinkClick = () => {
+    setSublistClosed(true);
+    setTimeout(() => setSublistClosed(false), 600);  
+  };
+
 
   return (
     <div className="login-wrapper">
       <div className='login w1400'>
+
+        {/* logó */}
         <Link to="/">
           <img className="logo" src={assets.logo} alt="Logo" />
         </Link>
+
+
+
+
         <div className="login-right">
 
+
+          {/*  kereső mező */}
           <div className="login-search-input">
             {searchVisible && (
               <form onSubmit={handleSearchSubmit}>
@@ -80,44 +97,56 @@ const Login = ({ toggleMenu }) => {
             </button>
           </div>
 
-          <div className="login-cart-btn">
-            <Link to="/cart"><button className='btn btn-icon '><FaShoppingCart className='login-icon' /><p className='btn-text'>Kosár</p></button></Link>
+
+
+
+
+
+          {/* Kosár */}
+          <div className={`login-cart-btn ${sublistClosed ? 'close' : ''}`}>
+            <Link to="/kosár"><button className='btn btn-icon ' onClick={handleLinkClick}><FaShoppingCart className='login-icon' /><p className='btn-text'>Kosár</p></button></Link>
             <div className="dot">0</div>
             <div className="cart-alert">
               <p>Kosár üres</p>
+
             </div>
           </div>
 
 
-          {!login ? (
-            <div className="login-btn">
-              <button className='btn btn-icon'><FaUserAlt className='login-icon' /><p className='btn-text'>Belépés</p></button>
-              <ul className='login-submenu'>
-                <Link to="/loginpage"><li >Bejelentkezés</li></Link>
-                <Link to="/loginpage"><li>Regisztráció</li></Link>
-              </ul>
-            </div>
-          ) : (
-
-            <div className="login-btn">
-              <button className='btn btn-icon'><RiLogoutBoxRLine className='login-icon' /><p className='btn-text'>Kijelentkezés</p></button>
-            </div>
-
-          )
-          }
 
 
+          {/* bejelentkézés */}
 
+          <div className={`login-btn ${sublistClosed ? 'close' : ''}`}>
+            <button className='btn btn-icon'><FaUserAlt className='login-icon' /><p className='btn-text'>Profil</p></button>
 
+            <ul className='login-submenu'>
 
+              { (!isLoggedIn) ? (
+                <>
+                  <Link to="/profil/bejelentkezés" onClick={handleLinkClick}><li >Bejelentkezés</li></Link>
+                  <Link to="/profil/regisztráció" onClick={handleLinkClick}><li>Regisztráció</li></Link>
+                </>
+              ) : (
+                <>
+                  <Link to="/fiókom/saját-profil" onClick={handleLinkClick}><li >Fiókom</li></Link>
+                  <Link to="/fiókom/rendeléseim" onClick={handleLinkClick}><li>Rendeléseim</li></Link>
+                  <Link to="/fiókom/kijelentkezés" onClick={() => { logout() ;handleLinkClick() }}><li>Kijelentkezés</li></Link>
+                </>
+              )
+              }
 
-
-
+            </ul>
+          </div>
 
           <button className='btn btn-icon hamburger-btn' ><FaBars onClick={toggleMenu} className='login-icon hamburger-icon' /></button>
+
+
+
+
         </div>
       </div>
-    </div>
+    </div >
   )
 };
 
