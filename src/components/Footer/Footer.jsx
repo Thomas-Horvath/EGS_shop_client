@@ -9,7 +9,7 @@ const Footer = () => {
 
   return (
     <div className='footer'>
-      <div className="footer-wrapper">
+      <div className="footer-wrapper w1400">
 
         <div className="address">
           <img src={assets.logo} alt="logo" className='footer-logo' />

@@ -11,6 +11,8 @@ const Login = ({ toggleMenu }) => {
   const [searchQuery, setSearchQuery] = useState(''); // Állapot a keresőszöveghez
   const [sublistClosed, setSublistClosed] = useState(false);
 
+  const [isScrolled, setIsScrolled] = useState(false);   // a görgetés állapota
+
   const { isLoggedIn, logout } = useContext(AuthContext);
 
 
@@ -62,11 +64,35 @@ const Login = ({ toggleMenu }) => {
   };
 
 
-// eltűntetjük az almenüt ha a valamelyik linkre kattintunk
+  // eltűntetjük az almenüt ha a valamelyik linkre kattintunk
   const handleLinkClick = () => {
     setSublistClosed(true);
-    setTimeout(() => setSublistClosed(false), 600);  
+    setTimeout(() => setSublistClosed(false), 600);
   };
+
+
+
+  // Görgetés figyelése a logó méretének változtatásához
+  useEffect(() => {
+    // figyeljük a scroll eseményt az oldalon
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+
+    
+// A useEffect visszatérési értéke egy cleanup funkció, amely eltávolítja a görgetésfigyelőt, 
+// amikor a komponens eltávolításra kerül az oldalról
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+
 
 
   return (
@@ -75,7 +101,7 @@ const Login = ({ toggleMenu }) => {
 
         {/* logó */}
         <Link to="/">
-          <img className="logo" src={assets.logo} alt="Logo" />
+          <img className={`logo ${isScrolled ? 'scrolled' : ''}`} src={assets.logo} alt="Logo" />
         </Link>
 
 
@@ -122,7 +148,7 @@ const Login = ({ toggleMenu }) => {
 
             <ul className='login-submenu'>
 
-              { (!isLoggedIn) ? (
+              {(!isLoggedIn) ? (
                 <>
                   <Link to="/profil/bejelentkezés" onClick={handleLinkClick}><li >Bejelentkezés</li></Link>
                   <Link to="/profil/regisztráció" onClick={handleLinkClick}><li>Regisztráció</li></Link>
@@ -131,7 +157,7 @@ const Login = ({ toggleMenu }) => {
                 <>
                   <Link to="/fiókom/saját-profil" onClick={handleLinkClick}><li >Fiókom</li></Link>
                   <Link to="/fiókom/rendeléseim" onClick={handleLinkClick}><li>Rendeléseim</li></Link>
-                  <Link to="/fiókom/kijelentkezés" onClick={() => { logout() ;handleLinkClick() }}><li>Kijelentkezés</li></Link>
+                  <Link to="/fiókom/kijelentkezés" onClick={() => { logout(); handleLinkClick() }}><li>Kijelentkezés</li></Link>
                 </>
               )
               }

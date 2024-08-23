@@ -19,14 +19,15 @@
 
 html {
   scroll-behavior: smooth;  
-
+overflow-x: hidden;
 }
 
 body {
   /* background: var(--bg-white); */
-  background: green;
+  background: var(--bg-white);
   font-family: 'Open Sans', sans-serif;
   min-width: 350px;
+position: relative;
  
 }
 

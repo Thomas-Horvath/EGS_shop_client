@@ -5,17 +5,16 @@
     height: 100vh;
     background-color: var(--main-color);
     position: absolute;
-    transition: transform .3s, visibility .3s, display .3s;
     padding-top: 2rem;
     top: 0;
-    right: -300px;
+    right: -100%;
     display: none;
-   
+    transition: .5s all ease;
 }
 
 .open {
-    right: 0;
     display: flex;
+    right: 0;
 }
 
 .close-btn {
@@ -46,9 +45,10 @@
         width: 100%;
         position: static;
         visibility: visible;
-        height: fit-content;
-        padding: 0;
         height: 3rem;
+        padding: 0 1rem;
+        z-index: 10000;
+        transition: none;
     }
 
     .navbar-menu {

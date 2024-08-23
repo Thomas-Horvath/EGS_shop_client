@@ -27,7 +27,7 @@
     gap: .5rem;
     background: var(--bg-white);
     flex-direction: column;
-    overflow: hidden;
+    /* overflow: hidden; */
     box-shadow: var(--box-shadow);
     transition: padding .4s ease;
 }
@@ -105,7 +105,7 @@
     .navbar-menu-item {
         border-left: 1px solid var(--white);
         flex-direction: row;
-        padding: .8rem 2rem;
+        padding: .3rem 2rem;
     }
 
     .navbar-menu-item:last-child {

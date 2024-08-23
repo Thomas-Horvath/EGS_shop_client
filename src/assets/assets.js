@@ -3,7 +3,8 @@ import marshall from './marshall.webp';
 import logo from './logo.svg';
 import percenticon from './percenticon.svg';
 import basketIcon from './basket_icon.png';
-import searchIcon from './search_icon.png'
+import searchIcon from './search_icon.png';
+import technic from './technic.jpg';
 
 export const assets = {
     banner,
@@ -11,7 +12,8 @@ export const assets = {
     logo,
     percenticon,
     basketIcon,
-    searchIcon
+    searchIcon,
+    technic
 };
 
 
