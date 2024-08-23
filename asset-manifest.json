@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/egs_shop_react/static/css/main.d9d50bcf.css",
+    "main.css": "/egs_shop_react/static/css/main.0a353d5f.css",
     "main.js": "/egs_shop_react/static/js/main.a84cf489.js",
     "static/media/banner.webp": "/egs_shop_react/static/media/banner.9d0d42e47cd08f21f390.webp",
     "static/media/marshall.webp": "/egs_shop_react/static/media/marshall.9693b0310f97e614bfad.webp",
@@ -8,11 +8,11 @@
     "static/media/logo.svg": "/egs_shop_react/static/media/logo.217b211d8153fcdd8d7096aa9a24896d.svg",
     "index.html": "/egs_shop_react/index.html",
     "static/media/percenticon.svg": "/egs_shop_react/static/media/percenticon.a11bcd08387bb8b9a372fa471fc7748e.svg",
-    "main.d9d50bcf.css.map": "/egs_shop_react/static/css/main.d9d50bcf.css.map",
+    "main.0a353d5f.css.map": "/egs_shop_react/static/css/main.0a353d5f.css.map",
     "main.a84cf489.js.map": "/egs_shop_react/static/js/main.a84cf489.js.map"
   },
   "entrypoints": [
-    "static/css/main.d9d50bcf.css",
+    "static/css/main.0a353d5f.css",
     "static/js/main.a84cf489.js"
   ]
 }
