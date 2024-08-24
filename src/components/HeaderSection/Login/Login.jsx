@@ -4,6 +4,7 @@ import './Login.css';
 import { assets } from '../../../assets/assets';
 import { FaUserAlt, FaShoppingCart, FaSearch, FaBars } from "react-icons/fa";
 import { AuthContext } from '../../../contexts/AuthContext';
+import { CartContext } from '../../../contexts/CartContext';
 
 
 const Login = ({ toggleMenu }) => {
@@ -14,6 +15,7 @@ const Login = ({ toggleMenu }) => {
   const [isScrolled, setIsScrolled] = useState(false);   // a görgetés állapota
 
   const { isLoggedIn, logout } = useContext(AuthContext);
+  const { cartItems , removeFromCart } = useContext(CartContext);
 
 
 
@@ -84,9 +86,9 @@ const Login = ({ toggleMenu }) => {
     };
     window.addEventListener('scroll', handleScroll);
 
-    
-// A useEffect visszatérési értéke egy cleanup funkció, amely eltávolítja a görgetésfigyelőt, 
-// amikor a komponens eltávolításra kerül az oldalról
+
+    // A useEffect visszatérési értéke egy cleanup funkció, amely eltávolítja a görgetésfigyelőt, 
+    // amikor a komponens eltávolításra kerül az oldalról
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -131,10 +133,25 @@ const Login = ({ toggleMenu }) => {
           {/* Kosár */}
           <div className={`login-cart-btn ${sublistClosed ? 'close' : ''}`}>
             <Link to="/kosár"><button className='btn btn-icon ' onClick={handleLinkClick}><FaShoppingCart className='login-icon' /><p className='btn-text'>Kosár</p></button></Link>
-            <div className="dot">0</div>
+            {cartItems.length >= 0 && <div className="dot">  {cartItems.reduce((total, item) => total + item.quantity, 0)}</div>}
             <div className="cart-alert">
-              <p>Kosár üres</p>
-
+              {cartItems.length === 0 ? (
+                <p>Kosár jelenleg üres</p>
+              ) : (
+                <div>
+                  <p>Tételek a kosárban:</p>
+                  <ul>
+                    {cartItems.map((item, index) => (
+                      <li key={index}>
+                        {item.Name} - {item.quantity} db 
+                        <button onClick={() => removeFromCart(item.ProductID)}>Törlés</button>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link to="kosár"><button className='btn'>Kosár</button></Link>
+                  <Link to="kosár"><button className='btn'>Pénztár</button></Link>
+                </div>
+              )}
             </div>
           </div>
 

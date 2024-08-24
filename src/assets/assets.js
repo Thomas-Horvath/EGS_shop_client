@@ -22,8 +22,8 @@ export const menuItems = [
     {
         title: 'Elektromos gitárok',
         submenuItems: [
-            { label: 'Jobb kezes', path: '/termékek/jobb-kezes' },
-            { label: 'Bal kezes', path: '/termékek/bal-kezes' },
+            { label: 'Jobb kezes', path: '/termékek/jobbkezes' },
+            { label: 'Bal kezes', path: '/termékek/balkezes' },
             { label: 'Héthúros', path: '/termékek/héthúros' },
         ],
     },
@@ -50,6 +50,7 @@ export const menuItems = [
             { label: 'Puhatok', path: '/termékek/puhatokok' },
             { label: 'Heveder', path: '/termékek/hevederek' },
             { label: 'Pengető', path: '/termékek/pengetők' },
+            { label: 'Kábelek', path: '/termékek/kábelek' },
         ],
     },
 ];

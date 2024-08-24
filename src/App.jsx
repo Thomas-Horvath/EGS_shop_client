@@ -11,9 +11,11 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import Info from './pages/Info/Info';
 import Contact from './pages/Contact/Contact';
 import Profile from './pages/Profile/Profile';
-import  ScrollTop from './components/ScrollTop/ScrollTop';
+import ScrollTop from './components/ScrollTop/ScrollTop';
 
-import { AuthProvider } from './contexts/AuthContext';
+
+import { AuthProvider } from './contexts/AuthContext'; // Bejelentkezési token vizsálata a session storageből
+import { CartProvider } from './contexts/CartContext'; // kosár kezelése
 
 function App() {
 
@@ -21,19 +23,21 @@ function App() {
   return (
     <AuthProvider >
       <Router>
-      <ScrollTop />
+        <ScrollTop />
         <div className="app">
           <PreHeader />
-          <Header />
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/termékek/:cagerory' element={<Products />} />
-            <Route path='/profil/:category' element={<LoginPage />} />
-            <Route path='/kosár' element={<Cart />} />
-            <Route path='/:links' element={<Info />} />
-            <Route path='/kapcsolat' element={<Contact />} />
-            <Route path='/fiókom/:category' element={<Profile />} />
-          </Routes>
+          <CartProvider>
+            <Header />
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/kosár' element={<Cart />} />
+              <Route path='/termékek/:category' element={<Products />} />
+              <Route path='/profil/:category' element={<LoginPage />} />
+              <Route path='/:links' element={<Info />} />
+              <Route path='/kapcsolat' element={<Contact />} />
+              <Route path='/fiókom/:category' element={<Profile />} />
+            </Routes>
+          </CartProvider>
           <Footer />
         </div>
       </Router>

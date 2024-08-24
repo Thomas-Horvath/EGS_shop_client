@@ -12,6 +12,7 @@ const LoginPage = () => {
 
   const { category } = useParams();
 
+
   const handleSubmit = async (e) => {
     e.preventDefault(); // Ne töltse újra az oldalt
 
@@ -29,7 +30,7 @@ const LoginPage = () => {
       });
 
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
 
       // Ha van token a válaszban
       if (data.token) {

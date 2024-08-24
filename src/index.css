@@ -24,7 +24,7 @@ overflow-x: hidden;
 
 body {
   /* background: var(--bg-white); */
-  background: var(--bg-white);
+  background: var(--white);
   font-family: 'Open Sans', sans-serif;
   min-width: 350px;
 position: relative;
