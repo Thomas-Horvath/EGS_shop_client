@@ -1,0 +1,17 @@
+.filter-container {
+    height: 100%;
+    width: 100%;
+    background: var(--bg-white);
+}
+
+.filter-container h1 {
+    padding: 1rem 0 0 1rem;
+}
+
+@media (min-width: 992px) {
+    .filter-container {
+        height: auto;
+        min-width: 220px;
+        max-width: 220px;
+    }
+}

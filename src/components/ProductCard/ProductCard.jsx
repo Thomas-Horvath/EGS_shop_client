@@ -1,27 +1,28 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import './ProductCard.css';
 
 const ProductCard = (props) => {
-  const { imgPath, title, price, SalePrice ,  onAddToCart} = props
+  const {  onAddToCart, product } = props
   return (
     <div className='card'>
       <div className="top">
-        <img src={imgPath} alt="Termék fotó" />
+       <Link to={`/termékadatok/${product.ProductID}`}> <img src={product.ProductPhotoURL} alt="Termék fotó" /></Link>
       </div>
       <div className="bottom">
-        <h2>{title}</h2>
+        <h2>{product.Name}</h2>
         <p>
-          {SalePrice > 0 ? (
+          {product.SalePrice > 0 ? (
             <>
-              <span style={{ textDecoration: 'line-through', marginRight: '10px' }}>{price} FT</span>
-              <span style={{ color: 'red', fontWeight: 'bold' }}>{SalePrice} FT</span>
+              <span style={{ textDecoration: 'line-through', marginRight: '10px' }}>{product.Price} FT</span>
+              <span style={{ color: 'red', fontWeight: 'bold' }}>{product.SalePrice} FT</span>
             </>
           ) : (
-            <span>{price} Ft</span>
+            <span>{product.Price} Ft</span>
           )}
         </p>
-        <button className='btn' onClick={onAddToCart}>Kosárba</button>
       </div>
+      <button className='btn product-card-btn' onClick={onAddToCart}>Kosárba</button>
     </div>
 
 

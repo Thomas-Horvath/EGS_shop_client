@@ -1,0 +1,103 @@
+import React, { useEffect, useState, useContext } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { CartContext } from '../../contexts/CartContext';
+import './ProductDetail.css';
+
+const ProductDetails = () => {
+    const { id } = useParams(); // Lekéri az URL-ből a termék azonosítóját
+    const [product, setProduct] = useState(null); // Állapot a termék adatok tárolására
+    const [isLoading, setIsLoading] = useState(true); // Betöltési állapot kezelése
+    const [error, setError] = useState(null); // Hibakezelés
+    const { addToCart } = useContext(CartContext);
+    const navigate = useNavigate(); // Navigáció
+
+    useEffect(() => {
+        // Fetch hívás a termék adatok lekérésére
+        const fetchProductDetails = async () => {
+            try {
+                const response = await fetch(`https://thomasapi.eu/api/product/${id}`, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json; charset=UTF-8",
+                    },
+                    mode: "cors",
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+                setProduct(data);
+            } catch (error) {
+                setError(error.message);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchProductDetails();
+    }, [id]); // Az effect újra fut, ha a productID változik
+
+    const handleAddToCart = () => {
+        if (product) {
+            addToCart(product);
+            //   alert('Termék hozzáadva a kosárhoz!'); // Visszajelzés a felhasználónak
+        }
+    };
+
+    const handleGoBack = () => {
+        navigate(-1); // Visszaugrik az előző oldalra
+    };
+
+    if (isLoading) return <div className='detail-container'>Loading...</div>;
+    if (error) return <div className='detail-container'>Error: {error}</div>;
+
+    return (
+        <div className='detail-container'>
+            {product ? (
+                <div className='product-details'>
+                    <div className='product-image'>
+                        <img src={product.ProductPhotoURL} alt={product.Name} />
+                    </div>
+                    <div className='product-info'>
+                        <h1>{product.BrandName} - {product.Name}</h1>
+                        {product.Model && <p><strong>Modell:</strong> {product.Model}</p>}
+                        {product.Color && <p><strong>Szín:</strong> {product.Color}</p>}
+                        {product.Quality && <p><strong>Minőség:</strong> {product.Quality}</p>}
+                        {product.BundsNumber && <p><strong>Bundok száma:</strong> {product.BundsNumber}</p>}
+                        {product.Body && <p><strong>Korpusz:</strong> {product.Body}</p>}
+                        {product.Neck && <p><strong>Nyak:</strong> {product.Neck}</p>}
+                        {product.FretBoard && <p><strong>Fretboard:</strong> {product.FretBoard}</p>}
+                        {product.Pickup && <p><strong>Pickup:</strong> {product.Pickup}</p>}
+                        {product.Weight > 0 && <p><strong>Súly:</strong> {product.Weight} kg</p>}
+                        {product.ChannelsNumber > 0 && <p><strong>Csatornák száma:</strong> {product.ChannelsNumber}</p>}
+                        {product.SpeakersNumber > 0 && <p><strong>Hangszórók száma:</strong> {product.SpeakersNumber}</p>}
+                        {product.Wattage > 0 && <p><strong>Teljesítmény:</strong> {product.Wattage} W</p>}
+                        {product.Width > 0 && <p><strong>Szélesség:</strong> {product.Width} cm</p>}
+                        {product.Length > 0 && <p><strong>Hosszúság:</strong> {product.Length} cm</p>}
+                        {product.Thickness > 0 && <p><strong>Vastagság:</strong> {product.Thickness} cm</p>}
+                        {product.CableLength > 0 && <p><strong>Kábel hossz:</strong> {product.CableLength} m</p>}
+                        {product.ConnectorType && <p><strong>Csatlakozó típus:</strong> {product.ConnectorType}</p>}
+                        {product.Radius && <p><strong>Rádiusz:</strong> {product.Radius}</p>}
+                        <p><strong>Kategória:</strong> {product.CategoryName}</p>
+                        <p><strong>Alkategória:</strong> {product.SubCategoryName}</p>
+                        <p><strong>Márka:</strong> {product.BrandName}</p>
+                        {product.Price > 0 && <p><strong>Ár:</strong> {product.Price} Ft</p>}
+                        {product.SalePrice > 0 && <p><strong>Akciós ár:</strong> {product.SalePrice} Ft</p>}
+                        {product.Description && <p><strong>Leírás:</strong> {product.Description}</p>}
+                    </div>
+                </div>
+
+            ) : (
+                <div>No product found</div>
+            )}
+            <div className='product-buttons'>
+                <button className='btn product-details-btn' onClick={handleAddToCart}>Kosárba</button>
+                <button className='btn product-details-btn' onClick={handleGoBack}>Vissza</button>
+            </div>
+        </div>
+    );
+};
+
+export default ProductDetails;

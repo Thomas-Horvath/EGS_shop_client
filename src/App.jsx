@@ -16,6 +16,7 @@ import ScrollTop from './components/ScrollTop/ScrollTop';
 
 import { AuthProvider } from './contexts/AuthContext'; // Bejelentkezési token vizsálata a session storageből
 import { CartProvider } from './contexts/CartContext'; // kosár kezelése
+import ProductDetails from './pages/ProductDetails/ProductDetails';
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
               <Route path='/:links' element={<Info />} />
               <Route path='/kapcsolat' element={<Contact />} />
               <Route path='/fiókom/:category' element={<Profile />} />
+              <Route path='/termékadatok/:id' element={<ProductDetails />} />
             </Routes>
           </CartProvider>
           <Footer />

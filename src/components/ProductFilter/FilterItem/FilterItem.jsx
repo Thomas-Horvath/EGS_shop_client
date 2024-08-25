@@ -1,28 +1,27 @@
+import React from 'react';
+import './FilterItem.css';
 
-
-const FilterItem = ({ filterCategory, title, options, onFilterChange }) => {
-
+const FilterItem = ({ filterCategory, title, options, selectedCheckboxes, onFilterChange }) => {
   const handleChange = (e) => {
-    // Az esemény célpontja (e.target) tartalmazza az állapotot és a szűrő kategóriát
-    onFilterChange(e.target.checked, filterCategory, e.target.value);
+    const isChecked = e.target.checked;
+    onFilterChange(filterCategory, e.target.value, isChecked);
   };
-
 
   return (
     <div className="filter-item">
       <h4>{title}</h4>
       {options.map((option, index) => (
         <div key={index} className="checkbox">
+          <label className='checkbox-label' htmlFor={option.value}>{option.label}</label>
           <input
             type="checkbox"
             name={filterCategory}
             id={option.value}
             value={option.value}
+            checked={selectedCheckboxes[`${filterCategory}-${option.value}`] || false}
             onChange={handleChange}
           />
-          <label htmlFor={option.value}>{option.label}</label>
         </div>
-
       ))}
     </div>
   );

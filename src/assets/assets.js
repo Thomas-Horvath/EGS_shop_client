@@ -112,4 +112,113 @@ export const footerInfoLinks = [
         className: 'footer-info-link',
         path: '/kapcsolat'
     },
-]
+];
+
+
+
+// product oldal adatai
+export const categoryMap = {
+    'balkezes': 'Balkezes',
+    'jobbkezes': 'Jobbkezes',
+    'héthúros': 'Héthúros',
+    'erősítő-fejek': 'Fej',
+    'kábelek': 'Gitár kábel',
+    'pedálok': 'Pedál',
+    'multieffektek': 'Mulltieffekt',
+    'pengetők': 'Pengető',
+    'gitárládák': 'Láda',
+    'puhatokok': 'Puha tok',
+    'kombók': 'Combó',
+    'hevederek': 'Heveder',
+    'húrok': 'Húr',
+    'kemény-tokok': 'Kemény tok',
+    'akciók': 'akciók',
+};
+
+
+export const categoryTitle = {
+    'balkezes': 'Balkezes gitárok',
+    'jobbkezes': 'Jobbkezes gitárok',
+    'héthúros': 'Héthúros gitárok',
+    'erősítő-fejek': 'Gitáresősítő fejek',
+    'kábelek': 'Gitár kábelek',
+    'pedálok': 'Effekt pedálok',
+    'multieffektek': 'Multieffekt pedálok',
+    'pengetők': 'Pengetők',
+    'gitárládák': 'Gitár ládák',
+    'puhatokok': 'Puha tokok',
+    'kombók': ' Gitár kombók',
+    'hevederek': ' Hevederek',
+    'húrok': 'Gitárhúrók',
+    'kemény-tokok': ' Kemény tokok',
+    'akciók': 'Akciós termékeink',
+};
+
+export const colorData = {
+    'Jobbkezes': ["Piros", "Fekete", "Fehér", "Zöld", "Lila", "Szürke", "Sunburst", "Kék", "Natúr Fa", "Narancssárga", "Barna", "Natúr fa", "Feket", "Sárga", "Rózsaszín"],
+    'Balkezes': ["Fekete", "Sunburst", "Narancssárga", "Kék", "Fehér", "Natúr Fa"],
+    'Héthúros': ["Fekete", "Piros", "Zöld", "Barna"],
+    'Fej': ["Fekete", "Piros", "Fehér"],
+    'Gitár kábel': ["Fekete", "Barna", "Feket", "Kék", "Zöld", "Piros", "Sárga", "Rózsaszín", "Narancssárga", "Lila"],
+    'Pedál': ["Narancssárga", "Kék", "Sárga", "Fekete", "Szürke", "Zöld", "Fehér", "Lila", "Barna"],
+    'Láda': ["Fekete", "Narancssárga"],
+    'Puha tok': ["Fekete", "Barna", "Zöld", "Kék"],
+    'Combó': ["Narancssárga", "Fekete"],
+    'Heveder': ["Fehér", "Fekete", "Sárga", "Lila", "Bordó", "Szürke", "Zöld", "Szivárvány", "Barna", "Kék", "Piros", "Mintás", "Rózsaszín", "Natúr "],
+    'Húr': [""],
+    'Kemény tok': ["Fekete"],
+    'Mulltieffekt': ["Fekete"],
+    'Pengető': ["Zöld", "Sárga", "Kék", "Lila", "Fekete", "Fehér", "Barna", "Szürke", "Feket", "Piros", "Narancssárga", "Piros "],
+    'akciók': ["Piros", "Fekete", "Fehér", "Zöld", "Lila", "Szürke", "Sunburst", "Kék", "Natúr Fa", "Narancssárga", "Barna", "Sárga", "Rózsaszín", "Bordó", "Szivárvány", "Mintás"] // Az 'akciók' kulcsot meghagytam az eredeti struktúrában, ahogy kérted
+};
+
+
+
+export const brandData = {
+    'Jobbkezes': ["Cort", "Fender", "Gibson", "Ibanez", "Epiphone", "Squier", "Jackson"],
+    'Balkezes': ["Cort", "Fender", "Ibanez", "Squier", "Jackson"],
+    'Héthúros': ["Cort", "Ibanez", "Jackson"],
+    'Fej': ["Marshall", "ENGL", "Orange", "Laney"],
+    'Gitár kábel': ["Fender", "Ernie Ball"],
+    'Pedál': ["Boss", "Fender", "Ibanez", "Dunlop", "Line6"],
+    'Láda': ["Marshall", "Laney", "Orange", "ENGL"],
+    'Puha tok': ["Cort", "Fender", "Ibanez"],
+    'Combó': ["Orange", "Laney", "MesaBoogei", "Line6"],
+    'Heveder': ["Ernie Ball", "Fender", "Jackson", "Ibanez"],
+    'Húr': ["Elixir", "D'Addario", "Ernie Ball"],
+    'Kemény tok': ["Ibanez", "Fender", "Jackson", "Cort"],
+    'Mulltieffekt': ["Boss", "Line6"],
+    'Pengető': ["Dunlop"],
+    'akciók': [
+        "Cort", "Fender", "Gibson", "Ibanez", "Epiphone", "Squier", "Jackson",
+        "Marshall", "ENGL", "Orange", "Laney", "MesaBoogei", "Line6", "Boss",
+        "Dunlop", "Ernie Ball", "Elixir", "D'Addario"
+    ]
+};
+
+
+export const modelData = {
+    'Jobbkezes': ["Stratocaster", "Superstrat", "Les Paul", "Telecaster", "Jaguár", "SG", "Flying V", "Explorer", "Mustang"],
+    'Balkezes': ["Stratocaster", "Stratocaste", "Telecaster", "Jaguár", "Superstrat"],
+    'Héthúros': ["Superstrat", "Iceman", "Stratocaster"],
+    'Fej': ["Csöves", "Tranzisztoros"],
+    'Gitár kábel': ["Patch", "Gitár kábel"],
+    'Pedál': ["Distortion", "Overdrive", "Fuzz", "Delay", "Chorus", "Flanger", "Phaser", "Wah", "EQ", "Reverb"],
+    'Láda': ["Döntött", "Egyenes"],
+    'Puha tok': ["Textil"],
+    'Combó': ["Tranzisztoros", "Csöves"],
+    'Heveder': ["Textil", "Bőr", "Farmer"],
+    'Húr': ["Acél"],
+    'Kemény tok': ["Műanyag", "Fa"],
+    'Mulltieffekt': ["Multieffekt"],
+    'Pengető': ["Műanyag"],
+    'akciók': [
+        "Stratocaster", "Superstrat", "Les Paul", "Telecaster", "Jaguár", "SG",
+        "Flying V", "Explorer", "Mustang", "Iceman", "Csöves", "Tranzisztoros",
+        "Döntött", "Egyenes", "Distortion", "Overdrive", "Fuzz", "Delay",
+        "Chorus", "Flanger", "Phaser", "Wah", "EQ", "Reverb", "Multieffekt",
+        "Textil", "Bőr", "Farmer", "Acél", "Műanyag", "Fa", "Patch", "Gitár kábel"
+    ]
+};
+
+

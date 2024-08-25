@@ -95,6 +95,13 @@ const Login = ({ toggleMenu }) => {
   }, []);
 
 
+  //össze ár kiszámítása
+  const calculateTotalPrice = () => {
+    return cartItems.reduce((total, item) => {
+      return total + item.Price * item.quantity;
+    }, 0);
+  };
+  
 
 
   return (
@@ -148,6 +155,7 @@ const Login = ({ toggleMenu }) => {
                       </li>
                     ))}
                   </ul>
+                  <p>Összesen: {calculateTotalPrice().toFixed(2)} Ft</p>
                   <Link to="kosár"><button className='btn'>Kosár</button></Link>
                   <Link to="kosár"><button className='btn'>Pénztár</button></Link>
                 </div>
