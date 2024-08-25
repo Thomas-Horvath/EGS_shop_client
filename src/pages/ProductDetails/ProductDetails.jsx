@@ -96,8 +96,8 @@ const ProductDetails = () => {
                 <div>No product found</div>
             )}
             <div className='product-buttons'>
-                <button className='btn product-details-btn' onClick={handleAddToCart}>Kosárba</button>
-                <button className='btn product-details-btn' onClick={handleGoBack}>Vissza</button>
+                <button className='btn product-details-btn main-btn' onClick={handleAddToCart}>Kosárba</button>
+                <button className='btn product-details-btn main-btn' onClick={handleGoBack}>Vissza</button>
             </div>
 
 

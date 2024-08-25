@@ -6,7 +6,7 @@ import './Cart.css'
 const Cart = () => {
   const { category } = useParams();
 
-console.log(category);
+
 
   let content;
 

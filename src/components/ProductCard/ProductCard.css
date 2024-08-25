@@ -1,48 +1,60 @@
 .card {
-    /* border: 2px solid black; */
+   position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;justify-content: space-between;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     height: 410px;
     background: rgba(255, 255, 255, 1);
     border: 1px dashed rgba(221, 221, 221, 1);
-    padding: 1rem .3rem ;
+    padding: 1rem .3rem;
     /* box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px; */
 }
+
 .card:hover {
-    box-shadow:  0 5px 30px -5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.15);
     z-index: 1;
 }
+
+
 .top img {
     width: 100%;
     max-width: 200px;
     transition: transform .4s ease-in-out;
 }
+
 .top img:hover {
     transform: scale(1.1);
     cursor: pointer;
 }
+
 .bottom {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;justify-content: space-between;
+    align-items: center;
+    justify-content: space-between;
     padding: 1rem;
 }
+
 .bottom p {
     font-size: .9rem;
 }
+
 .instock {
     font-weight: 700;
 }
+
 .price {
     margin: .5rem;
 }
+
 .price span {
     font-size: 1.1rem;
 }
+
 .product-card-btn {
     padding: .5rem 1.5rem;
 }
@@ -50,4 +62,30 @@
 
 .bottom h3 {
     font-size: 1rem;
+}
+
+.sale-sticker {
+    background: transparent;
+    color: #f6f6f6;
+    padding: .3rem 1rem;
+    position: absolute;
+    right: 1rem;
+    text-align: center;
+    top: 4rem;
+    z-index: 5;
+}
+
+.sale-sticker::before {
+    background-color: #d80e2f;
+    border-radius: 5px;
+    bottom: 0;
+    box-shadow: 5px 5px 5px 0 #000000bf;
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    transform: skewX(-15deg);
+    width: 100%;
+   z-index: -1;
 }

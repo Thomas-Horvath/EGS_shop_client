@@ -110,7 +110,7 @@ const Login = ({ toggleMenu }) => {
       setIsAlertClose(false)
     },300)
   }
-console.log(isAlertClose)
+
 
   return (
     <div className="login-wrapper">

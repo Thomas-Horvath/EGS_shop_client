@@ -156,7 +156,7 @@ const Products = () => {
   const handleSortDisplay = () => {
     setIsOpen(!isOpen);
   }
-console.log(isOpen )
+
 
   return (
     <div className='products'>
