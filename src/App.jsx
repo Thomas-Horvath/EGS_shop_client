@@ -31,7 +31,7 @@ function App() {
             <Header />
             <Routes>
               <Route path='/' element={<Home />} />
-              <Route path='/kosár' element={<Cart />} />
+              <Route path='/rendelés/:category' element={<Cart />} />
               <Route path='/termékek/:category' element={<Products />} />
               <Route path='/profil/:category' element={<LoginPage />} />
               <Route path='/:links' element={<Info />} />

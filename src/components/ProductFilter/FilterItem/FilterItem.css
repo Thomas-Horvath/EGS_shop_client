@@ -15,7 +15,7 @@
 }
 
 .checkbox:hover {
-    background: #dfdfdf;
+    background: var(--bg-light-grey);
 }
 .checkbox:hover .checkbox-label {
     cursor: pointer;

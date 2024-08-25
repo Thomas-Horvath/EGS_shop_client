@@ -8,6 +8,7 @@ const Footer = () => {
 
 
   return (
+    <>
     <div className='footer'>
       <div className="footer-wrapper w1400">
 
@@ -45,6 +46,10 @@ const Footer = () => {
         </div>
       </div>
     </div>
+    <div className="footer-bottom">
+      Copyright &copy; 2024 ElectricGuitarShop
+    </div>
+    </>
   )
 };
 

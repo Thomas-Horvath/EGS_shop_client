@@ -15,14 +15,15 @@ const Products = () => {
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [filters, setFilters] = useState([]);
-  const [sortOrder, setSortOrder] = useState('ascending'); // Növekvő alapértelmezett rendezés
+  const [sortOrder, setSortOrder] = useState('default');
   const [resetFiltersTrigger, setResetFiltersTrigger] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
 
 
   const apiCategory = categoryMap[category] || '';
   const title = categoryTitle[category] || '';
 
-  
+
   // Nullázza a checkboxok állapotát, amikor a kategória változik
   useEffect(() => {
     setSelectedFilters([]);
@@ -71,13 +72,19 @@ const Products = () => {
     }
 
     // Ár szerinti rendezés
-    filtered.sort((a, b) => {
-      if (sortOrder === 'ascending') {
-        return a.Price - b.Price;
-      } else {
-        return b.Price - a.Price;
-      }
-    });
+
+    if (sortOrder === "default") {
+      filtered = [...filtered]
+    } else if (sortOrder === 'ascending') {
+      filtered = filtered.sort((a, b) => a.Price - b.Price);
+    } else if (sortOrder === 'descending') {
+      filtered = filtered.sort((a, b) => b.Price - a.Price);
+    } else if (sortOrder === 'abc') {
+      filtered = filtered.sort();
+    } else if (sortOrder === 'cba') {
+      filtered = filtered.reverse();
+    }
+
 
     setFilteredProducts(filtered);
   }, [products, selectedFilters, category, apiCategory, sortOrder]);
@@ -101,7 +108,7 @@ const Products = () => {
           options: brandOptions,
         },
         {
-          title: 'Szín',
+          title: 'Színek',
           filterCategory: 'Color',
           options: colorOptions,
         },
@@ -146,22 +153,32 @@ const Products = () => {
   };
 
 
+  const handleSortDisplay = () => {
+    setIsOpen(!isOpen);
+  }
+console.log(isOpen )
 
   return (
     <div className='products'>
       <h2 className='title'>{title}</h2>
       <section className="product-container w1400">
 
-        <Filter className="filter-container" filters={filters} onFilterChange={onFilterChange} resetFiltersTrigger={resetFiltersTrigger}/>
+        <Filter className="filter-container" isOpen={isOpen} handleSortDisplay={handleSortDisplay}  filters={filters} onFilterChange={onFilterChange} resetFiltersTrigger={resetFiltersTrigger} />
 
         <div className="product-container-wrapper">
 
           <div className="sort-container">
-            <label>Rendezés: </label>
-            <select value={sortOrder} onChange={handleSortChange}>
-              <option value="ascending">Ár szerint növekvő</option>
-              <option value="descending">Ár szerint csökkenő</option>
-            </select>
+            <button className='btn sort-btn' onClick={handleSortDisplay}>Szűrés</button>
+            <div className="select-container">
+              <label>Rendezés: </label>
+              <select value={sortOrder} onChange={handleSortChange}>
+                <option value="default">Alapértelmezett</option>
+                <option value="ascending">Ár (alacsony &gt; magas)</option>
+                <option value="descending">Ár (magas &gt; alacsony)</option>
+                <option value="abc">Név (A - Z)</option>
+                <option value="cba">Név (Z - A)</option>
+              </select>
+            </div>
           </div>
 
 

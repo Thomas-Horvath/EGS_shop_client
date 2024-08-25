@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Oxygen:wght@300;400;700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* Variables */
 :root {
   --main-color: #b92038;
   --white: #fff;
   --orange: #EB5900;
   --bg-white: #eee;
+  --bg-light-grey: #dfdfdf;
+  --bg-grey-1: #bbb;
   --bg-grey: #333;
   --box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
 }
@@ -18,8 +21,8 @@
 }
 
 html {
-  scroll-behavior: smooth;  
-overflow-x: hidden;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -27,16 +30,18 @@ body {
   background: var(--white);
   font-family: 'Open Sans', sans-serif;
   min-width: 350px;
-position: relative;
- 
+  position: relative;
+
 }
 
 li {
   list-style: none;
 }
+
 a {
   text-decoration: none;
 }
+
 .w1400 {
   max-width: 1400px;
   width: 100%;
@@ -48,10 +53,18 @@ a {
 }
 
 .btn {
-  border: none;
+  border: none ;
+  background: transparent;
+  cursor: pointer;
 }
 
-
-@media (min-width: 992px) {
-
+.main-btn {
+  border: 1px solid var(--bg-grey);
+  display: flex;
+  align-items: center;gap: .5rem;
 }
+.main-btn:hover {
+  background-color: var(--main-color);
+  color: var(--bg-white);
+}
+@media (min-width: 992px) {}

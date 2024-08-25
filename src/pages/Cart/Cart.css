@@ -1,8 +1,4 @@
 .cart {
     min-height: 100vh;
-    background: dodgerblue;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
+    background: var(--white);
 }

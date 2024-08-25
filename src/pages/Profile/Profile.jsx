@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Spinner } from '../../components/Spinner/Spinner'
 import './Profile.css';
@@ -35,23 +35,30 @@ const Profile = () => {
   let content;
 
   if (category === "saját-profil") {
-    content =  isPending ? <Spinner /> : 
-      <ul>
-        <li>{profile.LastName + ' ' + profile.FirstName}</li>
-        <li>{profile.EmailAddress}</li>
-      </ul>
-  } else if ( category === "kijelentkezés") {
-   content =  <div>Kijelentkezve</div>
+    content = isPending ? <Spinner /> :
+      <div className="profil-container w1400">
+      <h2>Fiókom</h2>
+        <ul>
+          <li>{profile.LastName + ' ' + profile.FirstName}</li>
+          <li>{profile.EmailAddress}</li>
+        </ul>
+      </div>
+  } else if (category === "rendeléseim") {
+    content = <div className="orders w1400">
+      <h2>Rendeléseim</h2>
+    </div>
+  } else if (category === "kijelentkezés") {
+    content = <div>Kijelentkezve</div>
   }
 
 
 
 
-return (
-  <div className='profile'>
-    {content}
-  </div>
-)
+  return (
+    <div className='profile'>
+      {content}
+    </div>
+  )
 }
 
 export default Profile;

@@ -55,16 +55,17 @@ const ProductDetails = () => {
 
     return (
         <div className='detail-container'>
+            <h1 className='main-title'>{product.BrandName} - {product.Name}</h1>
             {product ? (
+
                 <div className='product-details'>
                     <div className='product-image'>
                         <img src={product.ProductPhotoURL} alt={product.Name} />
                     </div>
                     <div className='product-info'>
-                        <h1>{product.BrandName} - {product.Name}</h1>
                         {product.Model && <p><strong>Modell:</strong> {product.Model}</p>}
                         {product.Color && <p><strong>Szín:</strong> {product.Color}</p>}
-                        {product.Quality && <p><strong>Minőség:</strong> {product.Quality}</p>}
+                        {product.Quality && <p><strong>Minőség:</strong>{product.Quality === "P" ? "Prémium" : "Standard"}</p>}
                         {product.BundsNumber && <p><strong>Bundok száma:</strong> {product.BundsNumber}</p>}
                         {product.Body && <p><strong>Korpusz:</strong> {product.Body}</p>}
                         {product.Neck && <p><strong>Nyak:</strong> {product.Neck}</p>}
@@ -83,9 +84,11 @@ const ProductDetails = () => {
                         <p><strong>Kategória:</strong> {product.CategoryName}</p>
                         <p><strong>Alkategória:</strong> {product.SubCategoryName}</p>
                         <p><strong>Márka:</strong> {product.BrandName}</p>
-                        {product.Price > 0 && <p><strong>Ár:</strong> {product.Price} Ft</p>}
-                        {product.SalePrice > 0 && <p><strong>Akciós ár:</strong> {product.SalePrice} Ft</p>}
-                        {product.Description && <p><strong>Leírás:</strong> {product.Description}</p>}
+                        {product.SalePrice > 0 ? <p><strong>Akciós ár:</strong>
+                            <span style={{ textDecoration: 'line-through', marginRight: '10px' }}>{product.Price} FT</span>
+                            <span style={{ color: 'red', fontWeight: 'bold' }}>{product.SalePrice} FT</span></p>
+                            : <p><strong>Ár:</strong> <span>{product.Price} Ft</span></p>}
+                        {product.Description && <div><p><strong>Leírás:</strong></p> <p>{product.Description}</p></div>}
                     </div>
                 </div>
 
@@ -96,7 +99,10 @@ const ProductDetails = () => {
                 <button className='btn product-details-btn' onClick={handleAddToCart}>Kosárba</button>
                 <button className='btn product-details-btn' onClick={handleGoBack}>Vissza</button>
             </div>
+
+
         </div>
+
     );
 };
 

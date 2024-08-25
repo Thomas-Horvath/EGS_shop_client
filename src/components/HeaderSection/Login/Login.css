@@ -36,19 +36,34 @@
     text-align: start;
     display: none;
     flex-direction: column;
-    background: var(--bg-white);
-    box-shadow:var(--box-shadow);
+    background: var(--bg-light-grey);
+    box-shadow: var(--box-shadow);
     z-index: 2;
+}
+
+.arrow {
+    width: 10px;
+    height: 10px;
+    background: var(--bg-light-grey);
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+
+
 }
 
 .login-submenu a {
     color: var(--bg-grey);
     padding: 1rem;
 }
+
 .login-submenu a:hover {
     color: var(--main-color);
-    background-color: #dfdfdf;
+    background-color: var(--bg-grey-1);
+    z-index: 1;
 }
+
 .login-btn:hover .login-submenu {
     display: flex;
 }
@@ -91,16 +106,19 @@
     top: 3rem;
     width: 250px;
     display: none;
+    flex-direction: column;
     align-items: center;
     white-space: nowrap;
     padding: 3rem 1rem;
-    background: var(--bg-white);
+    background: var(--bg-light-grey);
     box-shadow: var(--box-shadow);
     z-index: 2;
     white-space: wrap;
 }
 
-
+.cart-btn {
+    padding: .5rem 1rem;
+}
 
 
 
@@ -172,11 +190,17 @@
     color: var(--orange);
 }
 
+/* cart alert btns*/
+.button-container {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
 
 .dot {
     position: absolute;
-    min-width: 22px;
-    min-height: 22px;
+    min-width: 21px;
+    min-height: 21px;
     background-color: var(--orange);
     border-radius: 50px;
     top: 0px;
@@ -184,7 +208,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--bg-grey);
+    color: var(--white);
     font-weight: bold;
 }
 
@@ -196,6 +220,7 @@
     .login {
         padding: .6rem 1rem;
     }
+
     .logo {
         width: 200px;
     }
@@ -210,13 +235,16 @@
     .login {
         box-shadow: none;
     }
+
     .logo {
         width: 320px;
         transition: width 0.3s ease;
     }
+
     .logo.scrolled {
         width: 200px;
-      }
+    }
+
     .login-search-input {
         display: flex;
         align-items: center;
@@ -244,10 +272,14 @@
     .btn-text {
         display: block;
     }
+
     .login-cart-btn:hover .cart-alert {
         display: flex;
     }
+    .close-alert {
+        visibility: hidden;
+    }
     .login-cart-btn.close .cart-alert {
-        display:none;
+        display: none;
     }
 }

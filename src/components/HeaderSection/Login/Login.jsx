@@ -11,11 +11,12 @@ const Login = ({ toggleMenu }) => {
   const [searchVisible, setSearchVisible] = useState(false); // Állapot a keresőmezőhöz
   const [searchQuery, setSearchQuery] = useState(''); // Állapot a keresőszöveghez
   const [sublistClosed, setSublistClosed] = useState(false);
+  const [isAlertClose, setIsAlertClose] = useState(false);
 
   const [isScrolled, setIsScrolled] = useState(false);   // a görgetés állapota
 
   const { isLoggedIn, logout } = useContext(AuthContext);
-  const { cartItems , removeFromCart } = useContext(CartContext);
+  const { cartItems, removeFromCart } = useContext(CartContext);
 
 
 
@@ -101,8 +102,15 @@ const Login = ({ toggleMenu }) => {
       return total + item.Price * item.quantity;
     }, 0);
   };
-  
 
+
+  const handleCartAlertDisplay =() => {
+    setIsAlertClose(true)
+    setTimeout(() => {
+      setIsAlertClose(false)
+    },300)
+  }
+console.log(isAlertClose)
 
   return (
     <div className="login-wrapper">
@@ -139,9 +147,9 @@ const Login = ({ toggleMenu }) => {
 
           {/* Kosár */}
           <div className={`login-cart-btn ${sublistClosed ? 'close' : ''}`}>
-            <Link to="/kosár"><button className='btn btn-icon ' onClick={handleLinkClick}><FaShoppingCart className='login-icon' /><p className='btn-text'>Kosár</p></button></Link>
+            <Link to="/rendelés/kosár"><button className='btn btn-icon ' onClick={handleLinkClick}><FaShoppingCart className='login-icon' /><p className='btn-text'>Kosár</p></button></Link>
             {cartItems.length >= 0 && <div className="dot">  {cartItems.reduce((total, item) => total + item.quantity, 0)}</div>}
-            <div className="cart-alert">
+            <div className={`cart-alert ${isAlertClose ? "close-alert" : ""}`} >
               {cartItems.length === 0 ? (
                 <p>Kosár jelenleg üres</p>
               ) : (
@@ -150,16 +158,19 @@ const Login = ({ toggleMenu }) => {
                   <ul>
                     {cartItems.map((item, index) => (
                       <li key={index}>
-                        {item.Name} - {item.quantity} db 
-                        <button onClick={() => removeFromCart(item.ProductID)}>Törlés</button>
+                        {item.Name} - {item.quantity} db
+                        <button className='btn del-btn' onClick={() => removeFromCart(item.ProductID)}>Törlés</button>
                       </li>
                     ))}
                   </ul>
-                  <p>Összesen: {calculateTotalPrice().toFixed(2)} Ft</p>
-                  <Link to="kosár"><button className='btn'>Kosár</button></Link>
-                  <Link to="kosár"><button className='btn'>Pénztár</button></Link>
                 </div>
               )}
+              <p>Összesen: {calculateTotalPrice().toFixed(2)} Ft</p>
+              <p className="arrow"></p>
+              <div className="button-container">
+                <Link to="/rendelés/kosár"><button className="btn cart-btn main-btn" onClick={handleCartAlertDisplay}>Kosár</button></Link>
+                <Link to="/rendelés/pénztár"><button className="btn cart-btn main-btn" onClick={handleCartAlertDisplay}>Pénztár</button></Link>
+              </div>
             </div>
           </div>
 
@@ -175,11 +186,13 @@ const Login = ({ toggleMenu }) => {
 
               {(!isLoggedIn) ? (
                 <>
+                <li className="arrow"></li>
                   <Link to="/profil/bejelentkezés" onClick={handleLinkClick}><li >Bejelentkezés</li></Link>
                   <Link to="/profil/regisztráció" onClick={handleLinkClick}><li>Regisztráció</li></Link>
                 </>
               ) : (
                 <>
+                <li className="arrow"></li>
                   <Link to="/fiókom/saját-profil" onClick={handleLinkClick}><li >Fiókom</li></Link>
                   <Link to="/fiókom/rendeléseim" onClick={handleLinkClick}><li>Rendeléseim</li></Link>
                   <Link to="/fiókom/kijelentkezés" onClick={() => { logout(); handleLinkClick() }}><li>Kijelentkezés</li></Link>

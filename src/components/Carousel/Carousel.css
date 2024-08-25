@@ -50,3 +50,5 @@
 .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
     bottom: -30px;
 }
+
+@media (min-width: 992px) {}

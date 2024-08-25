@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import FilterItem from '../FilterItem/FilterItem';
 import './Filter.css';
+import { IoMdClose } from "react-icons/io";
 
-const Filter = ({ filters, onFilterChange, resetFiltersTrigger }) => {
+const Filter = ({ filters, onFilterChange, resetFiltersTrigger, isOpen , handleSortDisplay }) => {
   const [selectedCheckboxes, setSelectedCheckboxes] = useState({});
 
   useEffect(() => {
@@ -15,12 +16,14 @@ const Filter = ({ filters, onFilterChange, resetFiltersTrigger }) => {
       ...prev,
       [`${filterCategory}-${value}`]: isChecked,
     }));
-  
+
     onFilterChange(isChecked, filterCategory, value);
   };
+  
 
   return (
-    <div className="filter-container">
+    <div className={`filter-container ${isOpen ? 'open-sort-menu' : ''}`} >
+      <IoMdClose className='close-icon' onClick={handleSortDisplay}/>
       <h1>Termékszűrő</h1>
       {filters.map((filter, index) => (
         <FilterItem

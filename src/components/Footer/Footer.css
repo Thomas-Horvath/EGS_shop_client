@@ -12,7 +12,13 @@
     display: flex;
     flex-direction: column;
 }
-
+.footer-bottom {
+    background: var(--bg-grey);
+    text-align: center;
+    font-size: .8rem;
+    padding: .5rem;
+    color: var(--bg-white);
+}
 
 
 @media (min-width: 992px) {
