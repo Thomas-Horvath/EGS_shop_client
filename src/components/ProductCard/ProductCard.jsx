@@ -5,6 +5,12 @@ import { FaShoppingCart } from "react-icons/fa";
 
 const ProductCard = (props) => {
   const { onAddToCart, product } = props
+
+const handleAddToCart = () => {
+  onAddToCart(product)
+}
+
+
   return (
     <div className='card'>
       <div className="top">
@@ -28,7 +34,7 @@ const ProductCard = (props) => {
           <span>{product.Price} Ft</span>
         )}
       </p>
-      <button className='btn product-card-btn main-btn' onClick={onAddToCart}><FaShoppingCart /> Kosárba</button>
+      <button className='btn product-card-btn main-btn' onClick={handleAddToCart}><FaShoppingCart /> Kosárba</button>
     </div>
 
 

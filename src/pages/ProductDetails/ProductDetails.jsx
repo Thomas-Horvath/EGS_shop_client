@@ -9,6 +9,7 @@ const ProductDetails = () => {
     const [isLoading, setIsLoading] = useState(true); // Betöltési állapot kezelése
     const [error, setError] = useState(null); // Hibakezelés
     const { addToCart } = useContext(CartContext);
+    const [quantity, setQuantity] = useState(1); 
     const navigate = useNavigate(); // Navigáció
 
     useEffect(() => {
@@ -39,12 +40,19 @@ const ProductDetails = () => {
         fetchProductDetails();
     }, [id]); // Az effect újra fut, ha a productID változik
 
+
+
     const handleAddToCart = () => {
         if (product) {
-            addToCart(product);
+            addToCart(product, quantity);
             //   alert('Termék hozzáadva a kosárhoz!'); // Visszajelzés a felhasználónak
         }
     };
+
+    const handleQuantityChange = (e) => {
+        const value = Math.max(1, Math.min(20, parseInt(e.target.value)));
+        setQuantity(value);
+      };
 
     const handleGoBack = () => {
         navigate(-1); // Visszaugrik az előző oldalra
@@ -96,7 +104,21 @@ const ProductDetails = () => {
                 <div>No product found</div>
             )}
             <div className='product-buttons'>
-                <button className='btn product-details-btn main-btn' onClick={handleAddToCart}>Kosárba</button>
+                <div className="addtocart-groupe">
+                    <div className="quantity-container">
+                        <label htmlFor="quantity">Darabszám:</label>
+                        <input
+                            type="number"
+                            id="quantity"
+                            name="quantity"
+                            value={quantity}
+                            min="1"
+                            max="20"
+                            onChange={handleQuantityChange}
+                        />
+                    </div>
+                    <button className='btn product-details-btn main-btn' onClick={handleAddToCart}>Kosárba</button>
+                </div>
                 <button className='btn product-details-btn main-btn' onClick={handleGoBack}>Vissza</button>
             </div>
 

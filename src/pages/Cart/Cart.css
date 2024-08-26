@@ -2,3 +2,6 @@
     min-height: 100vh;
     background: var(--white);
 }
+.cart-product-img {
+    width: 3rem;
+}

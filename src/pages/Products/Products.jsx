@@ -189,7 +189,7 @@ const Products = () => {
               <Card
                 key={product.ProductID}
                 product={product}
-                onAddToCart={() => addToCart(product)}
+                onAddToCart={() => addToCart(product,1)}
               />
             ))
             }
