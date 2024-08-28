@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { Spinner } from '../../components/Spinner/Spinner'
+import { useParams, useNavigate } from 'react-router-dom';
+import { Spinner } from '../../components/Spinner/Spinner';
+import MyProfile from '../../components/ProfileComponents/MyProfile/MyProfile';
+import UpdateOwnDatas from '../../components/ProfileComponents/UpdateOwnDatas/UpdateOwnDatas';
+import MyOrders from '../../components/ProfileComponents/MyOrders/MyOrders';
+
 import './Profile.css';
 
 const Profile = () => {
   const [profile, setProfile] = useState([]);
   const [isPending, setPending] = useState(false);
+  const navigate = useNavigate();
 
   const { category } = useParams();
 
@@ -32,30 +37,51 @@ const Profile = () => {
     });
   }, [])
 
+  const handleBackClick = () => {
+    navigate(`/fiókom/saját-profil`);
+  }
+
+
   let content;
 
   if (category === "saját-profil") {
     content = isPending ? <Spinner /> :
-      <div className="profil-container w1400">
-      <h2>Fiókom</h2>
-        <ul>
-          <li>{profile.LastName + ' ' + profile.FirstName}</li>
-          <li>{profile.EmailAddress}</li>
-        </ul>
-      </div>
+      <>
+        <MyProfile profile={profile} />
+
+      </>
   } else if (category === "rendeléseim") {
+    content = <>
+      <MyOrders profile={profile} />
+      <div className="btn-container">
+        <button className="btn back-btn main-btn" onClick={handleBackClick}>
+          Vissza a Profilhoz
+        </button>
+      </div>
+    </>
+
+  } else if (category === "címeim") {
     content = <div className="orders w1400">
-      <h2>Rendeléseim</h2>
+      <h2>Címeim</h2>
     </div>
-  } else if (category === "kijelentkezés") {
-    content = <div>Kijelentkezve</div>
+  } else if (category === "szerkesztés") {
+
+    content = <>
+      <UpdateOwnDatas profile={profile} />
+      <div className="btn-container">
+        <button className="btn back-btn main-btn" onClick={handleBackClick}>
+          Vissza a Profilhoz
+        </button>
+      </div>
+    </>
   }
 
 
 
 
+
   return (
-    <div className='profile'>
+    <div className='profile w1400'>
       {content}
     </div>
   )

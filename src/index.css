@@ -31,7 +31,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   min-width: 350px;
   position: relative;
-
+user-select: none;
 }
 
 li {
@@ -40,6 +40,7 @@ li {
 
 a {
   text-decoration: none;
+
 }
 
 .w1400 {

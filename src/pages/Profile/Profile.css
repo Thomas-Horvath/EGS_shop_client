@@ -2,3 +2,46 @@
     min-height: 100vh;
     background: var(--white);
 }
+
+.profil-container {
+    padding: 20px;
+}
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.menu-card {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+   
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+}
+
+.menu-link {
+    text-decoration: none;
+    color: #333;
+}
+
+.menu-link h3 {
+    padding: 1rem;
+}
+.btn-container {
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.back-btn {
+    padding: .5rem 1rem;
+}

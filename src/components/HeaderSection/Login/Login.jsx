@@ -195,7 +195,7 @@ const Login = ({ toggleMenu }) => {
                 <li className="arrow"></li>
                   <Link to="/fiókom/saját-profil" onClick={handleLinkClick}><li >Fiókom</li></Link>
                   <Link to="/fiókom/rendeléseim" onClick={handleLinkClick}><li>Rendeléseim</li></Link>
-                  <Link to="/fiókom/kijelentkezés" onClick={() => { logout(); handleLinkClick() }}><li>Kijelentkezés</li></Link>
+                  <Link to="/" onClick={() => { logout(); handleLinkClick() }}><li>Kijelentkezés</li></Link>
                 </>
               )
               }

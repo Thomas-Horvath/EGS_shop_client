@@ -1,8 +1,152 @@
 .login-page {
-    min-height: 100vh;
-    background: var(--white);
+    height: auto;
+    width: 100%;
+}
+
+.container {
+    min-height: 380px;
+    margin: 3rem auto;
+    padding: 2rem;
+    max-width: 25rem;
+    border-radius: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.1);
+
+    .link {
+        text-decoration: underline;
+        color: var(--main-color);
+        font-size: .8rem;
+    }
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.heading {
+    margin: 0 auto;
+    padding-bottom: 1rem;
+}
+
+.loginpage-label {
+    padding-top: 1rem;
+}
+
+.loginpage-input {
+    width: 100%;
+    margin: 0.3rem 0;
+    height: 2rem;
+    padding: 0.3rem;
+
+    border: 1px solid lightgray;
+}
+.loginpage-input:focus {
+    outline: none;
+    border-color: var(--bg-gery);
+}
+
+.btn-container {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    margin-top: .5rem;
+}
+
+.loginpage-btn {
+    width: fit-content;
+    padding: .5rem 2rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    font-size: .9rem;
+    background-color: var(--main-color);
+    color: var(--bg-white);
+    border: 1px solid var(--bg-white);
+}
+
+.loginpage-btn:hover {
+    background-color: transparent;
+    color: var(--bg-grey);
+    border-color: var(--bg-gery);
+}
+
+.forget-btn {
+    width: fit-content;
+    padding: .5rem 2rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    font-size: .9rem;
+    background-color: var(--main-color);
+    color: var(--bg-white);
+    border: 1px solid var(--bg-white);
+}
+
+.forget-btn:hover {
+    background-color: transparent;
+    color: var(--bg-grey);
+    border-color: var(--bg-gery);
+}
+
+.forget-btn a {
+    color: var(--bg-white);
+}
+
+.forget-btn:hover a {
+    color: var(--bg-grey);
+}
+
+.register-text {
+    margin-top: 1rem;
+    font-size: .8rem;
+}
+
+.forget {
     justify-content: center;
-    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+.checkbox-container {
+    margin-top: 2rem;
+}
+
+.chackbox-label {
+    cursor: pointer;
+}
+
+.password-container {
+    display: flex;
+    height: 2rem;
+    align-items: center;
+}
+
+.eye-icon-btn {
+    background: var(--main-color);
+    color: var(--bg-white);
+    border: none;
+    font-size: 1.2rem;
+    padding: 0 .5rem;
+    display: flex;
+    align-items: center;
+    /* border-top: 2px solid lightgrey;
+    border-right: 1px solid lightgrey;
+    border-bottom: 2px solid lightgrey; */
+    height: 100%;
+}
+
+.input-error {
+    border: 2px solid red;
+}
+
+.error-text {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.message.success {
+    color: green;
+}
+
+.error-message {
+    color: red;
 }
