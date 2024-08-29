@@ -11,10 +11,10 @@ const Home = () => {
                     <Carousel />
                 </div>
                 <div className="right-container">
-                hello
+                    <div className="banner-top"></div>
+                    <div className="banner-bottom"></div>
                 </div>
-
-            </div>
+            </div> 
         </div>
     )
 };

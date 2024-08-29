@@ -4,6 +4,9 @@ import { Spinner } from '../../components/Spinner/Spinner';
 import MyProfile from '../../components/ProfileComponents/MyProfile/MyProfile';
 import UpdateOwnDatas from '../../components/ProfileComponents/UpdateOwnDatas/UpdateOwnDatas';
 import MyOrders from '../../components/ProfileComponents/MyOrders/MyOrders';
+import ChangePassword from '../../components/ProfileComponents/ChangePassword/ChangePassword';
+import UpdateAdresses from '../../components/ProfileComponents/UpdateAddresses/UpdateAdresses';
+import OneOrderDetails from '../../components/ProfileComponents/OnrOrderDetails/OneOrderDetails';
 
 import './Profile.css';
 
@@ -12,7 +15,7 @@ const Profile = () => {
   const [isPending, setPending] = useState(false);
   const navigate = useNavigate();
 
-  const { category } = useParams();
+  const { category , orderId } = useParams();
 
   function fetchProfile() {
     const token = sessionStorage.getItem('token');
@@ -40,6 +43,9 @@ const Profile = () => {
   const handleBackClick = () => {
     navigate(`/fiókom/saját-profil`);
   }
+  const handleBackOrderClick = () => {
+    navigate(`/fiókom/rendeléseim`);
+  }
 
 
   let content;
@@ -48,7 +54,6 @@ const Profile = () => {
     content = isPending ? <Spinner /> :
       <>
         <MyProfile profile={profile} />
-
       </>
   } else if (category === "rendeléseim") {
     content = <>
@@ -61,9 +66,13 @@ const Profile = () => {
     </>
 
   } else if (category === "címeim") {
-    content = <div className="orders w1400">
-      <h2>Címeim</h2>
-    </div>
+    content = <> <UpdateAdresses profile={profile}/>
+      <div className="btn-container">
+        <button className="btn back-btn main-btn" onClick={handleBackClick}>
+          Vissza a Profilhoz
+        </button>
+      </div>
+      </>
   } else if (category === "szerkesztés") {
 
     content = <>
@@ -71,6 +80,25 @@ const Profile = () => {
       <div className="btn-container">
         <button className="btn back-btn main-btn" onClick={handleBackClick}>
           Vissza a Profilhoz
+        </button>
+      </div>
+    </>
+  } else if (category === "jelszóváltoztatás") {
+
+    content = <>
+      <ChangePassword username={profile.UserName} email={profile.EmailAddress} />
+      <div className="btn-container">
+        <button className="btn back-btn main-btn" onClick={handleBackClick}>
+          Vissza a Profilhoz
+        </button>
+      </div>
+    </>
+  } else if (category === "rendelésem" && orderId ) {
+
+    content = <> <OneOrderDetails orderId={orderId} profile={profile}/>
+      <div className="btn-container">
+        <button className="btn back-btn main-btn" onClick={handleBackOrderClick}>
+          Vissza a rendelésekhez
         </button>
       </div>
     </>

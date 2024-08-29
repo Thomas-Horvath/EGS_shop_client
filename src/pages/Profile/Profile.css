@@ -1,6 +1,7 @@
 .profile {
     min-height: 100vh;
     background: var(--white);
+    padding: 2rem;
 }
 
 .profil-container {
@@ -45,3 +46,5 @@ justify-content: center;
 .back-btn {
     padding: .5rem 1rem;
 }
+
+

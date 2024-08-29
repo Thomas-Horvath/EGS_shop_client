@@ -159,7 +159,7 @@ const Login = ({ toggleMenu }) => {
                     {cartItems.map((item, index) => (
                       <li key={index}>
                         {item.Name} - {item.quantity} db
-                        <button className='btn del-btn' onClick={() => removeFromCart(item.ProductID)}>Törlés</button>
+                        <button className='btn del-btn main-btn' onClick={() => removeFromCart(item.ProductID)}>Törlés</button>
                       </li>
                     ))}
                   </ul>

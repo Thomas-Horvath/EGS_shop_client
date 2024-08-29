@@ -36,7 +36,7 @@ function App() {
               <Route path='/profil/:category' element={<LoginPage />} />
               <Route path='/:links' element={<Info />} />
               <Route path='/kapcsolat' element={<Contact />} />
-              <Route path='/fiókom/:category' element={<Profile />} />
+              <Route path='/fiókom/:category/:orderId?' element={<Profile />} />
               <Route path='/termékadatok/:id' element={<ProductDetails />} />
             </Routes>
           </CartProvider>

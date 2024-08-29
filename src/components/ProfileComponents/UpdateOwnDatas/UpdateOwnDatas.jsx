@@ -89,9 +89,9 @@ const UpdateOwnDatas = ({ profile }) => {
     };
 
     return (
-        <div className="update-profile-container w1400">
+        <div className="profile-container w1400">
             <h1>Profiladatok módosítása</h1>
-            <form onSubmit={handleSubmit} noValidate >
+            <form className='form' onSubmit={handleSubmit} noValidate >
                 <label htmlFor="lastName">Vezetéknév:</label>
                 <input
                     type="text"
@@ -148,7 +148,7 @@ const UpdateOwnDatas = ({ profile }) => {
                 {errors.email && <p className="error-text">{errors.email}</p>}
 
                 <div className="btn-container">
-                    <button type="submit" className="btn update-btn">Adatok frissítése</button>
+                    <button type="submit" className="btn update-btn main-btn">Adatok frissítése</button>
                 </div>
 
                 {message && <p className={`message ${message === 'Sikeres frissítés!' ? 'success' : 'error-message'}`}>{message}</p>}

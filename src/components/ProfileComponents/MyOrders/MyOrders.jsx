@@ -41,8 +41,9 @@ const MyOrders = ({ profile }) => {
   }, [token]);
 
   if (error) {
-    return <div className="orders-container">
-      <h1>Saját Rendeléseim</h1>
+    return <div className="profile-container">
+      <h1>Saját Rendeléseim</h1> 
+      <div className="table-container">
       <table className="orders-table">
         <thead>
           <tr>
@@ -60,18 +61,20 @@ const MyOrders = ({ profile }) => {
           </tr>
         </tbody>
       </table>
+      </div>
     </div>
   }
 
 
   const handleOrderDetails = (orderId) => {
-    navigate(`/orders/${orderId}`);
+    navigate(`/fiókom/rendelésem/${orderId}`);
   };
 
  
   return (
-    <div className="orders-container">
+    <div className="profile-container">
       <h1>Saját Rendeléseim</h1>
+      <div className="table-container">
       <table className="orders-table">
         <thead>
           <tr>
@@ -86,7 +89,7 @@ const MyOrders = ({ profile }) => {
         <tbody>
           {orders.map(order => (
             <tr key={order._id}>
-              <td>{order.OrderID}</td>
+              <td>#{order.OrderID}</td>
               <td>{profile.LastName} {profile.FirstName} </td>
               <td>{order.OrderItems.length}</td>
               <td>{order.TotalDue} Ft</td>
@@ -103,7 +106,7 @@ const MyOrders = ({ profile }) => {
           ))}
         </tbody>
       </table>
-   
+      </div>
     </div>
   );
 };

@@ -2,9 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const MyProfile = ({ profile }) => {
-    console.log(profile);
     return (
-        <div className="profil-container">
+        <div className="profile-container">
             <h1>Fiókom</h1>
             <h2>Szia, {profile.FirstName}!</h2>
             <div className="menu-container">
@@ -34,4 +33,4 @@ const MyProfile = ({ profile }) => {
     )
 }
 
-export default MyProfile
+export default MyProfile;

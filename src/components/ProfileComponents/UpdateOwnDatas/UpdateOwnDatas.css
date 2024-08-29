@@ -1,6 +1,10 @@
 
 
-form {
+.form {
     width: 300px;
     margin: 1rem auto;
+}
+.update-btn {
+    padding: .5rem
+    1rem;
 }
