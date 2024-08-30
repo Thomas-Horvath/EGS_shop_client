@@ -8,8 +8,8 @@ const ProductDetails = () => {
     const [product, setProduct] = useState(null); // Állapot a termék adatok tárolására
     const [isLoading, setIsLoading] = useState(true); // Betöltési állapot kezelése
     const [error, setError] = useState(null); // Hibakezelés
-    const { addToCart } = useContext(CartContext);
-    const [quantity, setQuantity] = useState(1); 
+    const { addToCart  } = useContext(CartContext);
+    const [quantity, setQuantity] = useState(1);
     const navigate = useNavigate(); // Navigáció
 
     useEffect(() => {
@@ -49,14 +49,42 @@ const ProductDetails = () => {
         }
     };
 
-    const handleQuantityChange = (e) => {
-        const value = Math.max(1, Math.min(20, parseInt(e.target.value)));
-        setQuantity(value);
-      };
+  
 
     const handleGoBack = () => {
         navigate(-1); // Visszaugrik az előző oldalra
     };
+
+    const incrementQuantity = () => {
+        setQuantity(prevQuantity => {
+            if (prevQuantity < 20) {
+                return prevQuantity + 1;
+            }
+            return prevQuantity;
+        });
+    };
+    
+    const decrementQuantity = () => {
+        setQuantity(prevQuantity => {
+            if (prevQuantity > 1) {
+                return prevQuantity - 1;
+            }
+            return prevQuantity;
+        });
+    };
+    
+    const handleQuantityChange = (e) => {
+        const value = parseInt(e.target.value, 10);
+    
+        if (value >= 1 && value <= 20) {
+            setQuantity(value);
+        } else if (value < 1) {
+            setQuantity(1);
+        } else if (value > 20) {
+            setQuantity(20);
+        }
+    };
+    
 
     if (isLoading) return <div className='detail-container'>Loading...</div>;
     if (error) return <div className='detail-container'>Error: {error}</div>;
@@ -106,7 +134,6 @@ const ProductDetails = () => {
             <div className='product-buttons'>
                 <div className="addtocart-groupe">
                     <div className="quantity-container">
-                        <label htmlFor="quantity">Darabszám:</label>
                         <input
                             type="number"
                             id="quantity"
@@ -116,6 +143,10 @@ const ProductDetails = () => {
                             max="20"
                             onChange={handleQuantityChange}
                         />
+                        <div className="quantity-btn-groupe">
+                            <button onClick={incrementQuantity} className="increment">+</button>
+                            <button onClick={decrementQuantity} className="decrement">-</button>
+                        </div>
                     </div>
                     <button className='btn product-details-btn main-btn' onClick={handleAddToCart}>Kosárba</button>
                 </div>

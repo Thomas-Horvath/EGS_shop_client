@@ -65,9 +65,15 @@
 }
 
 .product-details-btn {
-  padding: 1rem 2rem;
+  padding: .5rem 2rem;
   margin: 0 1rem;
 }
+.addtocart-groupe  {
+  display: flex;
+  gap: .5rem;
+}
+
+
 
 
 @media (min-width: 992px) {

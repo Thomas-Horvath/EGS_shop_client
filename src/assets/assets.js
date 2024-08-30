@@ -5,6 +5,8 @@ import percenticon from './percenticon.svg';
 import basketIcon from './basket_icon.png';
 import searchIcon from './search_icon.png';
 import technic from './technic.jpg';
+import marshall_2 from './marshall_2.webp';
+import ibanez_amp from './ibanez_amp.webp'
 
 export const assets = {
     banner,
@@ -13,7 +15,9 @@ export const assets = {
     percenticon,
     basketIcon,
     searchIcon,
-    technic
+    technic,
+    marshall_2,
+    ibanez_amp
 };
 
 

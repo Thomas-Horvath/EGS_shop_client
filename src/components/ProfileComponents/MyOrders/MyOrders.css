@@ -54,7 +54,7 @@
 }
 
 
-/* Reszponzív stílusok */
+
 @media (max-width: 576px) { 
     .orders-container {
         padding: 10px;
@@ -84,7 +84,6 @@
     .orders-container {
         padding: 20px;
     }
-   */
     .orders-table th, 
     .orders-table td {
         padding: 12px;
@@ -92,7 +91,7 @@
     }
 }
 
-@media (min-width: 992px) { /* Large Devices (Desktops) */
+@media (min-width: 992px) { 
     .orders-container {
         padding: 20px;
     }

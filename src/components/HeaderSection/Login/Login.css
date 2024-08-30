@@ -108,12 +108,25 @@
     display: none;
     flex-direction: column;
     align-items: center;
-    white-space: nowrap;
-    padding: 3rem 1rem;
+    gap: 1rem;
+    white-space: wrap;
+    padding:1.5rem  1rem;
     background: var(--bg-light-grey);
     box-shadow: var(--box-shadow);
     z-index: 2;
-    white-space: wrap;
+   
+}
+.cart-alert ul  {
+    width: 100%;
+ 
+}
+.cart-alert li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid #444;
+    padding: .5rem 0;
 }
 
 .cart-btn {

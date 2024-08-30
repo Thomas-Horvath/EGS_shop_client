@@ -62,7 +62,9 @@ a {
 .main-btn {
   border: 1px solid var(--bg-grey);
   display: flex;
-  align-items: center;gap: .5rem;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem 1rem;
 }
 .main-btn:hover {
   background-color: var(--main-color);
@@ -79,4 +81,52 @@ a {
   background-color: #f9f9f9;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+
+
+
+.quantity-container {
+  display: flex;
+ 
+}
+.quantity-container input {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; 
+}
+
+.decrement, .increment {
+  width: 25px;
+  height: 25px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.btn.delete-btn {
+  padding: 8px 16px;
+  background-color: #f00;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.delete-btn:hover {
+  background-color: rgb(226, 2, 2);
+}
+
 @media (min-width: 992px) {}

@@ -1,69 +1,63 @@
 .home {
     background: #fff;
-    /* min-height: 100vh; */
+    padding: 2rem;
 }
 
 .banner {
-    padding: 1.5rem 0;
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-    /* height: 600px; */
+    flex-direction: column; /* Mobil nézethez alapértelmezett függőleges elrendezés */
     width: 100%;
-
-}
-
-.right-container {
- height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
+    height: auto; /* Magasság automatikusan igazodik a tartalomhoz */
     gap: .5rem;
-
-}
-.banner-top {
-    width: 100%;
-    height: 296px;
-    background: url('../../assets/marshall_2.webp');
-    background-size: cover;
-}
-.banner-bottom {
-    width: 100%;
-    height: 296px;
-    background: url('../../assets/ibanez_amp.webp');
-    background-size: cover;
 }
 
 .carousel-container {
-    height: 100%;
-    width: 100%;
+    width: 100%; /* Mobil nézetben teljes szélesség */
+    height: auto; /* Magasság automatikusan igazodik a Carousel-hez */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f8f8; /* Opció: háttérszín a Carousel-hez */
 }
 
+.right-container {
+    width: 100%; /* Mobil nézetben teljes szélesség */
+    display: flex;
+    flex-direction: row; /* Képek egymás mellett alapértelmezett elrendezés mobil nézetben */
+    justify-content: space-between; /* Képek közötti távolság a container szélességében */
+    height: auto; /* Magasság automatikusan igazodik a képekhez */
+    gap: .5rem;
+}
 
-@media (min-width: 992px) {
+.right-container img {
+    width: 50%; /* Képek szélessége 50% */
+    object-fit: cover; /* Képek megfelelő vágása, hogy kitöltsék a teret */
+    display: block;
+    height: auto; /* Magasság automatikusan igazodik */
+}
+
+/* Média lekérdezés 992px felett */
+@media screen and (min-width: 992px) {
     .banner {
-        flex-direction: row;
-        gap: 1rem;
+        flex-direction: row; /* Vízszintes elrendezés nagyobb képernyőkön */
+        height: 70vh; /* Teljes viewport magasságának 70%-a */
     }
 
     .carousel-container {
-        width: 70%;
+        width: 70%; /* Carousel szélessége 70% */
+        height: 100%; /* Magasság teljesen kitölti a banner magasságát */
     }
 
     .right-container {
-        height: 100%;
-        width: 100%;
-        flex-direction: column;
+        width: 30%; /* Képek szélessége 30% */
+        flex-direction: column; /* Képek egymás alatt */
+        justify-content: space-between; /* Képek közötti egyenletes távolság */
+        height: 100%; /* Magasság teljesen kitölti a banner magasságát */
     }
-    /* .banner-top {
-       
-        height: 50%;
-        
+
+    .right-container img {
+        width: 100%; /* Képek szélessége 100% */
+        height: 50%; /* Képek magassága 50% */
+        object-fit: cover; /* Képek megfelelő vágása */
     }
-    .banner-bottom {
-       
-        height: 50%;
-      
-    } */
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 import Carousel from '../../components/Carousel/Carousel';
-// import { assets } from '../../assets/assets'
+import { assets } from '../../assets/assets'
 
 const Home = () => {
     return (
@@ -11,10 +11,10 @@ const Home = () => {
                     <Carousel />
                 </div>
                 <div className="right-container">
-                    <div className="banner-top"></div>
-                    <div className="banner-bottom"></div>
+                    <img className="banner-top" src={assets.marshall_2} alt="" />
+                    <img className="banner-bottom" src={assets.ibanez_amp} alt="" />
                 </div>
-            </div> 
+            </div>
         </div>
     )
 };

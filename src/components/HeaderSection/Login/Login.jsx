@@ -104,11 +104,11 @@ const Login = ({ toggleMenu }) => {
   };
 
 
-  const handleCartAlertDisplay =() => {
+  const handleCartAlertDisplay = () => {
     setIsAlertClose(true)
     setTimeout(() => {
       setIsAlertClose(false)
-    },300)
+    }, 300)
   }
 
 
@@ -153,19 +153,19 @@ const Login = ({ toggleMenu }) => {
               {cartItems.length === 0 ? (
                 <p>Kosár jelenleg üres</p>
               ) : (
-                <div>
-                  <p>Tételek a kosárban:</p>
+                <>
+                  <h4>Tételek a kosárban:</h4>
                   <ul>
                     {cartItems.map((item, index) => (
                       <li key={index}>
                         {item.Name} - {item.quantity} db
-                        <button className='btn del-btn main-btn' onClick={() => removeFromCart(item.ProductID)}>Törlés</button>
+                        <button className='btn delete-btn main-btn' onClick={() => removeFromCart(item.ProductID)}>Törlés</button>
                       </li>
                     ))}
                   </ul>
-                </div>
+                </>
               )}
-              <p>Összesen: {calculateTotalPrice().toFixed(2)} Ft</p>
+              <h5>Összesen: {calculateTotalPrice().toFixed(2)} Ft</h5>
               <p className="arrow"></p>
               <div className="button-container">
                 <Link to="/rendelés/kosár"><button className="btn cart-btn main-btn" onClick={handleCartAlertDisplay}>Kosár</button></Link>
@@ -186,13 +186,13 @@ const Login = ({ toggleMenu }) => {
 
               {(!isLoggedIn) ? (
                 <>
-                <li className="arrow"></li>
+                  <li className="arrow"></li>
                   <Link to="/profil/bejelentkezés" onClick={handleLinkClick}><li >Bejelentkezés</li></Link>
                   <Link to="/profil/regisztráció" onClick={handleLinkClick}><li>Regisztráció</li></Link>
                 </>
               ) : (
                 <>
-                <li className="arrow"></li>
+                  <li className="arrow"></li>
                   <Link to="/fiókom/saját-profil" onClick={handleLinkClick}><li >Fiókom</li></Link>
                   <Link to="/fiókom/rendeléseim" onClick={handleLinkClick}><li>Rendeléseim</li></Link>
                   <Link to="/" onClick={() => { logout(); handleLinkClick() }}><li>Kijelentkezés</li></Link>
