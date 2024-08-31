@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/egs_shop_react/static/css/main.b9a5cfd6.css",
-    "main.js": "/egs_shop_react/static/js/main.7f276ab6.js",
+    "main.css": "/egs_shop_react/static/css/main.ead065b0.css",
+    "main.js": "/egs_shop_react/static/js/main.306e7bba.js",
     "static/media/marshall_2.webp": "/egs_shop_react/static/media/marshall_2.17d90edb9735608550fe.webp",
     "static/media/ibanez_amp.webp": "/egs_shop_react/static/media/ibanez_amp.4e3fc8d940d14b72d4f6.webp",
     "static/media/marshall.webp": "/egs_shop_react/static/media/marshall.ce30fea552f74429f3db.webp",
@@ -11,11 +11,11 @@
     "static/media/fender.png": "/egs_shop_react/static/media/fender.5c80910ecf3fa8377a64.png",
     "index.html": "/egs_shop_react/index.html",
     "static/media/percenticon.svg": "/egs_shop_react/static/media/percenticon.a11bcd08387bb8b9a372fa471fc7748e.svg",
-    "main.b9a5cfd6.css.map": "/egs_shop_react/static/css/main.b9a5cfd6.css.map",
-    "main.7f276ab6.js.map": "/egs_shop_react/static/js/main.7f276ab6.js.map"
+    "main.ead065b0.css.map": "/egs_shop_react/static/css/main.ead065b0.css.map",
+    "main.306e7bba.js.map": "/egs_shop_react/static/js/main.306e7bba.js.map"
   },
   "entrypoints": [
-    "static/css/main.b9a5cfd6.css",
-    "static/js/main.7f276ab6.js"
+    "static/css/main.ead065b0.css",
+    "static/js/main.306e7bba.js"
   ]
 }
