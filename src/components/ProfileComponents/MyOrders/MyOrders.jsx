@@ -41,7 +41,7 @@ const MyOrders = ({ profile }) => {
   }, [token]);
 
   if (error) {
-    return <div className="profile-container">
+    return <div className="main-container">
       <h1>Saját Rendeléseim</h1> 
       <div className="table-container">
       <table className="orders-table">
@@ -72,7 +72,7 @@ const MyOrders = ({ profile }) => {
 
  
   return (
-    <div className="profile-container">
+    <div className="main-container">
       <h1>Saját Rendeléseim</h1>
       <div className="table-container">
       <table className="orders-table">

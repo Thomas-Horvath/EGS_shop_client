@@ -61,7 +61,7 @@ const ChangePassword = ({ username, email }) => {
     };
 
     return (
-        <div className='profile-container'>
+        <div className='main-container'>
             <h1>Jelszó megváltoztatása</h1>
             <div className="form-container">
                 <form className='form' onSubmit={handleSubmit}>

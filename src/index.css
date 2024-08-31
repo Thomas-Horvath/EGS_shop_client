@@ -26,12 +26,11 @@ html {
 }
 
 body {
-  /* background: var(--bg-white); */
   background: var(--white);
   font-family: 'Open Sans', sans-serif;
   min-width: 350px;
   position: relative;
-user-select: none;
+  user-select: none;
 }
 
 li {
@@ -54,7 +53,7 @@ a {
 }
 
 .btn {
-  border: none ;
+  border: none;
   background: transparent;
   cursor: pointer;
 }
@@ -66,20 +65,18 @@ a {
   gap: .5rem;
   padding: .5rem 1rem;
 }
+
 .main-btn:hover {
   background-color: var(--main-color);
   color: var(--bg-white);
 }
 
-.profile-container {
-  max-width: 1200px;
-  min-height: 60vh;
+.main-container {
+  text-align: center;
+  width: 100%;
+  min-height: 40vh;
   margin: 20px auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: .5rem;
 }
 
 
@@ -87,8 +84,9 @@ a {
 
 .quantity-container {
   display: flex;
- 
+
 }
+
 .quantity-container input {
   font-size: 1.2rem;
   text-align: center;
@@ -96,15 +94,16 @@ a {
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 input[type="number"] {
-    -moz-appearance: textfield; 
+  -moz-appearance: textfield;
 }
 
-.decrement, .increment {
+.decrement,
+.increment {
   width: 25px;
   height: 25px;
   background-color: #f0f0f0;
@@ -117,16 +116,29 @@ input[type="number"] {
   padding: 0;
 }
 
+
+
+/* delete btn */
 .btn.delete-btn {
   padding: 8px 16px;
-  background-color: #f00;
+  background-color: rgb(226, 2, 2);
   color: #fff;
   border: none;
   cursor: pointer;
 }
 
 .btn.delete-btn:hover {
-  background-color: rgb(226, 2, 2);
+  background-color: rgb(184, 2, 2);
 }
 
-@media (min-width: 992px) {}
+.trash-icon {
+  font-size: 1.2rem;
+}
+
+@media (min-width: 992px) {
+  .main-container {
+    text-align: start;
+    max-width: 1300px;
+    margin: 20px auto;
+  }
+}

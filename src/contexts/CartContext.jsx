@@ -1,4 +1,5 @@
 import React, { createContext, useState , useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const CartContext = createContext();
 
@@ -8,6 +9,17 @@ export const CartProvider = ({ children }) => {
     const savedCart = localStorage.getItem('cartItems');
     return savedCart ? JSON.parse(savedCart) : [];
   });
+  const navigate = useNavigate();
+
+
+  const handleCheckoutClick = () => {
+    const token = sessionStorage.getItem('token');
+    if (token) {
+      navigate('/rendelés/pénztár');
+    } else {
+      navigate('/rendelés/bejelentkezés');
+    }
+  };
 
   // Kosár adatok mentése a localStorage-ba
   useEffect(() => {
@@ -55,7 +67,7 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart , clearCart, updateCartItemQuantity}}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart , clearCart, updateCartItemQuantity , handleCheckoutClick}}>
       {children}
     </CartContext.Provider>
   );

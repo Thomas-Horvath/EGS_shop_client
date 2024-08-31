@@ -89,7 +89,7 @@ const UpdateOwnDatas = ({ profile }) => {
     };
 
     return (
-        <div className="profile-container w1400">
+        <div className="main-container w1400">
             <h1>Profiladatok módosítása</h1>
             <form className='form' onSubmit={handleSubmit} noValidate >
                 <label htmlFor="lastName">Vezetéknév:</label>

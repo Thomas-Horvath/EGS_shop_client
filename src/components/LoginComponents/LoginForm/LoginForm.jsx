@@ -1,16 +1,17 @@
 import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
-import { IoEye , IoEyeOffSharp } from "react-icons/io5";
+import { IoEye, IoEyeOffSharp } from "react-icons/io5";
 
 
-const LoginForm = ({ showPassword, setShowPassword }) => {
+const LoginForm = ({ showPassword, setShowPassword , redirectPath , title }) => {
 
   const [errors, setErrors] = useState({});
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
+ 
 
   const { login } = useContext(AuthContext);
   const validateForm = () => {
@@ -56,23 +57,22 @@ const LoginForm = ({ showPassword, setShowPassword }) => {
       if (data.token) {
         // Mentsük el a sessionStorage-be
         login(data.token);
-
-        // Navigálás a saját profil oldalra
-        navigate('/fiókom/saját-profil');
+        navigate(redirectPath || '/fiókom/saját-profil'); 
+       
       } else {
         // Hiba kezelése, pl. hibás bejelentkezési adatok
         setMessage('Bejelentkezés sikertelen');
       }
     } catch (error) {
       setMessage(error.message || 'Hiba történt a bejelentkezés során.');
-    
+
     }
   };
 
   return (
     <>
       <form onSubmit={handleLogin} method='POST' noValidate>
-        <h1 className="heading">Bejelentkezés</h1>
+        <h1 className="heading">{title}</h1>
         <hr />
         <label className='loginpage-label' htmlFor="email">Felhasználó név:</label>
         <input

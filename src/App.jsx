@@ -11,6 +11,7 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import Info from './pages/Info/Info';
 import Contact from './pages/Contact/Contact';
 import Profile from './pages/Profile/Profile';
+import OrderLogin from './pages/OrderLogin/OrderLogin';
 import ScrollTop from './components/ScrollTop/ScrollTop';
 
 
@@ -32,6 +33,7 @@ function App() {
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/rendelés/:category' element={<Cart />} />
+              <Route path='/rendelés/bejelentkezés' element={<OrderLogin />} />
               <Route path='/termékek/:category' element={<Products />} />
               <Route path='/profil/:category' element={<LoginPage />} />
               <Route path='/:links' element={<Info />} />

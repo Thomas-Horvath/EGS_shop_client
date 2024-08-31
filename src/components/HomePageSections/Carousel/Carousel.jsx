@@ -7,7 +7,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './Carousel.css';
 
-import { assets } from '../../assets/assets'
+import { assets } from '../../../assets/assets'
 
 const Slider = () => {
     return (
@@ -19,7 +19,7 @@ const Slider = () => {
                 mousewheel={true}
                 loop={true}
                 keyboard={true}
-                autoplay={{ delay: 5000 }}
+                autoplay={{ delay: 3000 }}
                 modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
                 className="mySwiper"
             >

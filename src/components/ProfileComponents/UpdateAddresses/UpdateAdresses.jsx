@@ -51,7 +51,7 @@ const UpdateAddresses = ({ profile }) => {
     };
 
     return (
-        <div className='profile-container'>
+        <div className='main-container'>
             <h1>Címadatok módosítása</h1>
             <div className="form-container">
                 <form className='form' onSubmit={handleSubmit}>

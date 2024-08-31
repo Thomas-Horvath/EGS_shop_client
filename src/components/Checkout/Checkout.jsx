@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../../contexts/CartContext';
 
+
 const Checkout = ({ cartItems, totalPrice, shippingCost }) => {
     const [profile, setProfile] = useState(null);
     const [customerName, setCustomerName] = useState('');
@@ -114,12 +115,19 @@ const Checkout = ({ cartItems, totalPrice, shippingCost }) => {
         }
     };
 
+  
+
     if (!profile) {
-        return <p>Profil adatainak betöltése...</p>;
+        return (
+            <div className="main-container w1400">
+                <p>Profil adatainak betöltése...</p>
+            </div>
+        );
     }
+    
 
     return (
-        <div className="checkout-container w1400">
+        <div className="main-container w1400">
         <div className="profile-container">
             <h2>Megrendelés</h2>
             <form className='form' onSubmit={handleSubmit}>

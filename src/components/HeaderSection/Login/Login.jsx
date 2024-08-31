@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Login.css';
 import { assets } from '../../../assets/assets';
 import { FaUserAlt, FaShoppingCart, FaSearch, FaBars } from "react-icons/fa";
+import { IoTrashSharp } from "react-icons/io5";
 import { AuthContext } from '../../../contexts/AuthContext';
 import { CartContext } from '../../../contexts/CartContext';
 
@@ -16,7 +17,7 @@ const Login = ({ toggleMenu }) => {
   const [isScrolled, setIsScrolled] = useState(false);   // a görgetés állapota
 
   const { isLoggedIn, logout } = useContext(AuthContext);
-  const { cartItems, removeFromCart } = useContext(CartContext);
+  const { cartItems, removeFromCart , handleCheckoutClick} = useContext(CartContext);
 
 
 
@@ -111,6 +112,11 @@ const Login = ({ toggleMenu }) => {
     }, 300)
   }
 
+  const handleCombinedClick = () => {
+    handleCartAlertDisplay();
+    handleCheckoutClick();
+  };
+
 
   return (
     <div className="login-wrapper">
@@ -159,7 +165,7 @@ const Login = ({ toggleMenu }) => {
                     {cartItems.map((item, index) => (
                       <li key={index}>
                         {item.Name} - {item.quantity} db
-                        <button className='btn delete-btn main-btn' onClick={() => removeFromCart(item.ProductID)}>Törlés</button>
+                        <button className='btn delete-btn main-btn' onClick={() => removeFromCart(item.ProductID)}><IoTrashSharp className='trash-icon'/></button>
                       </li>
                     ))}
                   </ul>
@@ -169,7 +175,7 @@ const Login = ({ toggleMenu }) => {
               <p className="arrow"></p>
               <div className="button-container">
                 <Link to="/rendelés/kosár"><button className="btn cart-btn main-btn" onClick={handleCartAlertDisplay}>Kosár</button></Link>
-                <Link to="/rendelés/pénztár"><button className="btn cart-btn main-btn" onClick={handleCartAlertDisplay}>Pénztár</button></Link>
+                <button className="btn cart-btn main-btn" onClick={handleCombinedClick} >Pénztár</button>
               </div>
             </div>
           </div>

@@ -7,6 +7,7 @@
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+   
 }
 
 .cart-table th,
@@ -93,5 +94,6 @@
     gap: 1rem;
   }
   
+ 
  
   

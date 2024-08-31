@@ -18,6 +18,8 @@ const LoginPage = () => {
 
   if (category === 'bejelentkezés') {
     content = <LoginForm
+    title="Bejelentkezés"
+      redirectPath={'/fiókom/saját-profil'}
       showPassword={showPassword}
       setShowPassword={setShowPassword}
     />

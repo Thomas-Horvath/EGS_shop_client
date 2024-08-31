@@ -1,7 +1,7 @@
 .profile {
     min-height: 100vh;
     background: var(--white);
-    padding: 2rem;
+    padding: 2rem 0;
 }
 
 .profil-container {
@@ -20,7 +20,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-   
+
     transition: transform 0.3s ease;
     cursor: pointer;
 }
@@ -37,14 +37,14 @@
 .menu-link h3 {
     padding: 1rem;
 }
+
 .btn-container {
-width: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .back-btn {
     padding: .5rem 1rem;
 }
-
-

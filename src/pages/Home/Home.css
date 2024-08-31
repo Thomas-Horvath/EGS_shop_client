@@ -1,7 +1,4 @@
-.home {
-    background: #fff;
-    padding: 2rem;
-}
+
 
 .banner {
     display: flex;
@@ -36,11 +33,21 @@
     height: auto; /* Magasság automatikusan igazodik */
 }
 
+.home-sections-heading {
+    border-bottom:  2px solid var(--main-color);
+    padding-bottom: .5rem;
+    margin: 3rem 0;
+}
+
+
 /* Média lekérdezés 992px felett */
 @media screen and (min-width: 992px) {
+    .home {
+        padding: 2rem 0;
+    }
     .banner {
         flex-direction: row; /* Vízszintes elrendezés nagyobb képernyőkön */
-        height: 70vh; /* Teljes viewport magasságának 70%-a */
+        height: 60vh; /* Teljes viewport magasságának 70%-a */
     }
 
     .carousel-container {
