@@ -2,7 +2,7 @@
     width: 100%;
     min-height: 30vh;
     background-color: #ddd;
-    padding: 2rem;
+    padding: 2rem 1rem;
 }
 .footer-logo {
     height: 3rem;
@@ -49,6 +49,9 @@
 }
 .footer a {
     color: var(--bg-grey);
+}
+.footer a:hover {
+    color: var(--main-color);
 }
 
 @media (min-width: 768px) { 

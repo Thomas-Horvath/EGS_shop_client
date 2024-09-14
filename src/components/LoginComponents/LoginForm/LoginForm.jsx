@@ -1,17 +1,21 @@
 import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
+import LoginAlert from '../../../components/LoginAlert/LogonAlert';
 import { IoEye, IoEyeOffSharp } from "react-icons/io5";
+import { jwtDecode } from 'jwt-decode';
 
 
-const LoginForm = ({ showPassword, setShowPassword , redirectPath , title }) => {
+const LoginForm = ({ showPassword, setShowPassword, redirectPath, title }) => {
 
   const [errors, setErrors] = useState({});
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+  const [messageAlert, setMessageAlert] = useState('');
+
   const navigate = useNavigate();
- 
+
 
   const { login } = useContext(AuthContext);
   const validateForm = () => {
@@ -51,14 +55,23 @@ const LoginForm = ({ showPassword, setShowPassword , redirectPath , title }) => 
       }
 
       const data = await response.json();
-      // console.log(data);
+      console.log(data);
 
       // Ha van token a válaszban
       if (data.token) {
+        // Token dekódolása
+        const decodedToken = jwtDecode(data.token);
+
+        console.log(decodedToken);
+        // Ellenőrizzük az activeFlag értékét
+        if (!decodedToken.ActiveFlag) {
+          setMessageAlert('A fiókja inaktív. Kérem lépjen velünk kapcsolatba!');
+          return;
+        }
+
         // Mentsük el a sessionStorage-be
         login(data.token);
-        navigate(redirectPath || '/fiókom/saját-profil'); 
-       
+        navigate(redirectPath || '/fiókom/saját-profil');
       } else {
         // Hiba kezelése, pl. hibás bejelentkezési adatok
         setMessage('Bejelentkezés sikertelen');
@@ -71,6 +84,7 @@ const LoginForm = ({ showPassword, setShowPassword , redirectPath , title }) => 
 
   return (
     <>
+      { messageAlert && <LoginAlert message={messageAlert} /> }
       <form onSubmit={handleLogin} method='POST' noValidate>
         <h1 className="heading">{title}</h1>
         <hr />

@@ -1,28 +1,32 @@
 import React from 'react';
+import './About.css';
 
 const About = () => {
     return (
         <div>
             <div className="about w1400">
                 <h2 className='home-sections-heading'>Rólunk</h2>
-                <p>
-                    Üdvözöljük a Harmónia Hangszerek világában, ahol a zene iránti szenvedélyünk minden egyes termékünkben és szolgáltatásunkban tükröződik! A Harmónia Hangszerek története több mint 30 évvel ezelőtt kezdődött, amikor alapítónk, Tamás, megnyitotta első kis hangszerboltját Budapest szívében. Egy kis helyiségben, ahol a zenei közösség tagjai gyorsan otthon érezték magukat, hamarosan a város egyik legkedveltebb helyévé vált.
-                </p>
-                <p>
-                    Tamás zenei tanulmányai során tapasztalta meg, hogy mennyire fontos a minőségi hangszer a zenei teljesítményben és élvezetben. Ez inspirálta őt, hogy megnyissa boltját, amelyben nem csak eladni, hanem tanítani és inspirálni is akarta a vásárlóit. A Harmónia Hangszerek kezdetben főként klasszikus hangszerekre specializálódott, de az évek során folyamatosan bővítette kínálatát, hogy minden zenei stílus szerelmese megtalálhassa a számára tökéletes hangszert.
-                </p>
-                <p>
-                    A boltunk azóta is családi vállalkozásként működik, ahol minden egyes kollégánk elkötelezett a kiváló ügyfélszolgálat és a szakértelem mellett. A Harmónia Hangszerekben nem csupán termékeket kínálunk, hanem egy közösséget is építünk, amelynek tagjai megoszthatják egymással tapasztalataikat, tanulhatnak egymástól, és inspirációt meríthetnek a zenéléshez.
-                </p>
-                <p>
-                    Az elmúlt évtizedek során rengeteg zenei tehetség pályáját segítettük elő azáltal, hogy hozzáférést biztosítottunk számukra a legjobb hangszerekhez és kiegészítőkhöz. Büszkék vagyunk rá, hogy nemcsak Magyarországon, hanem nemzetközi szinten is elismerést szereztünk magunknak.
-                </p>
-                <p>
-                    Ma már online áruházunk is elérhető, így bárhonnan megvásárolhatod a kedvenc hangszereidet és kiegészítőidet, legyen szó gitárokról, zongorákról, vonós hangszerekről, vagy bármilyen más hangszerről. Számunkra a legfontosabb, hogy minden vásárlónk elégedetten távozzon, és boldogan térjen vissza hozzánk.
-                </p>
-                <p>
-                    Látogass el hozzánk, és tapasztald meg személyesen, miért választják zenészek ezrei a Harmónia Hangszereket! Legyen szó kezdőről vagy profi zenészről, mi itt vagyunk, hogy támogassuk zenei utazásodat.
-                </p>
+                <div className="content-wrapper">
+                    <p>
+                        Üdvözlünk az Electric Guitar Shop világában, ahol a gitározás iránti szenvedélyünk minden hangszerben és szolgáltatásban tükröződik! Az Electric Guitar Shop története 1990-ben kezdődött, amikor alapítónk, Péter, megnyitotta első boltját Budapest belvárosában. Egy kis üzlethelyiségben, ahol a gitárosok közössége hamar otthonra talált, az üzlet gyorsan a város egyik legismertebb és legkedveltebb helyévé vált.
+                    </p>
+                    <p>
+                        Péter maga is lelkes gitáros volt, és saját tapasztalataiból tudta, mennyire fontos egy minőségi hangszer a zenei élményben. Ez inspirálta őt arra, hogy megnyissa boltját, amelyben nem csupán eladni akarta a gitárokat, hanem lehetőséget is biztosítani a zenészeknek, hogy kipróbálhassák, tanuljanak és inspirációt meríthessenek egymástól. Kezdetben főleg elektromos gitárokra és erősítőkre specializálódtak, de az évek során a kínálat folyamatosan bővült mindenféle gitár és gitárkiegészítő irányába.
+                    </p>
+                    <p>
+                        Az Electric Guitar Shop azóta is családi vállalkozásként működik, ahol minden munkatársunk elkötelezett a szakértelem és a kiemelkedő ügyfélszolgálat mellett. Számunkra fontos, hogy ne csak termékeket adjunk el, hanem támogassuk is a vásárlóinkat zenei útjuk során. Az Electric Guitar Shop-ban egy olyan közösség jött létre, ahol a gitárosok megoszthatják egymással tapasztalataikat, tanulhatnak egymástól, és együtt élvezhetik a zenét.
+                    </p>
+                    <p>
+                        Az elmúlt évek során sok tehetséges gitáros kezdte nálunk a pályáját, és mi büszkék vagyunk arra, hogy részesei lehettünk zenei fejlődésüknek azzal, hogy elérhetővé tettük számukra a legjobb gitárokat és felszereléseket. Üzletünk mára nemcsak Magyarországon, hanem nemzetközileg is elismert hely lett a gitárosok körében.
+                    </p>
+                    <p>
+                        Az online áruházunknak köszönhetően már bárhonnan megrendelheted kedvenc gitárodat és kiegészítőidet. Legyen szó Fender, Gibson, Ibanez vagy bármilyen más gitárról, az Electric Guitar Shopban biztosan megtalálod a számodra megfelelő hangszert. Célunk, hogy minden vásárlónk elégedetten távozzon, és visszatérjen hozzánk, amikor újabb inspirációra van szüksége.
+                    </p>
+                    <p>
+                        Látogass el hozzánk személyesen is, és tapasztald meg, miért választják gitárosok százai az Electric Guitar Shop-ot! Legyen szó kezdő vagy profi zenészről, nálunk mindig találsz valami különlegeset, ami segít kibontakoztatni zenei tehetségedet.
+                    </p>
+                </div>
+
             </div>
         </div>
     )

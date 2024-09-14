@@ -133,6 +133,7 @@ const UpdateOwnDatas = ({ profile }) => {
                     value={formData.phoneNumber}
                     onChange={handleInputChange}
                     className={errors.phoneNumber ? 'input-error' : ''}
+                    placeholder='+36 20-123-4567'
                 />
                 {errors.phoneNumber && <p className="error-text">{errors.phoneNumber}</p>}
 

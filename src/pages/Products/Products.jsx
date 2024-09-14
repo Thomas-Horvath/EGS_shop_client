@@ -66,7 +66,7 @@ const Products = () => {
       filtered = filtered.filter(product =>
         selectedFilters.some(filter =>
           product[filter.filterCategory] &&
-          product[filter.filterCategory].toLowerCase().includes(filter.value.toLowerCase())
+          product[filter.filterCategory].toLowerCase() === (filter.value.toLowerCase())
         )
       );
     }

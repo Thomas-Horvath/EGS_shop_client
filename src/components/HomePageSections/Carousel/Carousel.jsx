@@ -14,12 +14,13 @@ const Slider = () => {
         <>
             <Swiper
                 cssMode={true}
+               
                 navigation={true}
                 pagination={true}
                 mousewheel={true}
                 loop={true}
                 keyboard={true}
-                autoplay={{ delay: 3000 }}
+                autoplay={{ delay: 4000 }}
                 modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
                 className="mySwiper"
             >

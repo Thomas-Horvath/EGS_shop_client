@@ -165,7 +165,7 @@ const Registration = (props) => {
                 </div>
                 {errors.password && <p className="error-text">{errors.password}</p>}
 
-                <label className='loginpage-label' htmlFor="confirmPassword">Jelszó mégegyszer:</label>
+                <label className='loginpage-label' htmlFor="confirmPassword">Jelszó ismét:</label>
                 <div className="password-container">
                     <input
                         className={`loginpage-input ${errors.confirmPassword ? 'input-error' : ''}`}

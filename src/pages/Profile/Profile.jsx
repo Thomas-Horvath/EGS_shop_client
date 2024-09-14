@@ -15,6 +15,8 @@ const Profile = () => {
   const [isPending, setPending] = useState(false);
   const navigate = useNavigate();
 
+
+ 
   const { category , orderId } = useParams();
 
   function fetchProfile() {
@@ -47,6 +49,10 @@ const Profile = () => {
     navigate(`/fiókom/rendeléseim`);
   }
 
+  const handleProfileUpdate = () => {
+    // Function to refresh profile data
+    fetchProfile();
+  };
 
   let content;
 
@@ -66,9 +72,9 @@ const Profile = () => {
     </>
 
   } else if (category === "címeim") {
-    content = <> <UpdateAdresses profile={profile}/>
+    content = <> <UpdateAdresses profile={profile} onUpdate={handleProfileUpdate} />
       <div className="btn-container">
-        <button className="btn back-btn main-btn" onClick={handleBackClick}>
+        <button className="btn back-btn main-btn" onClick={handleBackClick} >
           Vissza a Profilhoz
         </button>
       </div>

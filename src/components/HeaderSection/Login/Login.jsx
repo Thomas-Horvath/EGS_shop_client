@@ -8,16 +8,19 @@ import { AuthContext } from '../../../contexts/AuthContext';
 import { CartContext } from '../../../contexts/CartContext';
 
 
+
 const Login = ({ toggleMenu }) => {
   const [searchVisible, setSearchVisible] = useState(false); // Állapot a keresőmezőhöz
   const [searchQuery, setSearchQuery] = useState(''); // Állapot a keresőszöveghez
   const [sublistClosed, setSublistClosed] = useState(false);
   const [isAlertClose, setIsAlertClose] = useState(false);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
   const [isScrolled, setIsScrolled] = useState(false);   // a görgetés állapota
 
   const { isLoggedIn, logout } = useContext(AuthContext);
-  const { cartItems, removeFromCart , handleCheckoutClick} = useContext(CartContext);
+  const { cartItems, removeFromCart, handleCheckoutClick } = useContext(CartContext);
 
 
 
@@ -45,6 +48,22 @@ const Login = ({ toggleMenu }) => {
     };
   }, []);
 
+  // Termékek lekérése az API-ból
+  useEffect(() => {
+    const fetchProduct = () => {
+      fetch('https://thomasapi.eu/api/products', {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json; charset=UTF-8",
+        },
+        mode: "cors"
+      })
+        .then(res => res.json())
+        .then(data => setProducts(data));
+    };
+
+    fetchProduct();
+  }, []);
 
 
   const handleSearchClick = () => {
@@ -57,10 +76,24 @@ const Login = ({ toggleMenu }) => {
 
   const handleSearchSubmit = (e) => {
     if (e) e.preventDefault();
+    if (searchQuery.trim().length >= 3) {
+      const filtered = products.filter(product => {
+        const query = searchQuery.toLowerCase();
+        return (
+          product.Name.toLowerCase().includes(query) ||
+          product.BrandName.toLowerCase().includes(query) ||
+          product.Color?.toLowerCase().includes(query) ||
+          product.CategoryName?.toLowerCase().includes(query) ||
+          product.SubCategoryName?.toLowerCase().includes(query)
+        );
+      });
 
+      setFilteredProducts(filtered);
+      console.log(filtered)
+    }
 
-    // Itt kezelheted a keresési műveletet, pl. fetch, stb.
-    console.log('Keresés:', searchQuery);
+// TODO a keresett termékek megjelenítése
+
     if (window.innerWidth < 992) {
       setSearchVisible(false); // 992px alatt eltűnik submit után
     }
@@ -165,7 +198,7 @@ const Login = ({ toggleMenu }) => {
                     {cartItems.map((item, index) => (
                       <li key={index}>
                         {item.Name} - {item.quantity} db
-                        <button className='btn delete-btn main-btn' onClick={() => removeFromCart(item.ProductID)}><IoTrashSharp className='trash-icon'/></button>
+                        <button className='btn delete-btn main-btn' onClick={() => removeFromCart(item.ProductID)}><IoTrashSharp className='trash-icon' /></button>
                       </li>
                     ))}
                   </ul>

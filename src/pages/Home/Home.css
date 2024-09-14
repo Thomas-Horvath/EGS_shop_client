@@ -35,7 +35,7 @@
 
 .home-sections-heading {
     border-bottom:  2px solid var(--main-color);
-    padding-bottom: .5rem;
+    padding: .5rem;
     margin: 3rem 0;
 }
 

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const UpdateAddresses = ({ profile }) => {
+const UpdateAddresses = ({ profile, onUpdate }) => {
     const [postcode, setPostcode] = useState(profile.Postcode || '');
     const [city, setCity] = useState(profile.City || '');
     const [address, setAddress] = useState(profile.Address || '');
@@ -12,6 +12,16 @@ const UpdateAddresses = ({ profile }) => {
 
     const token = sessionStorage.getItem('token'); // Token lekérése a sessionStorage-ből
 
+    useEffect(() => {
+        // Update local state if profile prop changes
+        setPostcode(profile.Postcode || '');
+        setCity(profile.City || '');
+        setAddress(profile.Address || '');
+        setShippingPostcode(profile.ShippingPostcode || '');
+        setShippingCity(profile.ShippingCity || '');
+        setShippingAddress(profile.ShippingAddress || '');
+    }, [profile]);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -20,7 +30,7 @@ const UpdateAddresses = ({ profile }) => {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json; charset=UTF-8",
-                    "Authorization": `Bearer ${token}` // Token hozzáadása a fejléchez
+                    "Authorization": `Bearer ${token}`
                 },
                 mode: "cors",
                 body: JSON.stringify({
@@ -35,11 +45,10 @@ const UpdateAddresses = ({ profile }) => {
                 })
             });
 
-         
-
             if (response.ok) {
                 setSuccessMessage('A címadatok sikeresen módosítva!');
                 setErrorMessage('');
+                onUpdate(); // Notify the Profile component to refresh data
             } else {
                 setErrorMessage('Hiba történt a címadatok módosítása során.');
                 setSuccessMessage('');

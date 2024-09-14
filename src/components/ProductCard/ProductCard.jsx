@@ -27,8 +27,8 @@ const handleAddToCart = () => {
       <p className='price'>
         {product.SalePrice > 0 ? (
           <>
-            <span style={{ textDecoration: 'line-through', marginRight: '10px' }}>{product.Price} FT</span>
-            <span style={{ color: 'red', fontWeight: 'bold' }}>{product.SalePrice} FT</span>
+            <span className='price-line-throught' style={{ textDecoration: 'line-through', marginRight: '10px' }}>{product.Price} FT</span>
+            <span className='sale-price' style={{ color: 'red', fontWeight: 'bold' }}>{product.SalePrice} FT</span>
           </>
         ) : (
           <span>{product.Price} Ft</span>
