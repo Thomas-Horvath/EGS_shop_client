@@ -22,36 +22,6 @@
     position: relative;
 }
 
-.text {
-    font-size: 4rem;
-    color: var(--white);
-    text-shadow: 2px 2px 4px var(--main-color);
-    background-color: #22222290;
-    border: 2px solid var(--white);
-    border-radius: .45rem;
-    padding: 2rem;
-    text-transform: uppercase;
-}
-
-.text1-pos {
-    position: absolute;
-    bottom: 4rem;
-    left: 4rem;
-}
-.text2-pos {
-    position: absolute;
-    bottom: 4rem;
-    right: 6rem;
-}
-.text3-pos {
-    position: absolute;
-    top: 4rem;
-    left: 4rem;
-    background-color: transparent;
-    color: rgb(222, 222, 47);
-}
-
-
 
 .swiper-pagination-bullet {
     width: .8rem;

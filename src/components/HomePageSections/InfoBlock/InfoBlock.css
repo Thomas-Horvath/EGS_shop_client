@@ -13,9 +13,36 @@
 .info-card {
     /* width: 320px; */
     border: 1px solid var(--bg-white);
-    padding: 1rem;
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
-
+.info-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: .3rem;
+}
+.info-card p {
+    font-size: .9rem;
+}
+.info-card svg {
+    flex: 1;
+    font-size: 4rem;
+    color: var(--footer-text);
+}
+.info-card .info-content {
+    flex: 2;
+}
+.info-content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+  justify-content: flex-start;
+}
+.info-content span {
+color: var(--main-color);
+margin-top: .3rem;
+}
 @media (min-width: 768px) {
     .info-cards-container {
         display: grid;

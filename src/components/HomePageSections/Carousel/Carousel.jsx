@@ -25,16 +25,13 @@ const Slider = () => {
                 className="mySwiper"
             >
                 <SwiperSlide>
-                    <img src={assets.banner} alt="gitárok" />
-                    {/* <p className='text text1-pos'>Üdvözlünk Az EGS shoppban!</p> */}
+                    <img src={assets.line6_banner} alt="gitárok" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src={assets.red_guitar} alt="fender" />
-                    <p className='text text2-pos'>Fender akció!</p>
+                    <img src={assets.fender_banner} alt="fender" />
                 </SwiperSlide>
                 <SwiperSlide>
-                <img src={assets.technic} alt="pedálok" />
-                {/* <p className='text text3-pos'>Fender akció!</p> */}
+                <img src={assets.marshall_banner} alt="pedálok" />
                 </SwiperSlide>
 
             </Swiper>

@@ -41,12 +41,13 @@ max-width: 600px;
     flex-direction: column;
     gap: .5rem;
     width: 100%;
+    margin-bottom: .4rem;
 }
 
 .newsletter-right label {
     font-size: 1.4rem;
     font-weight: bold;
-    margin-bottom: .4rem;
+    margin-bottom: 1rem;
 }
 
 .newsletter-right input {

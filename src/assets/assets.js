@@ -10,7 +10,9 @@ import ibanez_amp from './ibanez_amp.webp';
 import red_guitar from './red_guitar.jpg';
 import shop from './shop.jpg';
 
-
+import marshall_banner from './marshall_banner.png';
+import line6_banner from './line6_banner.png';
+import fender_banner from './fender_banner.png';
 // brands
 
 export const assets = {
@@ -24,8 +26,10 @@ export const assets = {
     marshall_2,
     ibanez_amp,
     red_guitar,
-    shop
-  
+    shop,
+    fender_banner,
+    marshall_banner,
+    line6_banner
 };
 
 
