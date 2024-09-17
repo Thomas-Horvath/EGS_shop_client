@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/egs_shop_react/static/css/main.70b6044a.css",
-    "main.js": "/egs_shop_react/static/js/main.1a4ec3ef.js",
+    "main.css": "/egs_shop_react/static/css/main.d5dab413.css",
+    "main.js": "/egs_shop_react/static/js/main.d0be2712.js",
     "static/media/red_guitar.jpg": "/egs_shop_react/static/media/red_guitar.df6d25fff90eae59f42f.jpg",
     "static/media/fender_banner.png": "/egs_shop_react/static/media/fender_banner.e4ff19d7af8a3f6b9277.png",
     "static/media/shop.jpg": "/egs_shop_react/static/media/shop.a6c5f64f09559068d742.jpg",
@@ -16,11 +16,11 @@
     "static/media/logo.svg": "/egs_shop_react/static/media/logo.217b211d8153fcdd8d7096aa9a24896d.svg",
     "index.html": "/egs_shop_react/index.html",
     "static/media/percenticon.svg": "/egs_shop_react/static/media/percenticon.a11bcd08387bb8b9a372fa471fc7748e.svg",
-    "main.70b6044a.css.map": "/egs_shop_react/static/css/main.70b6044a.css.map",
-    "main.1a4ec3ef.js.map": "/egs_shop_react/static/js/main.1a4ec3ef.js.map"
+    "main.d5dab413.css.map": "/egs_shop_react/static/css/main.d5dab413.css.map",
+    "main.d0be2712.js.map": "/egs_shop_react/static/js/main.d0be2712.js.map"
   },
   "entrypoints": [
-    "static/css/main.70b6044a.css",
-    "static/js/main.1a4ec3ef.js"
+    "static/css/main.d5dab413.css",
+    "static/js/main.d0be2712.js"
   ]
 }
