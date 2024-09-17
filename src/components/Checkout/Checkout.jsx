@@ -83,6 +83,9 @@ const Checkout = ({ cartItems, totalPrice, shippingCost }) => {
             TotalDue: totalPrice + shippingCost,
             Comment: comment,
             OrderItems: orderItems,
+            ShippingPostcode: postcode,
+            ShippingCity: city,
+            ShippingAddress: address
         };
 
         try {

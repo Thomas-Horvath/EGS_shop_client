@@ -1,5 +1,6 @@
 import React from 'react';
 import './About.css';
+import { assets } from '../../../assets/assets';
 
 const About = () => {
     return (
@@ -26,7 +27,9 @@ const About = () => {
                         Látogass el hozzánk személyesen is, és tapasztald meg, miért választják gitárosok százai az Electric Guitar Shop-ot! Legyen szó kezdő vagy profi zenészről, nálunk mindig találsz valami különlegeset, ami segít kibontakoztatni zenei tehetségedet.
                     </p>
                 </div>
-
+                <div className="shop-img">
+                    <img src={assets.shop} alt="A bolt" />
+                </div>
             </div>
         </div>
     )

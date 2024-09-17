@@ -1,6 +1,5 @@
 import React from 'react';
 import './Brands.css';
-import {assets} from '../../../assets/assets'
 
 const Brands = () => {
     return (
@@ -9,34 +8,34 @@ const Brands = () => {
                 <h2 className='home-sections-heading'>Forgalmazott márkáink</h2>
                 <div className="brand-cards-container">
                     <div className="brand-card">
-                        <img src={assets.fender} alt="Fender" />
+                       <p>Marshall</p>
                     </div>
                     <div className="brand-card">
-                        <img src="" alt="Fender" />
+                       <p>Fender</p>
                     </div>
                     <div className="brand-card">
-                        <img src="" alt="Fender" />
+                       <p>Boss</p>
                     </div>
                     <div className="brand-card">
-                        <img src="" alt="Fender" />
+                      <p>Cort</p>
                     </div>
                     <div className="brand-card">
-                        <img src="" alt="Fender" />
+                     <p>Ibanez</p>
                     </div>
                     <div className="brand-card">
-                        <img src="" alt="Fender" />
+                      <p>Epiphone</p>
                     </div>
                     <div className="brand-card">
-                        <img src="" alt="Fender" />
+                       <p>Mesa Boogie</p>
                     </div>
                     <div className="brand-card">
-                        <img src="" alt="Fender" />
+                       <p>Ernei Ball</p>
                     </div>
                     <div className="brand-card">
-                        <img src="" alt="Fender" />
+                      <p>Orange</p>
                     </div>
                     <div className="brand-card">
-                        <img src="" alt="Fender" />
+                       <p>Jackson</p>
                     </div>
                 </div>
 

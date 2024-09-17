@@ -3,6 +3,8 @@ import './Footer.css';
 import { Link } from 'react-router-dom';
 import InfoLink from '../InfoLink/InfoLink';
 import { footerInfoLinks, assets } from '../../assets/assets';
+import { FaFacebook, FaInstagramSquare, FaYoutube } from "react-icons/fa";
+import { FaLocationDot, FaPhone, FaEnvelope } from "react-icons/fa6";
 
 const Footer = () => {
 
@@ -15,16 +17,17 @@ const Footer = () => {
 
           <div className="address grid-item">
             <h2>Elérhetőségek</h2>
-            <img src={assets.logo} alt="logo" className='footer-logo' />
+            <div className="footer-logo">
+              <img src={assets.logo} alt="logo" />
+            </div>
             <ul className='address-details'>
-              <li></li>
-              <li>Cím</li>
-              <li>telefon</li>
-              <li>email</li>
-              <ul>
-                <a href="https://facebook.com" target='_blank' rel='noreferrer'>facebook</a>
-                <a href="https://facebook.com" target='_blank' rel='noreferrer'>facebook</a>
-                <a href="https://facebook.com" target='_blank' rel='noreferrer'>facebook</a>
+              <li><FaLocationDot /> 1035 Budapest Bárhol utca 6.</li>
+              <li><FaPhone /> 06 20 123 4567</li>
+              <li><FaEnvelope /> egs@gmail.com</li>
+              <ul className='social-icons'>
+                <a href="https://facebook.com" target='_blank' rel='noreferrer'><FaFacebook /></a>
+                <a href="https://facebook.com" target='_blank' rel='noreferrer'><FaInstagramSquare /></a>
+                <a href="https://facebook.com" target='_blank' rel='noreferrer'><FaYoutube /></a>
               </ul>
             </ul>
 
@@ -48,28 +51,28 @@ const Footer = () => {
           </div>
 
           <div className="opening-hours grid-item">
-    <h2>Nyitvatartás</h2>
-    <div className="opening-hours-grid">
-        <div className="days">
-            <div>Hétfő</div>
-            <div>Kedd</div>
-            <div>Szerda</div>
-            <div>Csütörtök</div>
-            <div>Péntek</div>
-            <div>Szombat</div>
-            <div>Vasárnap</div>
-        </div>
-        <div className="hours">
-            <div>10:00 - 18:00</div>
-            <div>10:00 - 18:00</div>
-            <div>10:00 - 18:00</div>
-            <div>10:00 - 18:00</div>
-            <div>10:00 - 18:00</div>
-            <div>10:00 - 14:00</div>
-            <div>Zárva</div>
-        </div>
-    </div>
-</div>
+            <h2>Nyitvatartás</h2>
+            <div className="opening-hours-grid">
+              <div className="days">
+                <div>Hétfő</div>
+                <div>Kedd</div>
+                <div>Szerda</div>
+                <div>Csütörtök</div>
+                <div>Péntek</div>
+                <div>Szombat</div>
+                <div>Vasárnap</div>
+              </div>
+              <div className="hours">
+                <div>10:00 - 18:00</div>
+                <div>10:00 - 18:00</div>
+                <div>10:00 - 18:00</div>
+                <div>10:00 - 18:00</div>
+                <div>10:00 - 18:00</div>
+                <div>10:00 - 14:00</div>
+                <div>Zárva</div>
+              </div>
+            </div>
+          </div>
 
 
 

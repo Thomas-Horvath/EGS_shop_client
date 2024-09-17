@@ -4,3 +4,11 @@
 .content-wrapper p {
     margin-bottom: .7rem;
 }
+
+.shop-img {
+    width: 100%;
+    padding: 1rem; 
+}
+.shop-img img {
+    width: 100%;
+}

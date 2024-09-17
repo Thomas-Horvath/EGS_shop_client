@@ -96,7 +96,7 @@ const MyOrders = ({ profile }) => {
               <td>{new Date(order.OrderDate).toLocaleDateString('hu-HU')}</td>
               <td>
                 <button
-                  className="details-button"
+                  className="main-btn"
                   onClick={() => handleOrderDetails(order.OrderID)}
                 >
                   Részletek

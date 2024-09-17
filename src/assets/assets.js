@@ -7,7 +7,11 @@ import searchIcon from './search_icon.png';
 import technic from './technic.jpg';
 import marshall_2 from './marshall_2.webp';
 import ibanez_amp from './ibanez_amp.webp';
-import fender from './fender.png'
+import red_guitar from './red_guitar.jpg';
+import shop from './shop.jpg';
+
+
+// brands
 
 export const assets = {
     banner,
@@ -19,7 +23,9 @@ export const assets = {
     technic,
     marshall_2,
     ibanez_amp,
-    fender
+    red_guitar,
+    shop
+  
 };
 
 
