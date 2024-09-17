@@ -1,21 +1,23 @@
 {
   "files": {
-    "main.css": "/egs_shop_react/static/css/main.bd7994b3.css",
-    "main.js": "/egs_shop_react/static/js/main.a6e1c48c.js",
+    "main.css": "/egs_shop_react/static/css/main.4f77ed61.css",
+    "main.js": "/egs_shop_react/static/js/main.531cd695.js",
+    "static/media/red_guitar.jpg": "/egs_shop_react/static/media/red_guitar.df6d25fff90eae59f42f.jpg",
+    "static/media/shop.jpg": "/egs_shop_react/static/media/shop.a6c5f64f09559068d742.jpg",
     "static/media/marshall_2.webp": "/egs_shop_react/static/media/marshall_2.17d90edb9735608550fe.webp",
     "static/media/ibanez_amp.webp": "/egs_shop_react/static/media/ibanez_amp.4e3fc8d940d14b72d4f6.webp",
     "static/media/marshall.webp": "/egs_shop_react/static/media/marshall.ce30fea552f74429f3db.webp",
+    "static/media/PostNoBillsJaffna-ExtraBold.ttf": "/egs_shop_react/static/media/PostNoBillsJaffna-ExtraBold.2240aa28196a8ddae215.ttf",
     "static/media/banner.webp": "/egs_shop_react/static/media/banner.7fb44420cdd094005c06.webp",
     "static/media/technic.jpg": "/egs_shop_react/static/media/technic.c99d3195d264fbd28324.jpg",
     "static/media/logo.svg": "/egs_shop_react/static/media/logo.217b211d8153fcdd8d7096aa9a24896d.svg",
-    "static/media/fender.png": "/egs_shop_react/static/media/fender.5c80910ecf3fa8377a64.png",
     "index.html": "/egs_shop_react/index.html",
     "static/media/percenticon.svg": "/egs_shop_react/static/media/percenticon.a11bcd08387bb8b9a372fa471fc7748e.svg",
-    "main.bd7994b3.css.map": "/egs_shop_react/static/css/main.bd7994b3.css.map",
-    "main.a6e1c48c.js.map": "/egs_shop_react/static/js/main.a6e1c48c.js.map"
+    "main.4f77ed61.css.map": "/egs_shop_react/static/css/main.4f77ed61.css.map",
+    "main.531cd695.js.map": "/egs_shop_react/static/js/main.531cd695.js.map"
   },
   "entrypoints": [
-    "static/css/main.bd7994b3.css",
-    "static/js/main.a6e1c48c.js"
+    "static/css/main.4f77ed61.css",
+    "static/js/main.531cd695.js"
   ]
 }
