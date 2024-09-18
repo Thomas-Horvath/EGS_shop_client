@@ -70,6 +70,7 @@ const UpdateAddresses = ({ profile, onUpdate , handleBackClick}) => {
                         id="postcode"
                         value={postcode}
                         onChange={(e) => setPostcode(e.target.value)}
+                        placeholder='Irányítószám'
                     />
                     <label htmlFor="city">Város</label>
                     <input
@@ -77,6 +78,7 @@ const UpdateAddresses = ({ profile, onUpdate , handleBackClick}) => {
                         id="city"
                         value={city}
                         onChange={(e) => setCity(e.target.value)}
+                        placeholder='Város'
                     />
                     <label htmlFor="address">Cím</label>
                     <input
@@ -84,6 +86,7 @@ const UpdateAddresses = ({ profile, onUpdate , handleBackClick}) => {
                         id="address"
                         value={address}
                         onChange={(e) => setAddress(e.target.value)}
+                        placeholder='Cím'
                     />
                     <label htmlFor="shippingPostcode">Szállítási irányítószám</label>
                     <input
@@ -91,6 +94,7 @@ const UpdateAddresses = ({ profile, onUpdate , handleBackClick}) => {
                         id="shippingPostcode"
                         value={shippingPostcode}
                         onChange={(e) => setShippingPostcode(e.target.value)}
+                        placeholder='Szállítási irányítószám'
                     />
                     <label htmlFor="shippingCity">Szállítási város</label>
                     <input
@@ -98,6 +102,7 @@ const UpdateAddresses = ({ profile, onUpdate , handleBackClick}) => {
                         id="shippingCity"
                         value={shippingCity}
                         onChange={(e) => setShippingCity(e.target.value)}
+                        placeholder='Szállítási város'
                     />
                     <label htmlFor="shippingAddress">Szállítási cím</label>
                     <input
@@ -105,6 +110,7 @@ const UpdateAddresses = ({ profile, onUpdate , handleBackClick}) => {
                         id="shippingAddress"
                         value={shippingAddress}
                         onChange={(e) => setShippingAddress(e.target.value)}
+                        placeholder='Szállítási cím'
                     />
                     {errorMessage && <p className="error-message">{errorMessage}</p>}
                     {successMessage && <p className="success-message">{successMessage}</p>}

@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
+import { IoEye, IoEyeOffSharp } from "react-icons/io5";
+import './ChangePassword.css';
 
-const ChangePassword = ({ username, email , handleBackClick }) => {
+const ChangePassword = ({ username, email, handleBackClick }) => {
     const [oldPassword, setOldPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+    const [showNewPassword, setShowNewPassword] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -61,30 +65,40 @@ const ChangePassword = ({ username, email , handleBackClick }) => {
     };
 
     return (
-        <div className='main-container'>
+        <div className='main-container w1400'>
             <h1>Jelszó megváltoztatása</h1>
             <div className="form-container">
-                <form className='form' onSubmit={handleSubmit}>
+                <form className='form new-password-form' onSubmit={handleSubmit}>
                     <label htmlFor="old">Jelenlegi jelszó</label>
-                    <input
-                        type="password"
-                        id='old'
-                        value={oldPassword}
-                        onChange={(e) => setOldPassword(e.target.value)}
-                        placeholder='Régi jelszó'
-                    />
+                    <div className="password-container">
+                        <input
+                              type={showPassword ? 'text' : 'password'}
+                            id='old'
+                            value={oldPassword}
+                            onChange={(e) => setOldPassword(e.target.value)}
+                            placeholder='Régi jelszó'
+                        />
+                        <button className='eye-icon-btn' type="button" onClick={() => setShowPassword(!showPassword)}>
+                            {showPassword ? <IoEyeOffSharp /> : <IoEye />}
+                        </button>
+                    </div>
                     <label htmlFor="new">Új jelszó</label>
-                    <input
-                        type="password"
-                        id='new'
-                        value={newPassword}
-                        onChange={(e) => setNewPassword(e.target.value)}
-                        placeholder='Új jelszó'
-                    />
+                    <div className="password-container">
+                        <input
+                             type={showNewPassword ? 'text' : 'password'}
+                            id='new'
+                            value={newPassword}
+                            onChange={(e) => setNewPassword(e.target.value)}
+                            placeholder='Új jelszó'
+                        />
+                        <button className='eye-icon-btn' type="button" onClick={() => setShowNewPassword(!showNewPassword)}>
+                            {showNewPassword ? <IoEyeOffSharp /> : <IoEye />}
+                        </button>
+                    </div>
                     {errorMessage && <p className="error-message">{errorMessage}</p>}
                     {successMessage && <p className="success-message">{successMessage}</p>}
                     <div className="btn-container">
-                    <button className="btn back-btn red-btn" onClick={handleBackClick}>Vissza a Profilhoz</button>
+                        <button className="btn back-btn red-btn" onClick={handleBackClick}>Vissza a Profilhoz</button>
                         <button className='btn red-btn changepass-btn' type="submit">Megváltoztat</button>
                     </div>
                 </form>

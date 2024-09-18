@@ -56,10 +56,10 @@
     margin: 1rem auto 2rem;
 }
 
-label {
+.form label {
     margin: 1rem 0 .3rem 0;
 }
-input , textarea {
+.form input , textarea {
     padding: .5rem;
     border: 2px solid var(--main-color);
     border-radius: 5px;
@@ -68,6 +68,6 @@ input , textarea {
     
 }
 
-input:focus, textarea:focus {
+.form input:focus, textarea:focus {
     outline: none;
 }

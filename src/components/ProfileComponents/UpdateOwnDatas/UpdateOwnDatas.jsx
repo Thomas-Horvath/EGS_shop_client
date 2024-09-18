@@ -144,7 +144,7 @@ const UpdateOwnDatas = ({ profile, handleBackClick }) => {
                 <input
                     type="email"
                     id="email"
-                    name="email"
+                    name="emailAddress"
                     value={formData.emailAddress}
                     onChange={handleInputChange}
                     className={errors.email ? 'input-error' : ''}

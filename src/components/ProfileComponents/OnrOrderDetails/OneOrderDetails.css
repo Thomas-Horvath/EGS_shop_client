@@ -1,0 +1,96 @@
+/* Rendelés részletei */
+.order-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-container h1 {
+    margin-bottom: 2rem;
+}
+
+.order-container h3 {
+    margin: 2rem 0 1rem 0;
+}
+
+/* Rendelés részletei */
+.order-container .order-summary h1 {
+    font-size: 28px;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* Rendelés részletei */
+.order-container .order-summary h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* Rendelés részletei */
+.order-container .order-summary span {
+    color: var(--main-color);
+}
+
+/* Rendelés részletei */
+.order-container .order-summary p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Rendelés részletei */
+.order-container .total-amount {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+/* Termékek lista */
+/* Rendelés részletei */
+.order-container .product-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Rendelés részletei */
+.order-container .product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Rendelés részletei */
+.order-container .product-info {
+    margin-bottom: 10px;
+}
+
+/* Rendelés részletei */
+.order-container .product-info p {
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Rendelés részletei */
+.order-container .product-details {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Rendelés részletei */
+.order-container .product-details h4 {
+    color: #333;
+}
+
+/* Rendelés részletei */
+.order-container .product-details p {
+    margin: 5px 0;
+    color: #555;
+}

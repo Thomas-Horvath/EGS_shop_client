@@ -116,7 +116,7 @@ export const footerInfoLinks = [
         path: '/szállítás-és-fizetés'
     },
     {
-        title: 'ASZF',
+        title: 'ÁSZF',
         className: 'footer-info-link',
         path: '/álltalános-szerződési-feltételek'
     },
