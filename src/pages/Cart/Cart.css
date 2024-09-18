@@ -59,15 +59,6 @@
     flex-direction: column;
 }
 
-.increment,
-.decrement {
-    padding: 5px 10px;
-    cursor: pointer;
-    background-color: #eee;
-    border: 1px solid #ccc;
-    margin-left: 5px;
-}
-
 
 
 .cart-summary {
@@ -86,6 +77,9 @@
   .cart-summary span {
     font-size: 14px;
     color: #888;
+  }
+  .cart-summary h3 {
+    margin-bottom: .4rem;
   }
   
   .cart-buttons {

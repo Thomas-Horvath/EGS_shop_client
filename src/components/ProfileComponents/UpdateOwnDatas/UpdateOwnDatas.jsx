@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './UpdateOwnDatas.css'
 
-const UpdateOwnDatas = ({ profile }) => {
+const UpdateOwnDatas = ({ profile, handleBackClick }) => {
     const [formData, setFormData] = useState({
         lastName: '',
         firstName: '',
@@ -100,6 +100,7 @@ const UpdateOwnDatas = ({ profile }) => {
                     value={formData.lastName}
                     onChange={handleInputChange}
                     className={errors.lastName ? 'input-error' : ''}
+                    placeholder='Vezetéknév'
                 />
                 {errors.lastName && <p className="error-text">{errors.lastName}</p>}
 
@@ -111,6 +112,7 @@ const UpdateOwnDatas = ({ profile }) => {
                     value={formData.firstName}
                     onChange={handleInputChange}
                     className={errors.firstName ? 'input-error' : ''}
+                    placeholder='Kereszt név'
                 />
                 {errors.firstName && <p className="error-text">{errors.firstName}</p>}
 
@@ -122,6 +124,7 @@ const UpdateOwnDatas = ({ profile }) => {
                     value={formData.userName}
                     onChange={handleInputChange}
                     className={errors.userName ? 'input-error' : ''}
+                    placeholder='Felhasználónév'
                 />
                 {errors.userName && <p className="error-text">{errors.userName}</p>}
 
@@ -133,7 +136,7 @@ const UpdateOwnDatas = ({ profile }) => {
                     value={formData.phoneNumber}
                     onChange={handleInputChange}
                     className={errors.phoneNumber ? 'input-error' : ''}
-                    placeholder='+36 20-123-4567'
+                    placeholder='+3620/123-4567'
                 />
                 {errors.phoneNumber && <p className="error-text">{errors.phoneNumber}</p>}
 
@@ -149,12 +152,17 @@ const UpdateOwnDatas = ({ profile }) => {
                 {errors.email && <p className="error-text">{errors.email}</p>}
 
                 <div className="btn-container">
-                    <button type="submit" className="btn update-btn main-btn">Adatok frissítése</button>
+                    <button className="btn back-btn red-btn" onClick={handleBackClick}>Vissza a Profilhoz</button>
+                    <button type="submit" className="btn update-btn red-btn">Adatok frissítése</button>
                 </div>
 
+
+
+
+
                 {message && <p className={`message ${message === 'Sikeres frissítés!' ? 'success' : 'error-message'}`}>{message}</p>}
-            </form>
-        </div>
+            </form >
+        </div >
     );
 };
 

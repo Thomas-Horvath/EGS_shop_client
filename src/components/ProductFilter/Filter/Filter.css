@@ -27,6 +27,8 @@
     padding: 1rem 0 0 1rem;
 }
 
+
+
 @media (min-width: 992px) {
     .filter-container {
         position: static;

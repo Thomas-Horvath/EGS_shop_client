@@ -5,10 +5,11 @@ import percenticon from './percenticon.svg';
 import basketIcon from './basket_icon.png';
 import searchIcon from './search_icon.png';
 import technic from './technic.jpg';
-import marshall_2 from './marshall_2.webp';
-import ibanez_amp from './ibanez_amp.webp';
+import marshall_2 from './marshall_2.png';
+import ibanez_amp from './ibanez_amp.png';
 import red_guitar from './red_guitar.jpg';
 import shop from './shop.jpg';
+import newsletter from './newsletter-icon.jpg'
 
 import marshall_banner from './marshall_banner.png';
 import line6_banner from './line6_banner.png';
@@ -29,7 +30,8 @@ export const assets = {
     shop,
     fender_banner,
     marshall_banner,
-    line6_banner
+    line6_banner,
+    newsletter
 };
 
 

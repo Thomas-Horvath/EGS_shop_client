@@ -65,45 +65,22 @@ const Profile = () => {
     content = <>
       <MyOrders profile={profile} />
       <div className="btn-container">
-        <button className="btn back-btn main-btn" onClick={handleBackClick}>
+        <button className="btn back-btn red-btn" onClick={handleBackClick}>
           Vissza a Profilhoz
         </button>
       </div>
     </>
 
   } else if (category === "címeim") {
-    content = <> <UpdateAdresses profile={profile} onUpdate={handleProfileUpdate} />
-      <div className="btn-container">
-        <button className="btn back-btn main-btn" onClick={handleBackClick} >
-          Vissza a Profilhoz
-        </button>
-      </div>
-      </>
+    content = <UpdateAdresses profile={profile} onUpdate={handleProfileUpdate} handleBackClick={handleBackClick}/>
   } else if (category === "szerkesztés") {
-
-    content = <>
-      <UpdateOwnDatas profile={profile} />
-      <div className="btn-container">
-        <button className="btn back-btn main-btn" onClick={handleBackClick}>
-          Vissza a Profilhoz
-        </button>
-      </div>
-    </>
+    content =  <UpdateOwnDatas profile={profile}  handleBackClick={handleBackClick}/>
   } else if (category === "jelszóváltoztatás") {
-
-    content = <>
-      <ChangePassword username={profile.UserName} email={profile.EmailAddress} />
-      <div className="btn-container">
-        <button className="btn back-btn main-btn" onClick={handleBackClick}>
-          Vissza a Profilhoz
-        </button>
-      </div>
-    </>
+    content = <ChangePassword username={profile.UserName} email={profile.EmailAddress} handleBackClick={handleBackClick} />
   } else if (category === "rendelésem" && orderId ) {
-
     content = <> <OneOrderDetails orderId={orderId} profile={profile}/>
       <div className="btn-container">
-        <button className="btn back-btn main-btn" onClick={handleBackOrderClick}>
+        <button className="btn back-btn red-btn" onClick={handleBackOrderClick}>
           Vissza a rendelésekhez
         </button>
       </div>

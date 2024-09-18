@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const UpdateAddresses = ({ profile, onUpdate }) => {
+const UpdateAddresses = ({ profile, onUpdate , handleBackClick}) => {
     const [postcode, setPostcode] = useState(profile.Postcode || '');
     const [city, setCity] = useState(profile.City || '');
     const [address, setAddress] = useState(profile.Address || '');
@@ -108,8 +108,9 @@ const UpdateAddresses = ({ profile, onUpdate }) => {
                     />
                     {errorMessage && <p className="error-message">{errorMessage}</p>}
                     {successMessage && <p className="success-message">{successMessage}</p>}
-                    <div className="btn-group">
-                        <button className='btn main-btn' type="submit">Mentés</button>
+                    <div className="btn-container">
+                    <button className="btn back-btn red-btn" onClick={handleBackClick} >Vissza a Profilhoz</button>
+                        <button className='btn red-btn' type="submit">Mentés</button>
                     </div>
                 </form>
             </div>

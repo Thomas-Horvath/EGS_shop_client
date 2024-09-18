@@ -93,7 +93,7 @@ const Products = () => {
 
 
 
-  // A fixen tárolt adatok alapján attől függően hogy melyik subkategóriánál vagyon 
+  // A fixen tárolt adatok alapján attől függően hogy melyik subkategóriánál vagyunk
   // mindig az ott elérhető , márka, szín és model fajta jelenik meg.
   useEffect(() => {
     const generateFilters = () => {
@@ -139,11 +139,13 @@ const Products = () => {
     } else {
       setSelectedFilters(prev => prev.filter(filter => !(filter.filterCategory === filterCategory && filter.value === value)));
     }
+    setIsOpen(false);
   };
 
   // Checkbox változásainál kapott adatok
   const onFilterChange = (checked, filterCategory, value) => {
-    handleFilterChange(checked, filterCategory, value)
+    handleFilterChange(checked, filterCategory, value);
+  
   };
 
 

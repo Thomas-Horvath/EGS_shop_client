@@ -16,11 +16,16 @@
     box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.15);
     z-index: 1;
 }
-
+.top {
+    max-height: 200px;
+}
 
 .top img {
     width: 100%;
     max-width: 200px;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover; 
     transition: transform .4s ease-in-out;
 }
 

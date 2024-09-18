@@ -1,6 +1,7 @@
 .newsletter {
-    padding: 2rem 0;
+    padding: 2rem 0 0 0;
 }
+
 .newsletter-container {
     width: 100%;
     display: flex;
@@ -10,11 +11,14 @@
     align-items: center;
 
 }
+
 .newsletter-left {
     padding: 2rem;
-flex: 1;
-max-width: 600px;
+    flex: 1;
+    max-width: 600px;
+    position: relative;
 }
+
 .newsletter-left p {
     margin-bottom: 1rem;
     font-size: 1.2rem;
@@ -26,9 +30,17 @@ max-width: 600px;
     align-items: center;
     gap: 1rem;
 }
+
 .newsletter-left svg {
     color: green;
-    font-size: 2rem ;
+    font-size: 2rem;
+}
+.newsletter-icon {
+    position: absolute;
+    bottom: 2rem;
+    right: 4rem;
+    width: 5rem;
+    transform: rotate(25deg);
 }
 
 .newsletter-right {
@@ -36,6 +48,7 @@ max-width: 600px;
     flex: 1;
     max-width: 600px;
 }
+
 .news-wrapper {
     display: flex;
     flex-direction: column;
@@ -51,50 +64,66 @@ max-width: 600px;
 }
 
 .newsletter-right input {
-    border : 2px solid var(--main-color);
+    border: 2px solid var(--main-color);
     padding: .5rem 1rem;
-    /* border-radius: .25rem 0 0 .25rem; */
     border-radius: .25rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     flex: 2;
+    font-family:' Opan Sans', sans-serif; ;
 }
+
 .news-btn {
     border-radius: .25rem;
-    /* border-radius: 0 .25rem 0.25rem 0; */
     border: 2px solid var(--main-color);
     background: var(--main-color);
     color: var(--bg-white);
     border-left: none;
     font-size: 1.2rem;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .newsletter-right input:focus {
     outline: none;
-} 
+}
+
 .newsletter-right span {
     font-size: .7rem;
     margin: .4rem 0 1rem 0;
 }
+
 .newsletter-right span a {
     color: var(--main-color);
 }
 
+@media (min-width: 576px) {
+    .newsletter-icon {
+        width: 7rem;
+    }
+}
 @media (min-width: 992px) {
- .newsletter-container {
-    flex-direction: row;
-    align-items: flex-start;
-    margin-bottom: 5rem;
+    .newsletter-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .newsletter-icon {
+        bottom: 0;
+        right: 2rem;
+        width: 10rem;
+    }
 
- }
- .news-wrapper {
-     flex-direction: row;
-     gap: 0;
- }
-.newsletter-right input {
-    border-radius: .25rem 0 0 .25rem;
+    .news-wrapper {
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .newsletter-right input {
+        border-radius: .25rem 0 0 .25rem;
+    }
+
+    .news-btn {
+        border-radius: 0 .25rem 0.25rem 0;
+    }
 }
-.news-btn {
-    border-radius: 0 .25rem 0.25rem 0;
-}
-  }

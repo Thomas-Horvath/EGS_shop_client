@@ -35,6 +35,7 @@ const Filter = ({ filters, onFilterChange, resetFiltersTrigger, isOpen , handleS
           onFilterChange={handleCheckboxChange}
         />
       ))}
+      
     </div>
   );
 };

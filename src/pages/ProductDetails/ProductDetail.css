@@ -74,6 +74,31 @@
 }
 
 
+.quantity-container {
+  display: flex;
+
+}
+
+.quantity-container input {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.quantity-btn-groupe {
+  margin-left: .5rem;
+}
+.quantity-btn {
+  max-width: 25px;
+  height: 25px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .5rem;
+}
+
 
 
 @media (min-width: 992px) {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ChangePassword = ({ username, email }) => {
+const ChangePassword = ({ username, email , handleBackClick }) => {
     const [oldPassword, setOldPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
@@ -81,9 +81,9 @@ const ChangePassword = ({ username, email }) => {
                     />
                     {errorMessage && <p className="error-message">{errorMessage}</p>}
                     {successMessage && <p className="success-message">{successMessage}</p>}
-                    <div className="changepass-btn-group">
-                        <button className='btn main-btn changepass-btn' type="button">Mégsem</button>
-                        <button className='btn main-btn changepass-btn' type="submit">Megváltoztat</button>
+                    <div className="btn-container">
+                    <button className="btn back-btn red-btn" onClick={handleBackClick}>Vissza a Profilhoz</button>
+                        <button className='btn red-btn changepass-btn' type="submit">Megváltoztat</button>
                     </div>
                 </form>
             </div>

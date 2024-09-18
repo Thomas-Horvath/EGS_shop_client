@@ -144,13 +144,13 @@ const ProductDetails = () => {
                             onChange={handleQuantityChange}
                         />
                         <div className="quantity-btn-groupe">
-                            <button onClick={incrementQuantity} className="increment">+</button>
-                            <button onClick={decrementQuantity} className="decrement">-</button>
+                            <button onClick={incrementQuantity} className="quantity-btn red-btn">+</button>
+                            <button onClick={decrementQuantity} className="quantity-btn red-btn">-</button>
                         </div>
                     </div>
-                    <button className='btn product-details-btn main-btn' onClick={handleAddToCart}>Kosárba</button>
+                    <button className='btn product-details-btn red-btn' onClick={handleAddToCart}>Kosárba</button>
                 </div>
-                <button className='btn product-details-btn main-btn' onClick={handleGoBack}>Vissza</button>
+                <button className='btn product-details-btn red-btn' onClick={handleGoBack}>Vissza</button>
             </div>
 
 

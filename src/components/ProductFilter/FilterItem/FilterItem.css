@@ -12,6 +12,8 @@
 
 .checkbox-label{
     width: 100%;
+    margin: 0;
+    padding: .5rem 0;
 }
 
 .checkbox:hover {
@@ -19,4 +21,34 @@
 }
 .checkbox:hover .checkbox-label {
     cursor: pointer;
+}
+input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: white; /* Alap háttérszín */
+    border: 2px solid var(--main-color); /* Alap keretszín */
+    cursor: pointer;
+    position: relative;
+    margin: auto;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--main-color); /* Kitöltés színe, ha be van pipálva */
+    border-color: var(--main-color); /* Keret színe, ha be van pipálva */
+    padding: .2rem;
+
+}
+
+input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 0px;
+    width: 4px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    transform: rotate(45deg);
+  
 }
