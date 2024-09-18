@@ -1,26 +1,27 @@
 {
   "files": {
-    "main.css": "/egs_shop_react/static/css/main.d5dab413.css",
-    "main.js": "/egs_shop_react/static/js/main.d0be2712.js",
+    "main.css": "/egs_shop_react/static/css/main.96004319.css",
+    "main.js": "/egs_shop_react/static/js/main.67211975.js",
     "static/media/red_guitar.jpg": "/egs_shop_react/static/media/red_guitar.df6d25fff90eae59f42f.jpg",
-    "static/media/fender_banner.png": "/egs_shop_react/static/media/fender_banner.e4ff19d7af8a3f6b9277.png",
+    "static/media/fender_banner.png": "/egs_shop_react/static/media/fender_banner.3642f60485cf2a25f0d8.png",
+    "static/media/marshall_2.png": "/egs_shop_react/static/media/marshall_2.bcb9b510b9c2e191bc2c.png",
+    "static/media/ibanez_amp.png": "/egs_shop_react/static/media/ibanez_amp.66a967e2ef903911124d.png",
     "static/media/shop.jpg": "/egs_shop_react/static/media/shop.a6c5f64f09559068d742.jpg",
     "static/media/marshall_banner.png": "/egs_shop_react/static/media/marshall_banner.74f3b885e5936e5e10a7.png",
-    "static/media/marshall_2.webp": "/egs_shop_react/static/media/marshall_2.17d90edb9735608550fe.webp",
-    "static/media/ibanez_amp.webp": "/egs_shop_react/static/media/ibanez_amp.4e3fc8d940d14b72d4f6.webp",
     "static/media/line6_banner.png": "/egs_shop_react/static/media/line6_banner.35ed9d2e08706444d9ef.png",
     "static/media/marshall.webp": "/egs_shop_react/static/media/marshall.ce30fea552f74429f3db.webp",
     "static/media/PostNoBillsJaffna-ExtraBold.ttf": "/egs_shop_react/static/media/PostNoBillsJaffna-ExtraBold.2240aa28196a8ddae215.ttf",
     "static/media/banner.webp": "/egs_shop_react/static/media/banner.7fb44420cdd094005c06.webp",
     "static/media/technic.jpg": "/egs_shop_react/static/media/technic.c99d3195d264fbd28324.jpg",
     "static/media/logo.svg": "/egs_shop_react/static/media/logo.217b211d8153fcdd8d7096aa9a24896d.svg",
+    "static/media/newsletter-icon.jpg": "/egs_shop_react/static/media/newsletter-icon.f517241615e69fe7cf74.jpg",
     "index.html": "/egs_shop_react/index.html",
     "static/media/percenticon.svg": "/egs_shop_react/static/media/percenticon.a11bcd08387bb8b9a372fa471fc7748e.svg",
-    "main.d5dab413.css.map": "/egs_shop_react/static/css/main.d5dab413.css.map",
-    "main.d0be2712.js.map": "/egs_shop_react/static/js/main.d0be2712.js.map"
+    "main.96004319.css.map": "/egs_shop_react/static/css/main.96004319.css.map",
+    "main.67211975.js.map": "/egs_shop_react/static/js/main.67211975.js.map"
   },
   "entrypoints": [
-    "static/css/main.d5dab413.css",
-    "static/js/main.d0be2712.js"
+    "static/css/main.96004319.css",
+    "static/js/main.67211975.js"
   ]
 }
