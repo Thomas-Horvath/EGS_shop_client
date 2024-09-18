@@ -71,6 +71,7 @@ const ChangePassword = ({ username, email , handleBackClick }) => {
                         id='old'
                         value={oldPassword}
                         onChange={(e) => setOldPassword(e.target.value)}
+                        placeholder='Régi jelszó'
                     />
                     <label htmlFor="new">Új jelszó</label>
                     <input
@@ -78,6 +79,7 @@ const ChangePassword = ({ username, email , handleBackClick }) => {
                         id='new'
                         value={newPassword}
                         onChange={(e) => setNewPassword(e.target.value)}
+                        placeholder='Új jelszó'
                     />
                     {errorMessage && <p className="error-message">{errorMessage}</p>}
                     {successMessage && <p className="success-message">{successMessage}</p>}

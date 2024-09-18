@@ -91,8 +91,8 @@ const Cart = () => {
                               onChange={(e) => handleQuantityChange(e, item.ProductID)}
                             />
                             <div className="quantity-btn-groupe">
-                              <button onClick={() => incrementQuantity(item.ProductID)} className="increment">+</button>
-                              <button onClick={() => decrementQuantity(item.ProductID)} className="decrement">-</button>
+                              <button onClick={() => incrementQuantity(item.ProductID)} className="quantity-btn red-btn">+</button>
+                              <button onClick={() => decrementQuantity(item.ProductID)} className="quantity-btn red-btn">-</button>
                             </div>
                           </div>
                         </td>
