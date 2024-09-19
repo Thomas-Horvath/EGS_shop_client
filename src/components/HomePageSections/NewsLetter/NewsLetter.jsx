@@ -1,25 +1,53 @@
-import React, {useEffect} from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { TiTick } from "react-icons/ti";
 import './NewsLetter.css';
-import {assets } from '../../../assets/assets';
+import { assets } from '../../../assets/assets';
 
 
 
 const NewsLetter = () => {
- 
+  const [message, setMessage] = useState('');
 
-  useEffect((e) => {}, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); 
-    const message = e.target.email.value.trim();
 
-    // TODO itt lesz a fetch küldés.
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const email = e.target.email.value.trim();
 
-    e.target.reset();
-    console.log(message);
-  }
+    // Ellenőrizzük, hogy az email cím nem üres
+    if (!email) {
+      setMessage('Email cím megadása kötelező');
+      return;
+    }
+
+    try {
+      // POST kérés az API-ra
+      const response = await fetch('https://thomasapi.eu/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email })
+      });
+
+      // Ellenőrizzük a válasz státuszát
+      if (!response.ok) {
+        throw new Error('Hiba történt az API-val való kapcsolat során');
+      }
+      // Sikeres feliratkozás üzenet beállítása
+      setMessage('Sikeres felíratkozás!');
+
+      // Űrlap törlése
+      e.target.reset();
+      setTimeout(() => {
+        setMessage('');
+      }, 2000);
+    } catch (error) {
+      console.error('Hiba a POST kérés során:', error);
+      setMessage('Hiba történt a felíratkozás során. Kérjük, próbálja újra.');
+    }
+  };
 
 
   return (
@@ -44,8 +72,9 @@ const NewsLetter = () => {
                 <input type="email" name="email" id='news' placeholder='példa@gmail.com' />
                 <button className="main-btn news-btn">Küldés</button>
               </div>
-            <span>A beküldéssel elfogadom az <Link to="/adatvédelem">adatkezelési tájékoztatóban</Link>  foglaltakat!</span>
+              <span>A beküldéssel elfogadom az <Link to="/adatvédelem">adatkezelési tájékoztatóban</Link>  foglaltakat!</span>
             </form>
+            {message && <p className='success-message'>{message}</p>}
           </div>
         </div>
       </div>
