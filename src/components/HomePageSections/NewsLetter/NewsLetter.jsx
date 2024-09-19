@@ -44,7 +44,7 @@ const NewsLetter = () => {
                 <input type="email" name="email" id='news' placeholder='példa@gmail.com' />
                 <button className="main-btn news-btn">Küldés</button>
               </div>
-            <span>A beküldéssel elfogadom az <Link to="/információk">adatkezelési tájékoztatóban</Link>  foglaltakat!</span>
+            <span>A beküldéssel elfogadom az <Link to="/adatvédelem">adatkezelési tájékoztatóban</Link>  foglaltakat!</span>
             </form>
           </div>
         </div>

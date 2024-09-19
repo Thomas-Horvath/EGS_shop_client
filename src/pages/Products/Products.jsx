@@ -1,14 +1,17 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import './Products.css';
-import { Spinner } from '../../components/Spinner/Spinner'
-import Card from '../../components/ProductCard/ProductCard'
+import { Spinner } from '../../components/Spinner/Spinner';
+import Card from '../../components/ProductCard/ProductCard';
 import { CartContext } from '../../contexts/CartContext';
-import Filter from '../../components/ProductFilter//Filter/Filter'
-import { modelData, colorData, brandData, categoryMap, categoryTitle } from '../../assets//assets'
+
+import Filter from '../../components/ProductFilter//Filter/Filter';
+import ReactPaginate from 'react-paginate';
+import { modelData, colorData, brandData, categoryMap, categoryTitle } from '../../assets//assets';
 
 const Products = () => {
   const { addToCart } = useContext(CartContext);
+
   const [products, setProducts] = useState([]);
   const [isPending, setPending] = useState(false);
   const { category } = useParams();
@@ -18,11 +21,23 @@ const Products = () => {
   const [sortOrder, setSortOrder] = useState('default');
   const [resetFiltersTrigger, setResetFiltersTrigger] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
-
-
+  const [currentPage, setCurrentPage] = useState(0);
   const apiCategory = categoryMap[category] || '';
   const title = categoryTitle[category] || '';
+  const productsPerPage = 24;
+  const offset = currentPage * productsPerPage;
+  const currentProducts = filteredProducts.slice(offset, offset + productsPerPage);
+  const pageCount = Math.ceil(filteredProducts.length / productsPerPage);
 
+
+
+
+
+
+  const handlePageClick = ({ selected }) => {
+    setCurrentPage(selected);
+    window.scrollTo(0, 0);
+  };
 
   // Nullázza a checkboxok állapotát, amikor a kategória változik
   useEffect(() => {
@@ -54,13 +69,12 @@ const Products = () => {
 
 
 
-
   useEffect(() => {
+    let filtered;
     // Alap szűrés az akciók vagy alkategória alapján a navbar gombjaira kattintva
-    let filtered = category === 'akciók'
+    filtered = category === 'akciók'
       ? products.filter(product => product.OnSale === true)
       : products.filter(product => product.SubCategoryName.toLowerCase() === apiCategory.toLowerCase());
-
     // Szűrés a kiválasztott szűrők alapján a checkbox változásai alapján
     if (selectedFilters.length > 0) {
       filtered = filtered.filter(product =>
@@ -87,6 +101,7 @@ const Products = () => {
 
 
     setFilteredProducts(filtered);
+    setCurrentPage(0);  // szűrésnél reseteljük a lapozót is!
   }, [products, selectedFilters, category, apiCategory, sortOrder]);
 
 
@@ -136,6 +151,7 @@ const Products = () => {
   const handleFilterChange = (checked, filterCategory, value) => {
     if (checked) {
       setSelectedFilters(prev => [...prev, { filterCategory, value }]);
+      window.scrollTo(0, 0);
     } else {
       setSelectedFilters(prev => prev.filter(filter => !(filter.filterCategory === filterCategory && filter.value === value)));
     }
@@ -145,7 +161,7 @@ const Products = () => {
   // Checkbox változásainál kapott adatok
   const onFilterChange = (checked, filterCategory, value) => {
     handleFilterChange(checked, filterCategory, value);
-  
+
   };
 
 
@@ -164,8 +180,7 @@ const Products = () => {
     <div className='products'>
       <h2 className='title'>{title}</h2>
       <section className="product-container w1400">
-
-        <Filter className="filter-container" isOpen={isOpen} handleSortDisplay={handleSortDisplay}  filters={filters} onFilterChange={onFilterChange} resetFiltersTrigger={resetFiltersTrigger} />
+        <Filter className="filter-container" isOpen={isOpen} handleSortDisplay={handleSortDisplay} filters={filters} onFilterChange={onFilterChange} resetFiltersTrigger={resetFiltersTrigger} />
 
         <div className="product-container-wrapper">
 
@@ -183,19 +198,28 @@ const Products = () => {
             </div>
           </div>
 
-
-          <div className="product-card-container">
-            {(isPending) ? <Spinner /> : filteredProducts.slice(0, 24).map(product => (
-              // Termék kártyák 
-              // TODO egy oldalon 24 tewrméket jelenítünk meg. a lapozást még meg kell oldani!!
-              <Card
-                key={product.ProductID}
-                product={product}
-                onAddToCart={() => addToCart(product,1)}
-              />
-            ))
-            }
-          </div>
+          {isPending ? <Spinner /> :
+            filteredProducts.length === 0 ? <p className='no-product'>Nincs ilyen akciós termékünk!</p> :
+              <div className="product-card-container">
+                {currentProducts.map(product => (
+                  <Card
+                    key={product.ProductID}
+                    product={product}
+                    onAddToCart={() => addToCart(product, 1)}
+                  />
+                ))
+                }
+              </div>
+          }
+          <ReactPaginate
+            previousLabel={'Előző'}
+            nextLabel={'Következő'}
+            pageCount={pageCount}
+            onPageChange={handlePageClick}
+            containerClassName={'pagination'}
+            activeClassName={'active'}
+            forcePage={currentPage}
+          />
         </div>
       </section>
     </div>

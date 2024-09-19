@@ -1,0 +1,29 @@
+.cookie-notification {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cookie-notification p {
+    margin: 0;
+    font-size: 14px;
+  }
+  .cookie-btn {
+    width: fit-content;
+    margin:1rem auto 0;
+    cursor: pointer;
+    border: 2px solid var(--main-color);
+
+  }
+  .cookie-btn:hover {
+    color: var(--white);
+    border: 2px solid var(--white);
+  }

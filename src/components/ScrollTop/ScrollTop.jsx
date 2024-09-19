@@ -2,18 +2,17 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 export default function ScrollTop() {
-  const { pathname } = useLocation();
-
+  const location = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname])
+    // A setTimeout biztosítja, hogy az oldal tartalma már renderelődött legyen
+    const timer = setTimeout(() => {
+      window.scrollTo(0, 0); 
+    }, 0);
+    
+    // Törölni a timer-t ha a komponens eltűnik
+    return () => clearTimeout(timer);
+  }, [location.pathname, location.search, location.hash]);
 
-  // nem térünk vissza DOM elemmel ezért van itt null
-  return (
-    null
-  )
+  return null;
 }
-
-
-

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../../contexts/CartContext';
 
 
@@ -119,10 +119,10 @@ const Checkout = ({ cartItems, totalPrice, shippingCost }) => {
         }
     };
 
-   
+
     const handleBackClick = () => {
         navigate(`/rendelés/kosár`);
-      }
+    }
 
     if (!profile) {
         return (
@@ -137,84 +137,89 @@ const Checkout = ({ cartItems, totalPrice, shippingCost }) => {
         <div className="main-container w1400">
             <div className="profile-container">
                 <h2>Megrendelés</h2>
-                <form className='form' onSubmit={handleSubmit}>
+                <div className="cart-page-content">
+                    <form className='form'>
 
-                    <label htmlFor="name">Név</label>
-                    <input
-                        type="text"
-                        id="name"
-                        value={customerName}
-                        onChange={(e) => setCustomerName(e.target.value)}
-                        placeholder='Név'
-                    />
+                        <label htmlFor="name">Név</label>
+                        <input
+                            type="text"
+                            id="name"
+                            value={customerName}
+                            onChange={(e) => setCustomerName(e.target.value)}
+                            placeholder='Név'
+                        />
 
-                    <label htmlFor="phone">Telefonszám</label>
-                    <input
-                        type="text"
-                        id="phone"
-                        value={phoneNumber}
-                        onChange={(e) => setPhoneNumber(e.target.value)}
-                        placeholder='+3620/123-4567'
-                    />
-
-
-                    <label htmlFor="postcode">Irányítószám</label>
-                    <input
-                        type="text"
-                        id="postcode"
-                        value={postcode}
-                        placeholder="Irányítószám"
-                        onChange={(e) => setPostcode(e.target.value)}
-                    />
+                        <label htmlFor="phone">Telefonszám</label>
+                        <input
+                            type="text"
+                            id="phone"
+                            value={phoneNumber}
+                            onChange={(e) => setPhoneNumber(e.target.value)}
+                            placeholder='+3620/123-4567'
+                        />
 
 
-                    <label htmlFor="city">Város</label>
-                    <input
-                        type="text"
-                        id="city"
-                        value={city}
-                        placeholder="Város"
-                        onChange={(e) => setCity(e.target.value)}
-                    />
+                        <label htmlFor="postcode">Irányítószám</label>
+                        <input
+                            type="text"
+                            id="postcode"
+                            value={postcode}
+                            placeholder="Irányítószám"
+                            onChange={(e) => setPostcode(e.target.value)}
+                        />
 
 
-                    <label htmlFor="address">Cím</label>
-                    <input
-                        type="text"
-                        id="address"
-                        value={address}
-                        placeholder="Cím"
-                        onChange={(e) => setAddress(e.target.value)}
-                    />
+                        <label htmlFor="city">Város</label>
+                        <input
+                            type="text"
+                            id="city"
+                            value={city}
+                            placeholder="Város"
+                            onChange={(e) => setCity(e.target.value)}
+                        />
 
 
-                    <label htmlFor="comment">Megjegyzés</label>
-                    <textarea
-                        id="comment"
-                        value={comment}
-                        onChange={(e) => setComment(e.target.value)}
-                        placeholder='Megyjegyzés...'
-                    />
+                        <label htmlFor="address">Cím</label>
+                        <input
+                            type="text"
+                            id="address"
+                            value={address}
+                            placeholder="Cím"
+                            onChange={(e) => setAddress(e.target.value)}
+                        />
 
+
+                        <label htmlFor="comment">Megjegyzés</label>
+                        <textarea
+                            id="comment"
+                            value={comment}
+                            onChange={(e) => setComment(e.target.value)}
+                            placeholder='Megyjegyzés...'
+                        />
+
+                    </form>
                     <div className="cart-summary">
                         <h3>Termékek:</h3>
                         <ul>
                             {cartItems.map((item) => (
                                 <li key={item.ProductID}>
-                                    {item.Name} - {item.quantity} x {item.Price} Ft = {item.Price * item.quantity} Ft
+                                    <strong>{item.BrandName} - {item.Name}</strong>
+                                    <p>- {item.quantity} x {item.Price} Ft = {item.Price * item.quantity} Ft</p>
                                 </li>
                             ))}
                         </ul>
-                        <p><strong>Szállítási költség: </strong>{shippingCost} Ft</p>
-                        <p><strong>Végösszeg:</strong> {(totalPrice + shippingCost).toFixed(2)} Ft</p>
+                        <div className="amount-container">
+                            <p><strong>Szállítási költség: </strong>{shippingCost} Ft</p>
+                            <p className='total-amount'><strong>Végösszeg:</strong> {(totalPrice + shippingCost).toFixed(2)} Ft</p>
+                        </div>
                     </div>
-                    {errorMessage && <p className="error-message">{errorMessage}</p>}
-                    {successMessage && <p className="success-message">{successMessage}</p>}
-                    <div className="btn-container">
-                        <button className="btn red-btn" onClick={handleBackClick}>Kosár</button>
-                        <button className="btn red-btn" type="submit">Rendelés leadása</button>
-                    </div>
-                </form>
+                </div>
+                {errorMessage && <p className="error-message">{errorMessage}</p>}
+                {successMessage && <p className="success-message">{successMessage}</p>}
+                <div className="btn-container">
+                    <button className="btn red-btn" onClick={handleBackClick}>Kosár</button>
+                    <button className="btn red-btn" onClick={handleSubmit}>Rendelés leadása</button>
+                </div>
             </div>
         </div>
     );

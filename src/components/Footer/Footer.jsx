@@ -23,7 +23,7 @@ const Footer = () => {
             <ul className='address-details'>
               <li><FaLocationDot /> 1035 Budapest Bárhol utca 6.</li>
               <li><FaPhone /> 06 20 123 4567</li>
-              <li><FaEnvelope /> egs@gmail.com</li>
+              <li><FaEnvelope /> info@egs.hu</li>
               <ul className='social-icons'>
                 <a href="https://facebook.com" target='_blank' rel='noreferrer'><FaFacebook /></a>
                 <a href="https://facebook.com" target='_blank' rel='noreferrer'><FaInstagramSquare /></a>

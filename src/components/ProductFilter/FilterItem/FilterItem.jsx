@@ -5,6 +5,7 @@ const FilterItem = ({ filterCategory, title, options, selectedCheckboxes, onFilt
   const handleChange = (e) => {
     const isChecked = e.target.checked;
     onFilterChange(filterCategory, e.target.value, isChecked);
+    
   };
 
   return (

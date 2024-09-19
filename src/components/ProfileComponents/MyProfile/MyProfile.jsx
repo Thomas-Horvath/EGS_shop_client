@@ -5,6 +5,10 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import './MyProfile.css'
 
 const MyProfile = ({ profile }) => {
+  
+
+
+
     return (
         <div className="main-container">
             <h1>Fiókom</h1>
@@ -33,6 +37,11 @@ const MyProfile = ({ profile }) => {
                 </Link>
 
             </div>
+
+           
+
+
+     
         </div>
     )
 }

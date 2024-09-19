@@ -6,13 +6,13 @@ import { useNavigate } from 'react-router-dom';
 
 const LoginAlert = ({ message }) => {
     const navigate = useNavigate();
-  
+
 
     const handleContact = () => {
         navigate('/kapcsolat')
     }
     const handleUnderstand = () => {
-      navigate('/')
+        navigate('/')
     }
 
 
@@ -27,7 +27,7 @@ const LoginAlert = ({ message }) => {
                     <button className="confirm-button" onClick={handleContact}>Kapcsolat</button>
                 </div>
             </div>
-        </div >
+        </div>
     );
 };
 

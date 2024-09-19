@@ -1,9 +1,12 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { CartContext } from '../../contexts/CartContext';
+import { categoryMap } from '../../assets/assets';
+
 import './ProductDetail.css';
 
 const ProductDetails = () => {
+    
     const { id } = useParams(); // Lekéri az URL-ből a termék azonosítóját
     const [product, setProduct] = useState(null); // Állapot a termék adatok tárolására
     const [isLoading, setIsLoading] = useState(true); // Betöltési állapot kezelése
@@ -11,6 +14,9 @@ const ProductDetails = () => {
     const { addToCart  } = useContext(CartContext);
     const [quantity, setQuantity] = useState(1);
     const navigate = useNavigate(); // Navigáció
+ 
+    
+
 
     useEffect(() => {
         // Fetch hívás a termék adatok lekérésére
@@ -52,8 +58,18 @@ const ProductDetails = () => {
   
 
     const handleGoBack = () => {
-        navigate(-1); // Visszaugrik az előző oldalra
+        // SubCategoryName ellenőrzése a categoryMap-ben
+        const categoryKey = Object.keys(categoryMap).find(key => categoryMap[key].toLowerCase() === product.SubCategoryName.toLowerCase());
+    
+        // Ha találunk megfelelő kulcsot, navigáljunk arra a kategóriára
+        if (categoryKey) {
+            navigate(`/termékek/${categoryKey}`);
+        } else {
+            // Ha nincs megfelelő kulcs, visszanavigálunk egy általános kategóriához vagy főoldalra
+            navigate(`/terméke`);
+        }
     };
+    
 
     const incrementQuantity = () => {
         setQuantity(prevQuantity => {

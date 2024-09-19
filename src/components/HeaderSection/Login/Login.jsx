@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { assets } from '../../../assets/assets';
 import { FaUserAlt, FaShoppingCart, FaSearch, FaBars } from "react-icons/fa";
 import { IoTrashSharp } from "react-icons/io5";
 import { AuthContext } from '../../../contexts/AuthContext';
 import { CartContext } from '../../../contexts/CartContext';
+import { SearchContext } from '../../../contexts/SearchContext';
 
 
 
@@ -14,20 +15,21 @@ const Login = ({ toggleMenu }) => {
   const [searchQuery, setSearchQuery] = useState(''); // Állapot a keresőszöveghez
   const [sublistClosed, setSublistClosed] = useState(false);
   const [isAlertClose, setIsAlertClose] = useState(false);
-  const [filteredProducts, setFilteredProducts] = useState([]);
-  const [products, setProducts] = useState([]);
+  // const [products, setProducts] = useState([]);
+  // const navigate = useNavigate();
+  const { setSearch } = useContext(SearchContext);
 
   const [isScrolled, setIsScrolled] = useState(false);   // a görgetés állapota
 
   const { isLoggedIn, logout } = useContext(AuthContext);
   const { cartItems, removeFromCart, handleCheckoutClick } = useContext(CartContext);
 
+  const navigate = useNavigate();
 
 
   // Képernyőméret figyelése
   useEffect(() => {
     const mediaQuery = window.matchMedia('(min-width: 992px)');
-
     // Kezdeti állapot beállítása és minden méretváltásnál
     const handleResize = () => {
       if (mediaQuery.matches) {
@@ -49,21 +51,21 @@ const Login = ({ toggleMenu }) => {
   }, []);
 
   // Termékek lekérése az API-ból
-  useEffect(() => {
-    const fetchProduct = () => {
-      fetch('https://thomasapi.eu/api/products', {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json; charset=UTF-8",
-        },
-        mode: "cors"
-      })
-        .then(res => res.json())
-        .then(data => setProducts(data));
-    };
+  // useEffect(() => {
+  //   const fetchProduct = () => {
+  //     fetch('https://thomasapi.eu/api/products', {
+  //       method: "GET",
+  //       headers: {
+  //         "Content-Type": "application/json; charset=UTF-8",
+  //       },
+  //       mode: "cors"
+  //     })
+  //       .then(res => res.json())
+  //       .then(data => setProducts(data));
+  //   };
 
-    fetchProduct();
-  }, []);
+  //   fetchProduct();
+  // }, []);
 
 
   const handleSearchClick = () => {
@@ -77,22 +79,12 @@ const Login = ({ toggleMenu }) => {
   const handleSearchSubmit = (e) => {
     if (e) e.preventDefault();
     if (searchQuery.trim().length >= 3) {
-      const filtered = products.filter(product => {
-        const query = searchQuery.toLowerCase();
-        return (
-          product.Name.toLowerCase().includes(query) ||
-          product.BrandName.toLowerCase().includes(query) ||
-          product.Color?.toLowerCase().includes(query) ||
-          product.CategoryName?.toLowerCase().includes(query) ||
-          product.SubCategoryName?.toLowerCase().includes(query)
-        );
-      });
 
-      setFilteredProducts(filtered);
-      console.log(filtered)
+      setSearch(searchQuery.toLocaleLowerCase().trim());
+      navigate(`/termékek/keresés`);
     }
 
-// TODO a keresett termékek megjelenítése
+
 
     if (window.innerWidth < 992) {
       setSearchVisible(false); // 992px alatt eltűnik submit után

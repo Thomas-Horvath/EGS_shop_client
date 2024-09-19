@@ -1,4 +1,48 @@
+
 .info {
-    min-height: 100vh;
-    background: var(--white);
-}
+    font-family:'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding: 20px;
+  }
+  
+  .info h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--bg-grey);
+  }
+  
+  .info h2 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    color: var(--main-color); /* Világosabb kék a másodlagos címekhez */
+  }
+  
+  .info p {
+    margin: 1rem 0;
+  }
+  
+  .info ul {
+    list-style-type: disc;
+    margin: 1rem 0;
+    padding-left: 2rem;
+  }
+  
+  .info li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .info a {
+    color: #1e90ff;
+    text-decoration: none;
+  }
+  
+  .info a:hover {
+    text-decoration: underline;
+  }
+  
+  .info .info-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  

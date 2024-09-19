@@ -57,7 +57,7 @@ const Cart = () => {
           {cartItems.length === 0 ? (
             <p>A kosár üres.</p>
           ) : (
-            <div  >
+            <div  className='cart-page'>
               <div className="table-container">
                 <table className="cart-table">
                   <thead>
@@ -115,9 +115,9 @@ const Cart = () => {
               </div>
               <div className="cart-buttons">
                 <Link to="/">
-                  <button className="btn main-btn continue-shopping-btn">Vásárlás folytatása</button>
+                  <button className="btn red-btn continue-shopping-btn">Vásárlás folytatása</button>
                 </Link>
-                <button className="btn main-btn checkout-btn" onClick={handleCheckoutClick}>Pénztár</button>
+                <button className="btn red-btn checkout-btn" onClick={handleCheckoutClick}>Pénztár</button>
               </div>
             </div>
           )}

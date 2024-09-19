@@ -55,14 +55,14 @@ const LoginForm = ({ showPassword, setShowPassword, redirectPath, title }) => {
       }
 
       const data = await response.json();
-      console.log(data);
+     
 
       // Ha van token a válaszban
       if (data.token) {
         // Token dekódolása
         const decodedToken = jwtDecode(data.token);
 
-        console.log(decodedToken);
+     
         // Ellenőrizzük az activeFlag értékét
         if (!decodedToken.ActiveFlag) {
           setMessageAlert('A fiókja inaktív. Kérem lépjen velünk kapcsolatba!');

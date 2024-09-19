@@ -118,7 +118,7 @@ export const footerInfoLinks = [
     {
         title: 'ÁSZF',
         className: 'footer-info-link',
-        path: '/álltalános-szerződési-feltételek'
+        path: '/általános-szerződési-feltételek'
     },
     {
         title: 'Adatvédelem',
@@ -176,17 +176,17 @@ export const colorData = {
     'Jobbkezes': ["Piros", "Fekete", "Fehér", "Zöld", "Lila", "Szürke", "Sunburst", "Kék", "Natúr Fa", "Narancssárga", "Barna", "Natúr fa", "Feket", "Sárga", "Rózsaszín"],
     'Balkezes': ["Fekete", "Sunburst", "Narancssárga", "Kék", "Fehér", "Natúr Fa"],
     'Héthúros': ["Fekete", "Piros", "Zöld", "Barna"],
-    'Fej': ["Fekete", "Piros", "Fehér"],
+    'Fej': ["Fekete", "Piros", "Fehér", "Narancssárga"],
     'Gitár kábel': ["Fekete", "Barna", "Feket", "Kék", "Zöld", "Piros", "Sárga", "Rózsaszín", "Narancssárga", "Lila"],
     'Pedál': ["Narancssárga", "Kék", "Sárga", "Fekete", "Szürke", "Zöld", "Fehér", "Lila", "Barna"],
     'Láda': ["Fekete", "Narancssárga"],
     'Puha tok': ["Fekete", "Barna", "Zöld", "Kék"],
-    'Combó': ["Narancssárga", "Fekete"],
+    'Combó': ["Narancssárga", "Fekete", "Fehér"],
     'Heveder': ["Fehér", "Fekete", "Sárga", "Lila", "Bordó", "Szürke", "Zöld", "Szivárvány", "Barna", "Kék", "Piros", "Mintás", "Rózsaszín", "Natúr "],
     'Húr': [""],
     'Kemény tok': ["Fekete"],
     'Mulltieffekt': ["Fekete"],
-    'Pengető': ["Zöld", "Sárga", "Kék", "Lila", "Fekete", "Fehér", "Barna", "Szürke", "Feket", "Piros", "Narancssárga", "Piros "],
+    'Pengető': ["Zöld", "Sárga", "Kék", "Lila", "Fekete", "Fehér", "Barna", "Szürke",  "Piros", "Narancssárga"],
     'akciók': ["Piros", "Fekete", "Fehér", "Zöld", "Lila", "Szürke", "Sunburst", "Kék", "Natúr Fa", "Narancssárga", "Barna", "Sárga", "Rózsaszín", "Bordó", "Szivárvány", "Mintás"] // Az 'akciók' kulcsot meghagytam az eredeti struktúrában, ahogy kérted
 };
 
@@ -201,7 +201,7 @@ export const brandData = {
     'Pedál': ["Boss", "Fender", "Ibanez", "Dunlop", "Line6"],
     'Láda': ["Marshall", "Laney", "Orange", "ENGL"],
     'Puha tok': ["Cort", "Fender", "Ibanez"],
-    'Combó': ["Orange", "Laney", "MesaBoogei", "Line6"],
+    'Combó': ["Orange", "Laney", "Mesa Boogie", "Line6"],
     'Heveder': ["Ernie Ball", "Fender", "Jackson", "Ibanez"],
     'Húr': ["Elixir", "D'Addario", "Ernie Ball"],
     'Kemény tok': ["Ibanez", "Fender", "Jackson", "Cort"],
@@ -209,7 +209,7 @@ export const brandData = {
     'Pengető': ["Dunlop"],
     'akciók': [
         "Cort", "Fender", "Gibson", "Ibanez", "Epiphone", "Squier", "Jackson",
-        "Marshall", "ENGL", "Orange", "Laney", "MesaBoogei", "Line6", "Boss",
+        "Marshall", "ENGL", "Orange", "Laney", "Mesa Boogie", "Line6", "Boss",
         "Dunlop", "Ernie Ball", "Elixir", "D'Addario"
     ]
 };
