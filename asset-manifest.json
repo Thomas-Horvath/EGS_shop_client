@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/egs_shop_react/static/css/main.1438dfe8.css",
-    "main.js": "/egs_shop_react/static/js/main.a2d6210a.js",
+    "main.js": "/egs_shop_react/static/js/main.042385a6.js",
     "static/media/red_guitar.jpg": "/egs_shop_react/static/media/red_guitar.df6d25fff90eae59f42f.jpg",
     "static/media/fender_banner.png": "/egs_shop_react/static/media/fender_banner.3642f60485cf2a25f0d8.png",
     "static/media/marshall_2.png": "/egs_shop_react/static/media/marshall_2.bcb9b510b9c2e191bc2c.png",
@@ -18,10 +18,10 @@
     "index.html": "/egs_shop_react/index.html",
     "static/media/percenticon.svg": "/egs_shop_react/static/media/percenticon.a11bcd08387bb8b9a372fa471fc7748e.svg",
     "main.1438dfe8.css.map": "/egs_shop_react/static/css/main.1438dfe8.css.map",
-    "main.a2d6210a.js.map": "/egs_shop_react/static/js/main.a2d6210a.js.map"
+    "main.042385a6.js.map": "/egs_shop_react/static/js/main.042385a6.js.map"
   },
   "entrypoints": [
     "static/css/main.1438dfe8.css",
-    "static/js/main.a2d6210a.js"
+    "static/js/main.042385a6.js"
   ]
 }
