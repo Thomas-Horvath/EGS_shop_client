@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/egs_shop_react/static/css/main.5f336d1a.css",
-    "main.js": "/egs_shop_react/static/js/main.d2dd8f8f.js",
+    "main.css": "/egs_shop_react/static/css/main.1438dfe8.css",
+    "main.js": "/egs_shop_react/static/js/main.a2d6210a.js",
     "static/media/red_guitar.jpg": "/egs_shop_react/static/media/red_guitar.df6d25fff90eae59f42f.jpg",
     "static/media/fender_banner.png": "/egs_shop_react/static/media/fender_banner.3642f60485cf2a25f0d8.png",
     "static/media/marshall_2.png": "/egs_shop_react/static/media/marshall_2.bcb9b510b9c2e191bc2c.png",
@@ -17,11 +17,11 @@
     "static/media/newsletter-icon.jpg": "/egs_shop_react/static/media/newsletter-icon.f517241615e69fe7cf74.jpg",
     "index.html": "/egs_shop_react/index.html",
     "static/media/percenticon.svg": "/egs_shop_react/static/media/percenticon.a11bcd08387bb8b9a372fa471fc7748e.svg",
-    "main.5f336d1a.css.map": "/egs_shop_react/static/css/main.5f336d1a.css.map",
-    "main.d2dd8f8f.js.map": "/egs_shop_react/static/js/main.d2dd8f8f.js.map"
+    "main.1438dfe8.css.map": "/egs_shop_react/static/css/main.1438dfe8.css.map",
+    "main.a2d6210a.js.map": "/egs_shop_react/static/js/main.a2d6210a.js.map"
   },
   "entrypoints": [
-    "static/css/main.5f336d1a.css",
-    "static/js/main.d2dd8f8f.js"
+    "static/css/main.1438dfe8.css",
+    "static/js/main.a2d6210a.js"
   ]
 }
