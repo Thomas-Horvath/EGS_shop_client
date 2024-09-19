@@ -18,7 +18,7 @@
   }
   .cookie-btn {
     width: fit-content;
-    margin:1rem auto 0;
+    margin:1rem  0;
     cursor: pointer;
     border: 2px solid var(--main-color);
 
@@ -26,4 +26,11 @@
   .cookie-btn:hover {
     color: var(--white);
     border: 2px solid var(--white);
+  }
+
+  .cookie-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
   }

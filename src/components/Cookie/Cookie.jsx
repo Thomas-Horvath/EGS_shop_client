@@ -19,13 +19,13 @@ const Cookie = () => {
   }, []);
 
   const handleAcceptCookies = () => {
-    sessionStorage.setItem('cookiesAccepted', 'true'); 
+    sessionStorage.setItem('cookiesAccepted', 'true');
     sessionStorage.removeItem('cookiesDenied');
     setShow(false);
   };
 
   const handleDenyCookies = () => {
-    sessionStorage.setItem('cookiesDenied', 'true'); 
+    sessionStorage.setItem('cookiesDenied', 'true');
     sessionStorage.removeItem('cookiesAccepted');
     setShow(false);
   };
@@ -36,8 +36,10 @@ const Cookie = () => {
         <p>
           Az oldal cookie-kat használ a felhasználói élmény javítása érdekében. Kérjük, fogadja el a cookie-k használatát.
         </p>
-        <button className='red-btn cookie-btn' onClick={handleDenyCookies}>Megtagadom</button>
-        <button className='red-btn cookie-btn' onClick={handleAcceptCookies}>Elfogadom</button>
+        <div className="cookie-btn-container">
+          <button className='red-btn cookie-btn' onClick={handleDenyCookies}>Megtagadom</button>
+          <button className='red-btn cookie-btn' onClick={handleAcceptCookies}>Elfogadom</button>
+        </div>
       </div>
     )
   );
