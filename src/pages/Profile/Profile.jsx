@@ -74,7 +74,7 @@ const Profile = () => {
   } else if (category === "címeim") {
     content = <UpdateAdresses profile={profile} onUpdate={handleProfileUpdate} handleBackClick={handleBackClick}/>
   } else if (category === "szerkesztés") {
-    content =  <UpdateOwnDatas profile={profile}  handleBackClick={handleBackClick}/>
+    content =  <UpdateOwnDatas profile={profile}  handleBackClick={handleBackClick} fetchProfile={fetchProfile}/>
   } else if (category === "jelszóváltoztatás") {
     content = <ChangePassword username={profile.UserName} email={profile.EmailAddress} handleBackClick={handleBackClick} />
   } else if (category === "rendelésem" && orderId ) {

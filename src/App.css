@@ -1,5 +1,4 @@
 .app {
     min-height: 100vh; /* Biztosítja, hogy az app div legalább akkora magasságú, mint a viewport */
     position: relative;
-
   }

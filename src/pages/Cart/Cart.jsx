@@ -55,7 +55,7 @@ const Cart = () => {
         <div className="main-container">
           <h2>Kosár</h2>
           {cartItems.length === 0 ? (
-            <p>A kosár üres.</p>
+            <p className='empty-cart-text'>A kosár jelenleg üres.</p>
           ) : (
             <div  className='cart-page'>
               <div className="table-container">

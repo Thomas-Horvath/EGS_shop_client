@@ -7,14 +7,13 @@ import { CartContext } from '../../contexts/CartContext';
 const Checkout = ({ cartItems, totalPrice, shippingCost }) => {
     const [profile, setProfile] = useState(null);
     const [customerName, setCustomerName] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
     const [postcode, setPostcode] = useState('');
     const [city, setCity] = useState('');
     const [address, setAddress] = useState('');
     const [comment, setComment] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
-
+    const [formErrors, setFormErrors] = useState({});
 
     const { clearCart } = useContext(CartContext); // Kosár ürítése
     const navigate = useNavigate(); // Navigáláshoz szükséges hook
@@ -36,7 +35,7 @@ const Checkout = ({ cartItems, totalPrice, shippingCost }) => {
                 if (response.ok) {
                     setProfile(data);
                     setCustomerName(data.LastName + ' ' + data.FirstName || '');
-                    setPhoneNumber(data.PhoneNumber || '');
+
 
                     // Címadatok beállítása: először a Shipping adatok, ha nincs, akkor a normál cím adatok
                     setPostcode(data.ShippingPostcode || data.Postcode || '');
@@ -54,8 +53,26 @@ const Checkout = ({ cartItems, totalPrice, shippingCost }) => {
         fetchProfile();
     }, [token]);
 
+    const validateForm = () => {
+        let errors = {};
+        if (!customerName) errors.customerName = 'A név kitöltése kötelező.';
+        if (!postcode) errors.postcode = 'Az irányítószám kitöltése kötelező.';
+        if (!city) errors.city = 'A város kitöltése kötelező.';
+        if (!address) errors.address = 'A cím kitöltése kötelező.';
+        return errors;
+    };
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const errors = validateForm();
+        setFormErrors({});
+
+        if (Object.keys(errors).length > 0) {
+            setFormErrors(errors);
+            return;
+        }
 
         // Kosár ellenőrzése
         if (cartItems.length === 0) {
@@ -67,6 +84,9 @@ const Checkout = ({ cartItems, totalPrice, shippingCost }) => {
             setErrorMessage('Nem sikerült betölteni a profil adatokat, így a rendelést nem lehet leadni.');
             return;
         }
+
+
+
 
         const orderItems = cartItems.map(item => ({
             ProductID: item.ProductID,
@@ -148,15 +168,8 @@ const Checkout = ({ cartItems, totalPrice, shippingCost }) => {
                             onChange={(e) => setCustomerName(e.target.value)}
                             placeholder='Név'
                         />
+                        {formErrors.customerName && <p className="error-message">{formErrors.customerName}</p>}
 
-                        <label htmlFor="phone">Telefonszám</label>
-                        <input
-                            type="text"
-                            id="phone"
-                            value={phoneNumber}
-                            onChange={(e) => setPhoneNumber(e.target.value)}
-                            placeholder='+3620/123-4567'
-                        />
 
 
                         <label htmlFor="postcode">Irányítószám</label>
@@ -167,7 +180,7 @@ const Checkout = ({ cartItems, totalPrice, shippingCost }) => {
                             placeholder="Irányítószám"
                             onChange={(e) => setPostcode(e.target.value)}
                         />
-
+                        {formErrors.postcode && <p className="error-message">{formErrors.postcode}</p>}
 
                         <label htmlFor="city">Város</label>
                         <input
@@ -177,7 +190,7 @@ const Checkout = ({ cartItems, totalPrice, shippingCost }) => {
                             placeholder="Város"
                             onChange={(e) => setCity(e.target.value)}
                         />
-
+                        {formErrors.city && <p className="error-message">{formErrors.city}</p>}
 
                         <label htmlFor="address">Cím</label>
                         <input
@@ -187,7 +200,7 @@ const Checkout = ({ cartItems, totalPrice, shippingCost }) => {
                             placeholder="Cím"
                             onChange={(e) => setAddress(e.target.value)}
                         />
-
+                        {formErrors.address && <p className="error-message">{formErrors.address}</p>}
 
                         <label htmlFor="comment">Megjegyzés</label>
                         <textarea

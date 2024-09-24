@@ -62,7 +62,7 @@ const Info = () => {
         <p>Ha bármilyen kérdése van, vagy segítségre van szüksége, kérjük, lépjen kapcsolatba ügyfélszolgálatunkkal. Elérhetőségeink:</p>
         <ul>
           <li><strong>Email:</strong> <a href="/">info@egs.hu</a></li>
-          <li><strong>Telefon:</strong> [Telefonszám]</li>
+          <li><strong>Telefon:</strong> 06 20 123 4567</li>
           <li><strong>Ügyfélszolgálat:</strong> hétfőtől péntekig 9:00 és 17:00 között</li>
         </ul>
       

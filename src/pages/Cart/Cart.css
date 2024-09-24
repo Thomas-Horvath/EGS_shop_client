@@ -1,5 +1,5 @@
 .cart {
-    /* min-height: 100vh; */
+    min-height: 30vh;
     background: var(--white);
 }
 
@@ -8,6 +8,11 @@
     border-collapse: collapse;
     margin-top: 20px;
    
+}
+.empty-cart-text {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.3rem;
 }
 
 .cart-table th,

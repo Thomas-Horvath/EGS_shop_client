@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { CartContext } from '../../contexts/CartContext';
-import { categoryMap } from '../../assets/assets';
+
 
 import './ProductDetail.css';
 
@@ -57,19 +57,11 @@ const ProductDetails = () => {
 
   
 
+ 
+    
     const handleGoBack = () => {
-        // SubCategoryName ellenőrzése a categoryMap-ben
-        const categoryKey = Object.keys(categoryMap).find(key => categoryMap[key].toLowerCase() === product.SubCategoryName.toLowerCase());
-    
-        // Ha találunk megfelelő kulcsot, navigáljunk arra a kategóriára
-        if (categoryKey) {
-            navigate(`/termékek/${categoryKey}`);
-        } else {
-            // Ha nincs megfelelő kulcs, visszanavigálunk egy általános kategóriához vagy főoldalra
-            navigate(`/terméke`);
-        }
+        navigate(-1)
     };
-    
 
     const incrementQuantity = () => {
         setQuantity(prevQuantity => {

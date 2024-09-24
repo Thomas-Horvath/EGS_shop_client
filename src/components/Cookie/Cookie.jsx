@@ -37,8 +37,8 @@ const Cookie = () => {
           Az oldal cookie-kat használ a felhasználói élmény javítása érdekében. Kérjük, fogadja el a cookie-k használatát.
         </p>
         <div className="cookie-btn-container">
-          <button className='red-btn cookie-btn' onClick={handleDenyCookies}>Megtagadom</button>
-          <button className='red-btn cookie-btn' onClick={handleAcceptCookies}>Elfogadom</button>
+          <button className='red-btn cookie-btn' onClick={handleDenyCookies}>Elutasít</button>
+          <button className='red-btn cookie-btn' onClick={handleAcceptCookies}>Elfogad</button>
         </div>
       </div>
     )

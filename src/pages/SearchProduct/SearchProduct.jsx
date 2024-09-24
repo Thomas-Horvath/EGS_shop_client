@@ -44,7 +44,9 @@ const SearchProduct = () => {
         if (search) {
             const results = products.filter(product =>
                 product.Name.toLowerCase().includes(search.toLowerCase()) ||
-                product.BrandName.toLowerCase().includes(search.toLowerCase())
+                product.BrandName.toLowerCase().includes(search.toLowerCase()) ||
+                product.SubCategoryName.toLowerCase().includes(search.toLowerCase()) ||  
+                product.CategoryName.toLowerCase().includes(search.toLowerCase()) 
             );
             setFilteredProducts(results);
         } else {

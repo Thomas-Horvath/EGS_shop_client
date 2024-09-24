@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate} from 'react-router-dom';
 import { IoEye, IoEyeOffSharp } from "react-icons/io5";
 import './ChangePassword.css';
 
@@ -9,6 +10,7 @@ const ChangePassword = ({ username, email, handleBackClick }) => {
     const [successMessage, setSuccessMessage] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [showNewPassword, setShowNewPassword] = useState(false);
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -50,6 +52,7 @@ const ChangePassword = ({ username, email, handleBackClick }) => {
                 if (updateResponse.ok) {
                     setSuccessMessage('A jelszó sikeresen megváltoztatva!');
                     setErrorMessage('');
+                    setTimeout(() => navigate(-1), 2000);
                 } else {
                     setErrorMessage('Hiba történt a jelszó megváltoztatása során.');
                     setSuccessMessage('');

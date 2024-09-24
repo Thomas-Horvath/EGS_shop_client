@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate} from 'react-router-dom';
 
 const UpdateAddresses = ({ profile, onUpdate , handleBackClick}) => {
     const [postcode, setPostcode] = useState(profile.Postcode || '');
@@ -9,11 +10,10 @@ const UpdateAddresses = ({ profile, onUpdate , handleBackClick}) => {
     const [shippingAddress, setShippingAddress] = useState(profile.ShippingAddress || '');
     const [errorMessage, setErrorMessage] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
-
+    const navigate = useNavigate();
     const token = sessionStorage.getItem('token'); // Token lekérése a sessionStorage-ből
 
     useEffect(() => {
-        // Update local state if profile prop changes
         setPostcode(profile.Postcode || '');
         setCity(profile.City || '');
         setAddress(profile.Address || '');
@@ -48,7 +48,9 @@ const UpdateAddresses = ({ profile, onUpdate , handleBackClick}) => {
             if (response.ok) {
                 setSuccessMessage('A címadatok sikeresen módosítva!');
                 setErrorMessage('');
-                onUpdate(); // Notify the Profile component to refresh data
+                onUpdate(); 
+                setTimeout(() => navigate(-1), 2000);
+              
             } else {
                 setErrorMessage('Hiba történt a címadatok módosítása során.');
                 setSuccessMessage('');

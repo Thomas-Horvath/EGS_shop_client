@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { parsePhoneNumber } from 'libphonenumber-js';
 import './UpdateOwnDatas.css'
 
-const UpdateOwnDatas = ({ profile, handleBackClick }) => {
+const UpdateOwnDatas = ({ profile, handleBackClick, fetchProfile }) => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         lastName: '',
         firstName: '',
@@ -38,14 +41,25 @@ const UpdateOwnDatas = ({ profile, handleBackClick }) => {
         if (!formData.lastName) errors.lastName = 'A vezetéknév kitöltése kötelező.';
         if (!formData.firstName) errors.firstName = 'A keresztnév kitöltése kötelező.';
         if (!formData.userName) errors.userName = 'A felhasználónév kitöltése kötelező.';
-        const phonePattern = /^(?:\+36|06)\d{2}-\d{3}-\d{4}$/;
-        if (formData.phoneNumber && !phonePattern.test(formData.phoneNumber)) {
-            errors.phoneNumber = 'A telefonszám formátuma helytelen.';
+        // Telefonszám ellenőrzése
+        if (!formData.phoneNumber.trim()) {
+            errors.phone = 'Kérlek, adj meg egy telefonszámot.';
+        } else {
+            try {
+                const phoneNum = parsePhoneNumber(formData.phoneNumber, 'HU');
+
+                if (!phoneNum.isValid()) {
+                    errors.phone = 'Kérlek, adj meg egy érvényes telefonszámot.';
+                }
+            } catch (error) {
+                errors.phone = 'Hiba történt a telefonszám ellenőrzésekor.';
+            }
         }
         return errors;
     };
 
     const handleSubmit = (e) => {
+       
         e.preventDefault();
         setMessage('');
         const validationErrors = validateForm();
@@ -59,9 +73,11 @@ const UpdateOwnDatas = ({ profile, handleBackClick }) => {
             LastName: formData.lastName,
             FirstName: formData.firstName,
             UserName: formData.userName,
-            PhoneNumber: formData.phoneNumber,
+            PhoneNumber: parsePhoneNumber(formData.phoneNumber, 'HU').formatInternational(),
             EmailAddress: formData.emailAddress,
         };
+        
+
         const token = sessionStorage.getItem('token');
         fetch('https://thomasapi.eu/api/profileupdate', {
             method: 'PUT',
@@ -81,7 +97,9 @@ const UpdateOwnDatas = ({ profile, handleBackClick }) => {
                 return res.json();
             })
             .then(data => {
-                setMessage('Sikeres frissítés!');
+                setMessage('Az adatok sikeresen frissültek!');
+                fetchProfile();
+                setTimeout(() => navigate(-1), 2000);
             })
             .catch(error => {
                 setMessage(error.message || 'Hiba történt a frissítés során.');
@@ -136,9 +154,9 @@ const UpdateOwnDatas = ({ profile, handleBackClick }) => {
                     value={formData.phoneNumber}
                     onChange={handleInputChange}
                     className={errors.phoneNumber ? 'input-error' : ''}
-                    placeholder='+3620/123-4567'
+                    placeholder='+36 20 123 4567'
                 />
-                {errors.phoneNumber && <p className="error-text">{errors.phoneNumber}</p>}
+                {errors.phone && <p className="error-text">{errors.phone}</p>}
 
                 <label htmlFor="email">Email cím:</label>
                 <input
@@ -151,6 +169,8 @@ const UpdateOwnDatas = ({ profile, handleBackClick }) => {
                 />
                 {errors.email && <p className="error-text">{errors.email}</p>}
 
+
+                {message && <p className={`message ${message === 'Az adatok sikeresen frissültek!' ? 'success-message' : 'error-message'}`}>{message}</p>}
                 <div className="btn-container">
                     <button className="btn back-btn red-btn" onClick={handleBackClick}>Vissza a Profilhoz</button>
                     <button type="submit" className="btn update-btn red-btn">Adatok frissítése</button>
@@ -159,10 +179,8 @@ const UpdateOwnDatas = ({ profile, handleBackClick }) => {
 
 
 
-
-                {message && <p className={`message ${message === 'Sikeres frissítés!' ? 'success' : 'error-message'}`}>{message}</p>}
-            </form >
-        </div >
+            </form>
+        </div>
     );
 };
 
