@@ -1,13 +1,27 @@
 import React from 'react';
 import './Footer.css';
-import { Link } from 'react-router-dom';
+import { Link , useNavigate } from 'react-router-dom';
 import InfoLink from '../InfoLink/InfoLink';
 import { footerInfoLinks, assets } from '../../assets/assets';
 import { FaFacebook, FaInstagramSquare, FaYoutube } from "react-icons/fa";
 import { FaLocationDot, FaPhone, FaEnvelope } from "react-icons/fa6";
 
 const Footer = () => {
+  const navigate = useNavigate();
 
+  // Függvény az átirányításhoz
+  const handleProfileLinkClick = (e, path) => {
+    e.preventDefault(); // Megakadályozzuk az alapértelmezett link viselkedést
+    const token = sessionStorage.getItem('token');
+
+    if (token) {
+      // Ha van token, navigáljunk a saját profil oldalra
+      navigate('/fiókom/saját-profil');
+    } else {
+      // Ha nincs token, navigáljunk a bejelentkezés oldalra
+      navigate(path);
+    }
+  };
 
 
   return (
@@ -80,8 +94,8 @@ const Footer = () => {
           <div className="profile-links grid-item">
             <h2>Fiókom</h2>
             <ul>
-              <Link to="/profil/bejelentkezés"><li>Bejelentkezés</li></Link>
-              <Link to="/profil/regisztráció"><li>Regisztráció</li></Link>
+              <Link to="/profil/bejelentkezés" onClick={(e) => handleProfileLinkClick(e, '/profil/bejelentkezés')}><li>Bejelentkezés</li></Link>
+              <Link to="/profil/regisztráció" onClick={(e) => handleProfileLinkClick(e, '/profil/regisztráció')}><li>Regisztráció</li></Link>
               <Link to="/profil/elfelejtett-jelszó"><li>Elfelejtett jelszó</li></Link>
               <Link to="/kapcsolat"><li>Kapcsolat</li></Link>
             </ul>
