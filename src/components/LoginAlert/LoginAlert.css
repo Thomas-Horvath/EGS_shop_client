@@ -8,9 +8,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 5;
+    z-index: 1000;
   }
  
+
   .confirm-dialog {
     background-color: white;
     padding: 2rem;
