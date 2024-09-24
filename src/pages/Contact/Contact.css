@@ -70,7 +70,7 @@
 outline: none;
 }
 .form-group textarea {
-    height: 100px;
+    min-height: 6rem;
     resize: vertical;
 }
 

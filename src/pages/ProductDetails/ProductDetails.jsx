@@ -119,8 +119,8 @@ const ProductDetails = () => {
                         {product.ChannelsNumber > 0 && <p><strong>Csatornák száma:</strong> {product.ChannelsNumber}</p>}
                         {product.SpeakersNumber > 0 && <p><strong>Hangszórók száma:</strong> {product.SpeakersNumber}</p>}
                         {product.Wattage > 0 && <p><strong>Teljesítmény:</strong> {product.Wattage} W</p>}
-                        {product.Width > 0 && <p><strong>Szélesség:</strong> {product.Width} cm</p>}
-                        {product.Length > 0 && <p><strong>Hosszúság:</strong> {product.Length} cm</p>}
+                        {product.Width > 0 && <p><strong>Szélesség:</strong> {product.Width} mm</p>}
+                        {product.Length > 0 && <p><strong>Hosszúság:</strong> {product.Length} mm</p>}
                         {product.Thickness > 0 && <p><strong>Vastagság:</strong> {product.Thickness} cm</p>}
                         {product.CableLength > 0 && <p><strong>Kábel hossz:</strong> {product.CableLength} m</p>}
                         {product.ConnectorType && <p><strong>Csatlakozó típus:</strong> {product.ConnectorType}</p>}
