@@ -1,6 +1,6 @@
 # Electric Guitar Shop - E-commerce website
  
-## Weboldal: [electricguitarshop.eu](https://thomas-horvath.github.io/egs_shop_react)
+## Weboldal: [electricguitarshop.eu](https://thomas-horvath.github.io/EGS_shop_client)
 
 
 Teszt felhasználó:
