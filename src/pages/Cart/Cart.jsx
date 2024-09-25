@@ -57,7 +57,7 @@ const Cart = () => {
           {cartItems.length === 0 ? (
             <p className='empty-cart-text'>A kosár jelenleg üres.</p>
           ) : (
-            <div  className='cart-page'>
+            <div className='cart-page'>
               <div className="table-container">
                 <table className="cart-table">
                   <thead>
@@ -71,13 +71,17 @@ const Cart = () => {
                   <tbody>
                     {cartItems.map((item) => (
                       <tr key={item.ProductID} className="cart-item">
-                        <td className="cart-product-info">
-                          <img className='cart-product-img' src={item.ProductPhotoURL} alt={item.Name} />
-                          <div className="cart-product-details">
-                            <span className="brand-name">{item.BrandName}</span>
-                            <span className="product-name">{item.Name}</span>
+
+                        <td>
+                          <div className="cart-product-info">
+                            <img className='cart-product-img' src={item.ProductPhotoURL} alt={item.Name} />
+                            <div className="cart-product-details">
+                              <span className="brand-name">{item.BrandName}</span>
+                              <span className="product-name">{item.Name}</span>
+                            </div>
                           </div>
                         </td>
+
                         <td>{item.Price} Ft</td>
                         <td>
                           <div className="quantity-container">
@@ -97,7 +101,7 @@ const Cart = () => {
                           </div>
                         </td>
                         <td>
-                          <button className='btn delete-btn main-btn' onClick={() => removeFromCart(item.ProductID)}><IoTrashSharp className='trash-icon'/></button>
+                          <button className='btn delete-btn main-btn' onClick={() => removeFromCart(item.ProductID)}><IoTrashSharp className='trash-icon' /></button>
                         </td>
                       </tr>
                     ))}

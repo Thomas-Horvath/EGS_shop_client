@@ -7,6 +7,7 @@ import MyOrders from '../../components/ProfileComponents/MyOrders/MyOrders';
 import ChangePassword from '../../components/ProfileComponents/ChangePassword/ChangePassword';
 import UpdateAdresses from '../../components/ProfileComponents/UpdateAddresses/UpdateAdresses';
 import OneOrderDetails from '../../components/ProfileComponents/OnrOrderDetails/OneOrderDetails';
+import DeleteProfile from '../../components/ProfileComponents/DeleteProfile/DeleteProfile';
 
 import './Profile.css';
 
@@ -85,6 +86,8 @@ const Profile = () => {
         </button>
       </div>
     </>
+  } else if (category === "profil-törlés") {
+    content = <DeleteProfile profile={profile} handleBackClick={handleBackClick} />
   }
 
 

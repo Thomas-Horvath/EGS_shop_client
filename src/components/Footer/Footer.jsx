@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import { Link , useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import InfoLink from '../InfoLink/InfoLink';
 import { footerInfoLinks, assets } from '../../assets/assets';
 import { FaFacebook, FaInstagramSquare, FaYoutube } from "react-icons/fa";
@@ -40,8 +40,8 @@ const Footer = () => {
               <li><FaEnvelope /> info@egs.hu</li>
               <ul className='social-icons'>
                 <a href="https://facebook.com" target='_blank' rel='noreferrer'><FaFacebook /></a>
-                <a href="https://facebook.com" target='_blank' rel='noreferrer'><FaInstagramSquare /></a>
-                <a href="https://facebook.com" target='_blank' rel='noreferrer'><FaYoutube /></a>
+                <a href="https://instagram.com" target='_blank' rel='noreferrer'><FaInstagramSquare /></a>
+                <a href="https://youtube.com" target='_blank' rel='noreferrer'><FaYoutube /></a>
               </ul>
             </ul>
 
@@ -96,7 +96,7 @@ const Footer = () => {
             <ul>
               <Link to="/profil/bejelentkezés" onClick={(e) => handleProfileLinkClick(e, '/profil/bejelentkezés')}><li>Bejelentkezés</li></Link>
               <Link to="/profil/regisztráció" onClick={(e) => handleProfileLinkClick(e, '/profil/regisztráció')}><li>Regisztráció</li></Link>
-              <Link to="/profil/elfelejtett-jelszó"><li>Elfelejtett jelszó</li></Link>
+              <Link to="/profil/elfelejtett-jelszó" onClick={(e) => handleProfileLinkClick(e, '/profil/elfelejtett-jelszó')}><li>Elfelejtett jelszó</li></Link>
               <Link to="/kapcsolat"><li>Kapcsolat</li></Link>
             </ul>
           </div>

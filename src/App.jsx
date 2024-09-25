@@ -22,6 +22,7 @@ import { SearchProvider } from './contexts/SearchContext';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Cookie from './components/Cookie/Cookie';
 
+
 function App() {
 
 

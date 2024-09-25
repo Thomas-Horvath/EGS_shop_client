@@ -1,0 +1,39 @@
+
+.profile-delete-container {
+    border: 1px solid var(--bg-grey-1);
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px #bbb;
+    padding: 1rem;
+    width: 320px;
+    margin: 3rem auto ;
+}
+.profile-delete-container h2 {
+    margin-bottom: 1rem;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+   
+}
+.form .form-container label {
+    margin: 0;
+}
+.form.delete-form {
+    display: flex;
+
+   width: 100%;
+   margin: 0;
+}
+
+.delete-btn {
+    width: fit-content;
+    margin: 1rem auto;
+}
+
+.delete-pass-btn {
+    border-radius: 3px;
+    margin-left: .5rem;
+}
