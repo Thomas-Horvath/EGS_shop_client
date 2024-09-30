@@ -50,22 +50,6 @@ const Login = ({ toggleMenu }) => {
     };
   }, []);
 
-  // Termékek lekérése az API-ból
-  // useEffect(() => {
-  //   const fetchProduct = () => {
-  //     fetch('https://thomasapi.eu/api/products', {
-  //       method: "GET",
-  //       headers: {
-  //         "Content-Type": "application/json; charset=UTF-8",
-  //       },
-  //       mode: "cors"
-  //     })
-  //       .then(res => res.json())
-  //       .then(data => setProducts(data));
-  //   };
-
-  //   fetchProduct();
-  // }, []);
 
 
   const handleSearchClick = () => {

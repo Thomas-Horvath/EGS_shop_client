@@ -122,7 +122,7 @@ const OneOrderDetails = ({ profile }) => {
   useEffect(() => {
     const fetchOrderDetails = async () => {
       try {
-        const orderResponse = await fetch(`https://thomasapi.eu/api/order/${orderId}`, {
+        const orderResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/order/${orderId}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json; charset=UTF-8",
@@ -137,7 +137,7 @@ const OneOrderDetails = ({ profile }) => {
         setOrder(orderData);
 
         const productPromises = orderData.OrderItems.map(async (item) => {
-          const productResponse = await fetch(`https://thomasapi.eu/api/product/${item.ProductID}`, {
+          const productResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/product/${item.ProductID}`, {
             method: "GET",
             headers: {
               "Content-Type": "application/json; charset=UTF-8",

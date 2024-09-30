@@ -15,7 +15,7 @@ const BestSelling = () => {
 
   // Api hívás
   function fetchProduct() {
-    return fetch('https://thomasapi.eu/api/products', {
+    return fetch(`${process.env.REACT_APP_API_URL}/api/products`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json; charset=UTF-8",

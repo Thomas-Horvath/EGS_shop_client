@@ -22,7 +22,7 @@ const ProductDetails = () => {
         // Fetch hívás a termék adatok lekérésére
         const fetchProductDetails = async () => {
             try {
-                const response = await fetch(`https://thomasapi.eu/api/product/${id}`, {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/api/product/${id}`, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json; charset=UTF-8",

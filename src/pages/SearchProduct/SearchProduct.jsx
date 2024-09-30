@@ -19,7 +19,7 @@ const SearchProduct = () => {
 
     async function fetchProduct() {
         try {
-            const response = await fetch('https://thomasapi.eu/api/products', {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/products`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json; charset=UTF-8",

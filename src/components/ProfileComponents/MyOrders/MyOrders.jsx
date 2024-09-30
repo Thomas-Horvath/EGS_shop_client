@@ -13,7 +13,7 @@ const MyOrders = ({ profile }) => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await fetch('https://thomasapi.eu/api/ownorders', {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/ownorders`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json; charset=UTF-8",

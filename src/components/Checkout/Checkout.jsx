@@ -22,7 +22,7 @@ const Checkout = ({ cartItems, totalPrice, shippingCost }) => {
     useEffect(() => {
         const fetchProfile = async () => {
             try {
-                const response = await fetch('https://thomasapi.eu/api/profile', {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/api/profile`, {
                     method: "GET",
                     headers: {
                         "Authorization": `Bearer ${token}`
@@ -110,7 +110,7 @@ const Checkout = ({ cartItems, totalPrice, shippingCost }) => {
         };
 
         try {
-            const response = await fetch('https://thomasapi.eu/api/order', {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/order`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json; charset=UTF-8",

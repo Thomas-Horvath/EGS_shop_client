@@ -22,7 +22,7 @@ const Profile = () => {
 
   function fetchProfile() {
     const token = sessionStorage.getItem('token');
-    return fetch('https://thomasapi.eu/api/profile', {
+    return fetch(`${process.env.REACT_APP_API_URL}/api/profile`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json; charset=UTF-8",

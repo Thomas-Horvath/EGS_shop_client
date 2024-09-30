@@ -67,7 +67,7 @@ const Registration = (props) => {
             EmailAddress: formData.email
         };
 
-        fetch('https://thomasapi.eu/api/register', {
+        fetch(`${process.env.REACT_APP_API_URL}/api/register`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json; charset=UTF-8",
