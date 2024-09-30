@@ -17,7 +17,7 @@ const ChangePassword = ({ username, email, handleBackClick }) => {
 
         // Először küldjük el a régi jelszót az ellenőrzéshez
         try {
-            const loginResponse = await fetch('https://thomasapi.eu/api/login', {
+            const loginResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/login`, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json; charset=UTF-8"
@@ -33,7 +33,7 @@ const ChangePassword = ({ username, email, handleBackClick }) => {
 
             if (loginResponse.ok && loginData.token) {
                 // Ha a bejelentkezés sikeres, elküldjük az új jelszót
-                const updateResponse = await fetch('https://thomasapi.eu/api/profileupdate', {
+                const updateResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/profileupdate`, {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json; charset=UTF-8",

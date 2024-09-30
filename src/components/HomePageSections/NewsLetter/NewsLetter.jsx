@@ -23,7 +23,7 @@ const NewsLetter = () => {
 
     try {
       // POST kérés az API-ra
-      const response = await fetch('https://thomasapi.eu/api/newsletter', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/newsletter`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

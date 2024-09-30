@@ -26,7 +26,7 @@ const UpdateAddresses = ({ profile, onUpdate , handleBackClick}) => {
         e.preventDefault();
 
         try {
-            const response = await fetch('https://thomasapi.eu/api/profileupdate', {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/profileupdate`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json; charset=UTF-8",

@@ -82,7 +82,7 @@ const DeleteProfile = ({ profile, handleBackClick}) => {
 
 
 
-        fetch('https://thomasapi.eu/api/profileupdate', {
+        fetch(`${process.env.REACT_APP_API_URL}/api/profileupdate`, {
             method: 'PUT',
             headers: {
                 "Content-Type": "application/json; charset=UTF-8",
