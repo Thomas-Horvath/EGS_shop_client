@@ -15,8 +15,6 @@ const Login = ({ toggleMenu }) => {
   const [searchQuery, setSearchQuery] = useState(''); // Állapot a keresőszöveghez
   const [sublistClosed, setSublistClosed] = useState(false);
   const [isAlertClose, setIsAlertClose] = useState(false);
-  // const [products, setProducts] = useState([]);
-  // const navigate = useNavigate();
   const { setSearch } = useContext(SearchContext);
 
   const [isScrolled, setIsScrolled] = useState(false);   // a görgetés állapota
@@ -218,14 +216,14 @@ const Login = ({ toggleMenu }) => {
             </ul>
           </div>
 
-          <button className='btn btn-icon hamburger-btn' ><FaBars onClick={toggleMenu} className='login-icon hamburger-icon' /></button>
+          <button className='btn btn-icon hamburger-btn' onClick={toggleMenu}><FaBars  className='login-icon hamburger-icon' /></button>
 
 
 
 
         </div>
       </div>
-    </div >
+    </div>
   )
 };
 

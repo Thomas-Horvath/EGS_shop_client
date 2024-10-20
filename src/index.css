@@ -31,7 +31,6 @@
 }
 
 html {
-  /* scroll-behavior: smooth; */
   overflow-x: hidden;
 }
 
@@ -40,7 +39,8 @@ body {
   font-family: 'Open Sans', sans-serif;
   min-width: 350px;
   position: relative;
-
+  overflow-x: hidden;
+  margin-top: 4rem;
 }
 
 li {
@@ -105,7 +105,8 @@ a {
   padding: .5rem;
 }
 
-.main-container h1 , .main-container h2{
+.main-container h1,
+.main-container h2 {
   text-align: center;
 }
 
@@ -141,6 +142,7 @@ input[type="number"] {
 .trash-icon {
   font-size: 1.2rem;
 }
+
 .error-message {
   text-align: center;
   color: var(--red);
@@ -152,6 +154,7 @@ input[type="number"] {
   color: var(--green);
   padding: .5rem;
 }
+
 .quantity-btn {
   max-width: 25px;
   height: 25px;
@@ -171,16 +174,20 @@ input[type="checkbox"] {
   appearance: none;
   min-width: 20px;
   height: 20px;
-  background-color: white; /* Alap háttérszín */
-  border: 2px solid var(--main-color); /* Alap keretszín */
+  background-color: white;
+  /* Alap háttérszín */
+  border: 2px solid var(--main-color);
+  /* Alap keretszín */
   cursor: pointer;
   position: relative;
   margin: auto .5rem;
 }
 
 input[type="checkbox"]:checked {
-  background-color: var(--main-color); /* Kitöltés színe, ha be van pipálva */
-  border-color: var(--main-color); /* Keret színe, ha be van pipálva */
+  background-color: var(--main-color);
+  /* Kitöltés színe, ha be van pipálva */
+  border-color: var(--main-color);
+  /* Keret színe, ha be van pipálva */
   padding: .2rem;
 
 }
@@ -198,11 +205,21 @@ input[type="checkbox"]:checked::after {
 
 }
 
+a, .btn , .btn-icon , img , button , svg , .login-cart-btn, .login-btn{
+  -webkit-tap-highlight-color: transparent;
+}
+
 
 @media (min-width: 992px) {
+  html {
+    overflow-x: visible;
+  }
+  body {
+    margin-top: 0;
+  }
   .main-container {
     text-align: start;
     max-width: 1300px;
-   
+
   }
 }

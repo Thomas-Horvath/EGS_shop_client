@@ -1,6 +1,16 @@
 .header {
-    position: sticky;
-    top: 0;
-    left: 0;
+    position: fixed;
+    top: 0px;
+    width: 100vw;
     z-index: 1000;
+}
+
+
+@media (min-width: 992px) {
+    .header {
+        position: sticky;
+        left: 0;
+        right: 0;
+        width: auto;
+    }
 }
