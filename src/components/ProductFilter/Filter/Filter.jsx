@@ -18,6 +18,8 @@ const Filter = ({ filters, onFilterChange, resetFiltersTrigger, isOpen , handleS
     }));
 
     onFilterChange(isChecked, filterCategory, value);
+
+  
   };
   
 

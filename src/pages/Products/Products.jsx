@@ -4,7 +4,7 @@ import './Products.css';
 import { Spinner } from '../../components/Spinner/Spinner';
 import Card from '../../components/ProductCard/ProductCard';
 import { CartContext } from '../../contexts/CartContext';
-
+import { PiFadersHorizontalBold } from "react-icons/pi";
 import Filter from '../../components/ProductFilter//Filter/Filter';
 import ReactPaginate from 'react-paginate';
 import { modelData, colorData, brandData, categoryMap, categoryTitle } from '../../assets//assets';
@@ -152,10 +152,11 @@ const Products = () => {
     if (checked) {
       setSelectedFilters(prev => [...prev, { filterCategory, value }]);
       window.scrollTo(0, 0);
+      setIsOpen(false);
     } else {
       setSelectedFilters(prev => prev.filter(filter => !(filter.filterCategory === filterCategory && filter.value === value)));
     }
-    setIsOpen(false);
+    
   };
 
   // Checkbox változásainál kapott adatok
@@ -185,7 +186,7 @@ const Products = () => {
         <div className="product-container-wrapper">
 
           <div className="sort-container">
-            <button className='btn sort-btn' onClick={handleSortDisplay}>Szűrés</button>
+            <button className='btn sort-btn' onClick={handleSortDisplay}><PiFadersHorizontalBold />Szűrés</button>
             <div className="select-container">
               <label>Rendezés: </label>
               <select value={sortOrder} onChange={handleSortChange}>

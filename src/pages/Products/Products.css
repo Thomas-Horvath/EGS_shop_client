@@ -30,6 +30,14 @@
     border-radius: 5px;
     box-shadow: var(--box-shadow);
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.sort-btn:hover {
+    background: var(--green-hover);
+
 }
 
 .select-container {
