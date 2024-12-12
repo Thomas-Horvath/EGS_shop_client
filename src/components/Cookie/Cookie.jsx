@@ -12,9 +12,13 @@ const Cookie = () => {
     if (hasAcceptedCookies === 'true') {
       setShow(false); // Ha elfogadták, ne jelenjen meg az értesítő
     } else if (hasDeniedCookies === 'true') {
-      setShow(true); // Ha tagadták, mindig jelenjen meg az értesítő
+      setTimeout(() => {
+        setShow(true); // Ha tagadták, mindig jelenjen meg az értesítő
+      }, 4000)
     } else {
-      setShow(true); // Alapértelmezés szerint jelenjen meg az értesítő
+      setTimeout(() => {
+        setShow(true); // Alapértelmezés szerint jelenjen meg az értesítő
+      }, 4000)
     }
   }, []);
 
